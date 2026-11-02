@@ -33,7 +33,7 @@ export function PostHero({
         'relative',
         image
           ? [
-              'mb-15 flex h-screen-header min-h-[500px] items-center justify-center overflow-hidden sm:mb-20 lg:mb-25 lg:h-screen',
+              'mb-15 flex h-screen-header min-h-[500px] items-center justify-center overflow-hidden sm:mb-20 lg:mb-25 lg:h-viewport',
               '[clip-path:polygon(0_0,100%_0,100%_calc(100%_-_40px),50%_100%,0_calc(100%_-_40px))] md:[clip-path:polygon(0_0,100%_0,100%_calc(100%_-_60px),50%_100%,0_calc(100%_-_60px))]',
             ]
           : 'bg-body pt-15 pb-12.5 lg:py-20'
