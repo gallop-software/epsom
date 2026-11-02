@@ -7,11 +7,11 @@ import { formatPostDate } from '@/utils/blog'
 export interface PostHeroProps {
   title: string
   /**
-   * Studio key of the featured image. Without one (video posts) the title
+   * Studio key of the featured image. Without one the title
    * sits in the plain white band of the other pages.
    */
   image?: string | undefined
-  /** WordPress publish time, ISO. */
+  /** Publish time, ISO. */
   date: string
   author?: string | undefined
 }
@@ -48,7 +48,7 @@ export function PostHero({
           )}
         >
           <Image
-            src="/brand/favicon.png"
+            src="/brand/icon-b.png"
             alt="Avatar photo"
             width={36}
             height={36}

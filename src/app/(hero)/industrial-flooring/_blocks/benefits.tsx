@@ -10,7 +10,7 @@ export default function Benefits() {
       <Spacer height="h-12.5" />
       <IconCards>
         <IconCard
-          image="/placeholder.png"
+          image="/content/circles/circle-industrial-1.png"
           title="Made For Hard Plant Use"
         >
           An industrial floor takes forklift traffic, pallet loads and dropped
@@ -20,7 +20,7 @@ export default function Benefits() {
           gray slab.
         </IconCard>
         <IconCard
-          image="/placeholder.png"
+          image="/content/circles/circle-industrial-2.png"
           title="Good Looks, Real Protection"
         >
           An epoxy-chip floor layers tough industrial coatings with decorative
@@ -28,7 +28,7 @@ export default function Benefits() {
           give the building a finished look you can be proud of.
         </IconCard>
         <IconCard
-          image="/placeholder.png"
+          image="/content/circles/circle-industrial-3.png"
           title="Stands Up To Fluids"
         >
           Plants and shops see oil, coolant, hydraulic fluid and solvents, and a
@@ -37,7 +37,7 @@ export default function Benefits() {
           whenever a client or owner walks through the door.
         </IconCard>
         <IconCard
-          image="/placeholder.png"
+          image="/content/circles/circle-industrial-4.png"
           title="Simple To Clean"
         >
           Choose from diamond-polished slabs, sealed concrete or a range of

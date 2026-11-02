@@ -5,12 +5,12 @@ import { Content } from './content'
 const metadata: PageMetadata = {
   title: 'Epoxy-Flake Lakeside Patio Coating - Bedrock Flooring',
   path: '/epoxy-flake-lakeside-patio-coating/',
-  publishDate: '2021-05-05T21:16:06+00:00',
-  modifiedDate: '2022-01-14T03:44:09+00:00',
-  date: '2021-05-05T16:16:06',
+  publishDate: '2026-05-05T21:16:06+00:00',
+  modifiedDate: '2026-05-05T21:16:06+00:00',
+  date: '2026-05-05T16:16:06',
   author: 'Bedrock Flooring',
   categories: ['Residential Concrete Flooring Projects'],
-  featuredImage: '/placeholder.png',
+  featuredImage: '/content/r20-patio-pergola.jpg',
   excerpt:
     'This lakeside patio now has the same flake blend as the garage next to it. #residentialflooring',
   authors: [{ name: 'Bedrock Flooring' }],
@@ -23,8 +23,8 @@ const metadata: PageMetadata = {
     description:
       'This lakeside patio now has the same flake blend as the garage next to it. #residentialflooring',
     image: {
-      url: '/placeholder.png',
-      type: 'image/png',
+      url: '/content/r20-patio-pergola.jpg',
+      type: 'image/jpeg',
       caption: 'Epoxy-Flake Lakeside Patio Coating',
     },
   },

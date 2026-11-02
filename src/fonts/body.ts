@@ -1,6 +1,6 @@
 import localFont from 'next/font/local'
 
-// Muli, the exact faces the WordPress-era site loaded from Google Fonts (converted to woff2).
+// Muli: Google Fonts faces converted to woff2.
 export const _bodyFont = localFont({
   src: [
     {

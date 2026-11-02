@@ -19,13 +19,13 @@ const metadata: PageMetadata = {
   path: '/contact/',
   description:
     'Call Bedrock Flooring to set up a free estimate. We will come look at your slab, talk through your options and share straight advice.',
-  publishDate: '2021-02-02T04:15:38+00:00',
-  modifiedDate: '2021-05-18T13:58:45+00:00',
+  publishDate: '2026-02-02T04:15:38+00:00',
+  modifiedDate: '2026-02-02T04:15:38+00:00',
   openGraph: {
     type: 'article',
-    image: { url: '/placeholder.png', type: 'image/png' },
+    image: { url: '/content/g04-finished.jpg', type: 'image/jpeg' },
   },
-  // Yoast gave this page a share image but no primary image
+  // This page has a share image but no primary image
   primaryImage: false,
   breadcrumbs: [
     { name: 'Home', href: '/' },

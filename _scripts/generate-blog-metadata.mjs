@@ -8,11 +8,8 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const ROOT_DIR = path.resolve(__dirname, '..')
 
-// Posts live at the site root (/<slug>/), directly in route groups: (post) for
-// the featured-image layout, (video-post) for video posts (white header).
-const POSTS_DIRS = ['src/app/(post)', 'src/app/(video-post)'].map((dir) =>
-  path.join(ROOT_DIR, dir)
-)
+// Posts live at the site root (/<slug>/), directly in the (post) route group.
+const POSTS_DIRS = ['src/app/(post)'].map((dir) => path.join(ROOT_DIR, dir))
 const OUTPUT_FILE = path.join(ROOT_DIR, '_data/_blog.json')
 
 function extractMetadata(filePath) {
@@ -93,7 +90,6 @@ async function generateBlogMetadata() {
           featuredImage: metadata.featuredImage || '',
           author: metadata.author || '',
           excerpt: metadata.excerpt || '',
-          ...(metadata.video && { video: metadata.video }),
           modified: metadata.modifiedDate || '',
         },
       })

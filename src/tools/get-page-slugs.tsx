@@ -8,8 +8,8 @@ type PageSlugItem = {
   uri: string
 }
 
-// (post), (video-post): posts are listed from _data/_blog.json (getPostSlugs)
-const BLOCKED_ROUTE_GROUPS = ['(demo)', '(post)', '(video-post)']
+// (post): posts are listed from _data/_blog.json (getPostSlugs)
+const BLOCKED_ROUTE_GROUPS = ['(demo)', '(post)']
 const EXCLUDED_FOLDERS = [
   'api',
   'post', // Posts are handled separately

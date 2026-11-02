@@ -9,7 +9,7 @@ import chevronRightIcon from '@iconify/icons-lucide/chevron-right'
 import type { ReactNode } from 'react'
 import { Icon } from '@/components/icon'
 
-/** One accordion row (the theme's Genesis accordion): a navy question with a chevron that turns when open. */
+/** One accordion row: a navy question with a chevron that turns when open. */
 export function Details({
   summary,
   open = false,

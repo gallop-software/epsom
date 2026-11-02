@@ -16,7 +16,7 @@ export default function Careers() {
     <Section
       className="bg-photo-dark px-col-5 py-col-10 text-overlay-text"
       maxWidth="max-w-[1120px]"
-      imageSrc="/placeholder.png"
+      imageSrc="/content/g03-roller.jpg"
       parallax
       imagePosition="bg-top"
       overlayColor="bg-photo-dark/80"

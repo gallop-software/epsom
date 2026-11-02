@@ -1,6 +1,6 @@
 import Script from 'next/script'
 
-/** Heap analytics, with the snippet the WordPress site loaded. */
+/** Heap analytics snippet. */
 export default function Heap({ appId }: { appId: string }) {
   if (!appId) return null
 

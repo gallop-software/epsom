@@ -1,9 +1,10 @@
-import { HeroVideo } from '@/components/hero-video'
+import { HeroBanner } from '@/components/hero-banner'
 
 export default function Hero() {
   return (
-    <HeroVideo
-      image="/placeholder.png"
+    <HeroBanner
+      image="/content/c04-venue.jpg"
+      dim="opacity-20"
       downLink="#more"
     />
   )

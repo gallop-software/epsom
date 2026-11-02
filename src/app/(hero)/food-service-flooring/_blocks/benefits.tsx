@@ -9,7 +9,7 @@ export default function Benefits() {
       <Spacer height="h-12.5" />
       <IconCards padding="px-col-10">
         <IconCard
-          image="/placeholder.png"
+          image="/content/circles/circle-food-1.png"
           title="Textures that suit the work"
         >
           We can tune the resin blend and surface grit to add more grip or ease
@@ -17,7 +17,7 @@ export default function Benefits() {
           means a busy cook line or a quiet prep room.
         </IconCard>
         <IconCard
-          image="/placeholder.png"
+          image="/content/circles/circle-food-2.png"
           title="Comfort and sure footing"
         >
           Staff get steady, predictable traction on a floor chosen with wet
@@ -26,7 +26,7 @@ export default function Benefits() {
           with less to worry about.
         </IconCard>
         <IconCard
-          image="/placeholder.png"
+          image="/content/circles/circle-food-3.png"
           title="A Floor Built To Stay"
         >
           Every Bedrock kitchen floor gets a resin coating that forms a firm,

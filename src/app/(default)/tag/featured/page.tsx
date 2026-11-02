@@ -2,7 +2,7 @@ import { PageWrapper } from '@/components/page-wrapper'
 import { PostArchive } from '@/components/post-archive'
 import { generatePageMetadata, type PageMetadata } from '@/utils/page-helpers'
 
-// The "featured" tag: no post uses it, so WordPress showed an empty archive
+// The "featured" tag: no post uses it, so the archive is empty
 function Content() {
   return (
     <PostArchive

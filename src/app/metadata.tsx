@@ -7,13 +7,13 @@ export const siteDescription =
 
 export const siteLogo = '/brand/logo-white.png'
 
-// Share image for pages without their own (Yoast had none there): the logo on navy, 1200×630.
+// Share image for pages without their own: the logo on navy, 1200×630.
 export const siteShareImage = '/brand/share.jpg'
 
 export const defaultSEOConfig = {
   creator: siteName,
   publisher: siteName,
-  // One robots tag, as Yoast emitted it.
+  // Emitted as one robots tag.
   robots: {
     index: true,
     follow: true,
@@ -24,7 +24,7 @@ export const defaultSEOConfig = {
 }
 
 /**
- * Site-wide JSON-LD nodes, as the WordPress-era site (Yoast) emitted them.
+ * Site-wide JSON-LD nodes.
  * Relative ids are prefixed with baseURL and Studio keys under
  * image/logo/url resolve to CDN URLs in PageWrapper.
  */

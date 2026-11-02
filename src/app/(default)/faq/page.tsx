@@ -15,8 +15,8 @@ function Content() {
 const metadata: PageMetadata = {
   title: 'FAQ - Bedrock Flooring',
   path: '/faq/',
-  publishDate: '2021-02-03T14:33:00+00:00',
-  modifiedDate: '2021-05-18T13:58:45+00:00',
+  publishDate: '2026-02-03T14:33:00+00:00',
+  modifiedDate: '2026-02-03T14:33:00+00:00',
   openGraph: { type: 'article' },
   breadcrumbs: [
     { name: 'Home', href: '/' },

@@ -46,27 +46,27 @@ export const footerMenu = [
 /** Six project photos above the footer (the "Above Footer" gallery widget). */
 export const footerGallery = [
   {
-    src: '/placeholder.png',
+    src: '/content/c17-gym.jpg',
     alt: 'Polished concrete in a Red Mesa, TX business',
   },
   {
-    src: '/placeholder.png',
+    src: '/content/g04-finished.jpg',
     alt: 'Polished concrete going down at a Red Mesa, TX job',
   },
   {
-    src: '/placeholder.png',
-    alt: 'Flake epoxy on a Red Mesa, TX garage and patio',
+    src: '/content/r09-workshop-stain.jpg',
+    alt: 'Stained concrete in a home workshop',
   },
   {
-    src: '/placeholder.png',
+    src: '/content/i06-repair-bay.jpg',
     alt: 'Epoxy floor at a Red Mesa, TX workplace',
   },
   {
-    src: '/placeholder.png',
+    src: '/content/r12-kitchen-resin.jpg',
     alt: 'Resinous flake coating at a family home',
   },
   {
-    src: '/placeholder.png',
-    alt: 'Red Mesa, TX patio with an epoxy-chip finish',
+    src: '/content/r16-workshop-polished.jpg',
+    alt: 'Polished concrete in a home workshop',
   },
 ]

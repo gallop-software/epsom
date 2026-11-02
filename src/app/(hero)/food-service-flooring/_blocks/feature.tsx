@@ -1,22 +1,21 @@
 import { Container } from '@/components/container'
 import { Heading } from '@/components/heading'
-import { VideoFeature } from '@/components/video-feature'
+import { ImageFeature } from '@/components/image-feature'
 
-export default function Video() {
+export default function Feature() {
   return (
     <Container
       width="wide"
-      id="video"
+      id="feature"
     >
       <div
-        id="food-service-video"
+        id="food-service-feature"
         className="mt-25 md:mt-30"
       >
-        <VideoFeature
-          src="/videos/placeholder-video-hls/master.m3u8"
-          poster="/placeholder.png"
-          title="Bedrock Flooring Food Service Floors Video"
-          pattern="/uploads/2024/02/dots.png"
+        <ImageFeature
+          image="/content/f07-brewery.jpg"
+          title="Bedrock Flooring Food Service Floors"
+          pattern="/patterns/dots.png"
         >
           <Heading
             as="h2"
@@ -32,7 +31,7 @@ export default function Video() {
           >
             Floors for every kitchen
           </Heading>
-        </VideoFeature>
+        </ImageFeature>
       </div>
     </Container>
   )

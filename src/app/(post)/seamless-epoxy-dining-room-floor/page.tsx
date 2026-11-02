@@ -5,13 +5,12 @@ import { Content } from './content'
 const metadata: PageMetadata = {
   title: 'Seamless Epoxy Dining Room Floor - Bedrock Flooring',
   path: '/seamless-epoxy-dining-room-floor/',
-  publishDate: '2021-05-05T21:20:28+00:00',
-  modifiedDate: '2022-01-14T03:44:09+00:00',
-  date: '2021-05-05T16:20:28',
+  publishDate: '2026-05-05T21:20:28+00:00',
+  modifiedDate: '2026-05-05T21:20:28+00:00',
+  date: '2026-05-05T16:20:28',
   author: 'Bedrock Flooring',
   categories: ['Commercial Concrete Flooring Projects'],
-  featuredImage:
-    '/placeholder.png',
+  featuredImage: '/content/f10-restaurant-epoxy.jpg',
   excerpt:
     'We coated this restaurant dining room with a seamless epoxy system. With no grout lines to scrub, the staff can mop it down fast, and the lighter color opens up the room. #commercialflooring',
   authors: [{ name: 'Bedrock Flooring' }],
@@ -24,8 +23,8 @@ const metadata: PageMetadata = {
     description:
       'We coated this restaurant dining room with a seamless epoxy system. With no grout lines to scrub, the staff can mop it down fast, and the lighter color opens up the room. #commercialflooring',
     image: {
-      url: '/placeholder.png',
-      type: 'image/png',
+      url: '/content/f10-restaurant-epoxy.jpg',
+      type: 'image/jpeg',
       caption: 'Seamless Epoxy Dining Room Floor',
     },
   },

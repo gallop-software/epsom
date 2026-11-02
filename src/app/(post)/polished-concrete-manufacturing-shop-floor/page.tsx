@@ -3,16 +3,14 @@ import { generatePageMetadata, type PageMetadata } from '@/utils/page-helpers'
 import { Content } from './content'
 
 const metadata: PageMetadata = {
-  title:
-    'Polished Concrete Manufacturing Shop Floor - Bedrock Flooring',
+  title: 'Polished Concrete Manufacturing Shop Floor - Bedrock Flooring',
   path: '/polished-concrete-manufacturing-shop-floor/',
-  publishDate: '2021-03-22T15:21:21+00:00',
-  modifiedDate: '2022-01-14T03:44:10+00:00',
-  date: '2021-03-22T10:21:21',
+  publishDate: '2026-03-22T15:21:21+00:00',
+  modifiedDate: '2026-03-22T15:21:21+00:00',
+  date: '2026-03-22T10:21:21',
   author: 'Bedrock Flooring',
   categories: ['Commercial Concrete Flooring Projects'],
-  featuredImage:
-    '/placeholder.png',
+  featuredImage: '/content/i02-plant-polished.jpg',
   excerpt:
     'We are polishing this manufacturing shop floor one section at a time. Working in stages lets their team stay in production while we move across the slab. #commercialflooring',
   authors: [{ name: 'Bedrock Flooring' }],
@@ -25,8 +23,8 @@ const metadata: PageMetadata = {
     description:
       'We are polishing this manufacturing shop floor one section at a time. Working in stages lets their team stay in production while we move across the slab. #commercialflooring',
     image: {
-      url: '/placeholder.png',
-      type: 'image/png',
+      url: '/content/i02-plant-polished.jpg',
+      type: 'image/jpeg',
       caption: 'Polished Concrete Manufacturing Shop Floor',
     },
   },

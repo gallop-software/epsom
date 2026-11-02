@@ -11,13 +11,13 @@ const metadata: PageMetadata = {
   path: '/careers/',
   description:
     'Looking for steady work in the flooring trade? Bedrock Flooring wants people who take pride in the job, and our crews help new hires learn real concrete floor skills on the job.',
-  publishDate: '2021-02-02T04:16:04+00:00',
-  modifiedDate: '2021-05-18T13:58:44+00:00',
+  publishDate: '2026-02-02T04:16:04+00:00',
+  modifiedDate: '2026-02-02T04:16:04+00:00',
   openGraph: {
     type: 'article',
-    image: { url: '/placeholder.png', type: 'image/png' },
+    image: { url: '/content/g03-roller.jpg', type: 'image/jpeg' },
   },
-  // Yoast gave this page a share image but no primary image
+  // This page has a share image but no primary image
   primaryImage: false,
   breadcrumbs: [
     { name: 'Home', href: '/' },

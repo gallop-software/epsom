@@ -17,7 +17,7 @@ interface SectionProps {
   imageMode?: 'img' | 'background'
   /** Background position of a parallax image (default `bg-center`). */
   imagePosition?: string
-  /** Show `imageSrc` as a fixed background from 861px (Genesis "parallax"). */
+  /** Show `imageSrc` as a fixed background from 861px (parallax). */
   parallax?: boolean
   /** Overlay laid over a parallax background, e.g. `bg-body-light/60`. */
   overlayColor?: string

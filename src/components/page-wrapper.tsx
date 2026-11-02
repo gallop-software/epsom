@@ -26,7 +26,7 @@ function processStructuredData(data: unknown, key?: string): unknown {
     // A Studio key is an image wherever it appears (ImageObject.url included).
     if (
       (IMAGE_KEYS.has(key) || URL_KEYS.has(key)) &&
-      data.startsWith('/uploads/')
+      /^\/(?:content|heroes|brand|patterns)\//.test(data)
     ) {
       return studioUrl(data, 'full')
     }

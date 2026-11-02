@@ -1,22 +1,21 @@
 import { Container } from '@/components/container'
 import { Heading } from '@/components/heading'
 import { Spacer } from '@/components/spacer'
-import { VideoFeature } from '@/components/video-feature'
+import { ImageFeature } from '@/components/image-feature'
 
-export default function Video() {
+export default function Feature() {
   return (
     <>
       <Spacer height="h-[39px]" />
       <Container
         width="wide"
-        id="video"
+        id="feature"
         className="mt-25 md:mt-30"
       >
-        <VideoFeature
-          src="/videos/placeholder-video-hls/master.m3u8"
-          poster="/placeholder.png"
-          title="Bedrock Flooring Commercial Floors Video"
-          pattern="/uploads/2024/02/dots.png"
+        <ImageFeature
+          image="/content/c14-supermarket.jpg"
+          title="Bedrock Flooring Commercial Floors"
+          pattern="/patterns/dots.png"
         >
           <Heading
             as="h2"
@@ -35,7 +34,7 @@ export default function Video() {
               <strong>finishes on every slab</strong>
             </strong>
           </Heading>
-        </VideoFeature>
+        </ImageFeature>
       </Container>
       <Spacer height="h-[101px]" />
     </>

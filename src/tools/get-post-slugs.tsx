@@ -18,7 +18,7 @@ export async function getPostSlugs(): Promise<{ postSlugs: PostSlugItem[] }> {
   const postSlugs: PostSlugItem[] = (blogData as BlogPost[]).map((post) => ({
     slug: post.slug,
     modified: post.metadata.modified || post.metadata.date || '',
-    // WordPress post URLs sit at the site root
+    // Post URLs sit at the site root
     uri: `/${post.slug}/`,
   }))
 

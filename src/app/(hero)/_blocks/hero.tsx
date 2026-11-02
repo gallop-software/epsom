@@ -1,14 +1,14 @@
 import { Button } from '@/components/button'
 import { Buttons } from '@/components/buttons'
 import { Heading } from '@/components/heading'
-import { HeroVideo } from '@/components/hero-video'
-import { PlayButton } from '@/components/play-button'
+import { HeroBanner } from '@/components/hero-banner'
 import { TypewriterHeading } from '@/components/typewriter-heading'
 
 export default function Hero() {
   return (
-    <HeroVideo
-      video="/videos/placeholder-loop.mp4"
+    <HeroBanner
+      downLink="#feature"
+      image="/heroes/hero-home.jpg"
       caption="Working Out of Red Mesa, Texas"
     >
       <Heading
@@ -59,7 +59,6 @@ export default function Hero() {
           Industrial Floors
         </Button>
       </Buttons>
-      <PlayButton href="#commercial-video" />
-    </HeroVideo>
+    </HeroBanner>
   )
 }

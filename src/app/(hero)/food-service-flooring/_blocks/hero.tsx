@@ -1,11 +1,11 @@
 import { Heading } from '@/components/heading'
-import { HeroVideo } from '@/components/hero-video'
-import { PlayButton } from '@/components/play-button'
+import { HeroBanner } from '@/components/hero-banner'
 
 export default function Hero() {
   return (
-    <HeroVideo
-      video="/videos/placeholder-loop.mp4"
+    <HeroBanner
+      downLink="#feature"
+      image="/heroes/hero-food-service.jpg"
       overlayColor="bg-contrast-light"
     >
       <Heading
@@ -16,7 +16,6 @@ export default function Hero() {
       >
         Food Service Floor Systems
       </Heading>
-      <PlayButton href="#food-service-video" />
-    </HeroVideo>
+    </HeroBanner>
   )
 }

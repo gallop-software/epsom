@@ -1,7 +1,7 @@
 import { PageWrapper } from '@/components/page-wrapper'
 import { generatePageMetadata, type PageMetadata } from '@/utils/page-helpers'
 import Hero from './_blocks/hero'
-import Videos from './_blocks/videos'
+import Features from './_blocks/features'
 import Services from './_blocks/services'
 import FloorTypes from './_blocks/floor-types'
 import Cta from './_blocks/cta'
@@ -13,7 +13,7 @@ function Content() {
   return (
     <>
       <Hero />
-      <Videos />
+      <Features />
       <Services />
       <FloorTypes />
       <Cta />
@@ -29,13 +29,13 @@ const metadata: PageMetadata = {
   path: '/',
   description:
     'Bedrock Flooring installs polished, epoxy and resinous concrete floors for homes and businesses in Red Mesa, Texas and the surrounding area.',
-  publishDate: '2021-02-02T04:05:56+00:00',
-  modifiedDate: '2024-04-04T20:10:14+00:00',
+  publishDate: '2026-02-02T04:05:56+00:00',
+  modifiedDate: '2026-02-02T04:05:56+00:00',
   openGraph: {
     type: 'website',
     image: {
-      url: '/placeholder.png',
-      type: 'image/png',
+      url: '/content/c05-grocery-produce.jpg',
+      type: 'image/jpeg',
     },
   },
   breadcrumbs: [{ name: 'Home', href: '/' }],

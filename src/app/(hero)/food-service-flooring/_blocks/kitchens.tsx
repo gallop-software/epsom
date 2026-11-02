@@ -11,13 +11,13 @@ import {
   StickyScroll,
 } from '@/components/sticky-scroll'
 
-const pattern = '/uploads/2021/02/dot-wave-sec-1.svg'
+const pattern = '/patterns/dot-wave-sec-1.svg'
 
 export default function Kitchens() {
   return (
     <StickyScroll>
       <StickyImage
-        src="/placeholder.png"
+        src="/content/f01-kitchen-line.jpg"
         alt="Food Service Floor Systems"
       />
       <ScrollPanel
@@ -54,7 +54,7 @@ export default function Kitchens() {
       </ScrollPanel>
 
       <StickyImage
-        src="/placeholder.png"
+        src="/content/f08-bakery.jpg"
         alt="Food Service Floor Systems"
       />
       <ScrollPanel>
@@ -99,7 +99,7 @@ export default function Kitchens() {
       </ScrollPanel>
 
       <StickyImage
-        src="/placeholder.png"
+        src="/content/f09-dish-area.jpg"
         alt="Finished Food Service Floor"
       />
       <ScrollPanel

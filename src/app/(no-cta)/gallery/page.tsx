@@ -11,14 +11,14 @@ const metadata: PageMetadata = {
   path: '/gallery/',
   description:
     'Thinking about a new finish for your shop, business or garage? Browse photos of concrete floors and coatings to see what could work for you.',
-  publishDate: '2021-02-02T04:19:19+00:00',
-  modifiedDate: '2022-04-16T15:16:49+00:00',
+  publishDate: '2026-02-02T04:19:19+00:00',
+  modifiedDate: '2026-02-02T04:19:19+00:00',
   openGraph: {
     type: 'article',
-    image: { url: '/placeholder.png', type: 'image/png' },
+    image: { url: '/content/c01-showroom.jpg', type: 'image/jpeg' },
   },
-  // Yoast's primary image is the first gallery photo, not the share image
-  primaryImage: { url: '/placeholder.png' },
+  // The primary image is the first gallery photo, not the share image
+  primaryImage: { url: '/content/c01-showroom.jpg' },
   breadcrumbs: [
     { name: 'Home', href: '/' },
     { name: 'Gallery', href: '/gallery/' },

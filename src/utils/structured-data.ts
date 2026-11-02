@@ -2,13 +2,12 @@ import { siteDescription, siteName } from '@/app/metadata'
 import type { PageMetadata } from '@/utils/page-helpers'
 import { getStudioImage } from '@/utils/studio-helpers'
 
-// Yoast's id for the "Bedrock Flooring" author (a hash of the WordPress user)
-const AUTHOR_ID = '/#/schema/person/cb3121c6173124ce1f5c009e8d9a0bfd'
+// Stable JSON-LD id for the site's one author
+const AUTHOR_ID = '/#/schema/person/bedrock-flooring'
 
 /**
- * Per-page JSON-LD nodes in the order and shape the WordPress-era site
- * (Yoast) emitted: [Article,] WebPage, ImageObject, BreadcrumbList, WebSite
- * [, Person]. Relative @id/url values are prefixed with baseURL by PageWrapper.
+ * Per-page JSON-LD nodes, in order: [Article,] WebPage, ImageObject,
+ * BreadcrumbList, WebSite [, Person]. Relative @id/url values are prefixed with baseURL by PageWrapper.
  */
 export function buildPageGraph(metadata: PageMetadata): object[] {
   const url = metadata.path
@@ -18,7 +17,7 @@ export function buildPageGraph(metadata: PageMetadata): object[] {
       : (metadata.primaryImage ?? metadata.openGraph?.image)
   const imageData = image ? getStudioImage(image.url, 'full') : undefined
   const breadcrumbs = metadata.breadcrumbs || []
-  // Paged archives: Yoast gave pages 2+ the archive's own id (see openGraph.url)
+  // Paged archives: pages 2+ use the archive's own id (see openGraph.url)
   const pageId = metadata.openGraph?.url ?? url
   const pageType = metadata.pageType || 'WebPage'
   const profile = pageType === 'ProfilePage'
@@ -53,7 +52,7 @@ export function buildPageGraph(metadata: PageMetadata): object[] {
     url,
     name: metadata.title,
     isPartOf: { '@id': '/#website' },
-    // Yoast linked the organization from the front page only
+    // Only the front page links the organization
     ...(url === '/' && { about: { '@id': '/#organization' } }),
     ...(image && {
       primaryImageOfPage: { '@id': `${url}#primaryimage` },
@@ -90,7 +89,7 @@ export function buildPageGraph(metadata: PageMetadata): object[] {
         '@type': 'ListItem',
         position: index + 1,
         name: item.name,
-        // Yoast leaves the current page's crumb without an item.
+        // The current page's crumb has no item.
         ...(index < breadcrumbs.length - 1 && { item: item.href }),
       })),
     })
@@ -115,8 +114,8 @@ export function buildPageGraph(metadata: PageMetadata): object[] {
         '@type': 'ImageObject',
         inLanguage: 'en-US',
         '@id': '/#/schema/person/image/',
-        url: '/brand/favicon.png',
-        contentUrl: '/brand/favicon.png',
+        url: '/brand/icon-b.png',
+        contentUrl: '/brand/icon-b.png',
         caption: metadata.author,
       },
       ...(profile

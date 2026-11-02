@@ -15,7 +15,7 @@ export default function Contact() {
     <Section
       className="bg-accent2 px-col-5 py-col-20 text-overlay-text"
       maxWidth="max-w-[900px]"
-      imageSrc="/uploads/2021/02/dot-wave-sec-1.svg"
+      imageSrc="/patterns/dot-wave-sec-1.svg"
       imageClassName="opacity-10"
     >
       <Heading

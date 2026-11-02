@@ -211,11 +211,11 @@ export function getStudioImage(
  * ```tsx
  * // Image in cloud returns CDN URL (defaults to 'large' size)
  * studioUrl('/images/hero-bg.png')
- * // Returns: 'https://speedwell-cdn.gallop.software/images/hero-bg-lg.jpg'
+ * // Returns: 'https://epsom-cdn.gallop.software/images/hero-bg-lg.jpg'
  *
  * // Specify a size
  * studioUrl('/images/hero-bg.png', 'medium')
- * // Returns: 'https://speedwell-cdn.gallop.software/images/hero-bg-md.jpg'
+ * // Returns: 'https://epsom-cdn.gallop.software/images/hero-bg-md.jpg'
  *
  * // Image not in cloud returns original path
  * studioUrl('/images/local-only.png')

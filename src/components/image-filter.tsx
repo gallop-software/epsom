@@ -4,35 +4,32 @@ import { clsx } from 'clsx'
 import { useState } from 'react'
 import type { ReactNode } from 'react'
 import { Container } from '@/components/container'
-import { VideoFeature } from '@/components/video-feature'
+import { ImageFeature } from '@/components/image-feature'
 
-export interface VideoFilterPanel {
-  /** Anchor id of the panel (the hero play button links to the first). */
+export interface ImageFilterPanel {
+  /** Anchor id of the panel. */
   id: string
   /** Tab label. */
   label: string
-  /** Studio key of the video's HLS master playlist. */
-  src: string
-  /** Studio key of the poster shown until the video plays. */
-  poster: string
-  /** Accessible name of the video. */
+  /** Studio key of the photo. */
+  image: string
+  /** Alt text of the photo. */
   title: string
-  /** Text beside the video. */
+  /** Text beside the photo. */
   children?: ReactNode
 }
 
-export interface VideoFilterProps {
+export interface ImageFilterProps {
   id: string
-  /** Studio key of the dotted pattern drawn behind each video. */
+  /** Studio key of the dotted pattern drawn behind each photo. */
   pattern: string
-  panels: VideoFilterPanel[]
+  panels: ImageFilterPanel[]
 }
 
 /**
- * Tabs that switch between video panels. Only the shown panel's video is in
- * view, so it is the one that plays (see HlsVideo).
+ * Tabs that switch between photo panels.
  */
-export function VideoFilter({ id, pattern, panels }: VideoFilterProps) {
+export function ImageFilter({ id, pattern, panels }: ImageFilterProps) {
   const [active, setActive] = useState(0)
   return (
     <>
@@ -64,14 +61,13 @@ export function VideoFilter({ id, pattern, panels }: VideoFilterProps) {
             id={panel.id}
             className={clsx(i === active ? 'relative block' : 'hidden')}
           >
-            <VideoFeature
-              src={panel.src}
-              poster={panel.poster}
+            <ImageFeature
+              image={panel.image}
               title={panel.title}
               pattern={pattern}
             >
               {panel.children}
-            </VideoFeature>
+            </ImageFeature>
           </div>
         ))}
       </Container>

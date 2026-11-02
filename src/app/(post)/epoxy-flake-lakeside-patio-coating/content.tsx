@@ -10,8 +10,8 @@ export function Content() {
     <>
       <PostHero
         title={TITLE}
-        image="/placeholder.png"
-        date="2021-05-05T16:16:06"
+        image="/content/r20-patio-pergola.jpg"
+        date="2026-05-05T16:16:06"
       />
       <PostBody categories={['Residential Concrete Flooring Projects']}>
         <Paragraph>
@@ -25,31 +25,15 @@ export function Content() {
         <PostGallery
           images={[
             {
-              src: '/placeholder.png',
+              src: '/content/r20-patio-pergola.jpg',
               alt: 'Epoxy-Flake Lakeside Patio Coating',
             },
             {
-              src: '/placeholder.png',
+              src: '/content/r03-patio-covered.jpg',
               alt: 'Epoxy-Flake Lakeside Patio Coating',
             },
             {
-              src: '/placeholder.png',
-              alt: 'Epoxy-Flake Lakeside Patio Coating',
-            },
-            {
-              src: '/placeholder.png',
-              alt: 'Epoxy-Flake Lakeside Patio Coating',
-            },
-            {
-              src: '/placeholder.png',
-              alt: 'Epoxy-Flake Lakeside Patio Coating',
-            },
-            {
-              src: '/placeholder.png',
-              alt: 'Epoxy-Flake Lakeside Patio Coating',
-            },
-            {
-              src: '/placeholder.png',
+              src: '/content/r21-patio-poolside.jpg',
               alt: 'Epoxy-Flake Lakeside Patio Coating',
             },
           ]}

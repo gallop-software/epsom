@@ -13,7 +13,7 @@ const TURNSTILE_FIELD = 'cf-turnstile-response'
 const HONEYPOT_FIELD = 'companyWebsite'
 const HIDDEN_FIELDS = ['emailSubject', TURNSTILE_FIELD, HONEYPOT_FIELD]
 
-// Forms whose visitor gets a confirmation email, as on the WordPress site
+// Forms whose visitor gets a confirmation email
 const CONFIRMED_FORMS = new Set(['Contact Form'])
 
 const MAX_FIELDS = 30
@@ -142,7 +142,7 @@ function validate(payload: Record<string, any>): string | null {
   const phone = fieldValue(payload, 'phone')
 
   if (!email && !phone) {
-    return 'Please enter a phone number or an email address so we can reach you.'
+    return 'Add a phone number or an email address so we can get back to you.'
   }
   // Also keeps line breaks out of the Reply-To header
   if (email && !/^[^\s@<>"',;]+@[^\s@<>"',;]+\.[^\s@<>"',;]+$/.test(email)) {
@@ -252,7 +252,7 @@ export async function POST(req: Request) {
       subject: `${process.env.MAILGUN_FROM_NAME} Contact Confirmation${displayName ? `: ${displayName}` : ''}`,
       html: renderEmailHtml(
         displayPayload,
-        `<p class="row">Hi${greeting ? ` ${greeting}` : ''},</p><p class="row">Your contact form message has been received and we will get back to you as soon as possible. Thanks for reaching out to us!</p>`
+        `<p class="row">Hi${greeting ? ` ${greeting}` : ''},</p><p class="row">Thanks for getting in touch. We have your message, and someone from our team will reply soon.</p>`
       ),
       devOnly: isDevelopment,
     })

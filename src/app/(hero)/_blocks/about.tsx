@@ -9,7 +9,7 @@ export default function About() {
     <Section
       className="bg-accent2 px-col-5 text-overlay-text"
       maxWidth="max-w-[1160px]"
-      imageSrc="/uploads/2021/02/dot-wave-sec-1.svg"
+      imageSrc="/patterns/dot-wave-sec-1.svg"
     >
       <Spacer height="h-25" />
       <Paragraph

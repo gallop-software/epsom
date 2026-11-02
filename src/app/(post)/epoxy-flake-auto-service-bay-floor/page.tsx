@@ -3,22 +3,19 @@ import { generatePageMetadata, type PageMetadata } from '@/utils/page-helpers'
 import { Content } from './content'
 
 const metadata: PageMetadata = {
-  title:
-    'Epoxy-Flake Auto Service Bay Floor - Bedrock Flooring',
+  title: 'Epoxy-Flake Auto Service Bay Floor - Bedrock Flooring',
   path: '/epoxy-flake-auto-service-bay-floor/',
-  publishDate: '2021-04-14T14:07:47+00:00',
-  modifiedDate: '2022-01-14T03:44:09+00:00',
-  date: '2021-04-14T09:07:47',
+  publishDate: '2026-04-14T14:07:47+00:00',
+  modifiedDate: '2026-04-14T14:07:47+00:00',
+  date: '2026-04-14T09:07:47',
   author: 'Bedrock Flooring',
   categories: ['Commercial Concrete Flooring Projects'],
-  featuredImage:
-    '/placeholder.png',
+  featuredImage: '/content/i06-repair-bay.jpg',
   excerpt:
     'We finished an epoxy-flake floor in the service bays at a local auto shop. Oil and road grime clean up easily, and the textured surface gives the techs secure footing. #commercialflooring',
   authors: [{ name: 'Bedrock Flooring' }],
   article: {
-    headline:
-      'Epoxy-Flake Auto Service Bay Floor',
+    headline: 'Epoxy-Flake Auto Service Bay Floor',
     wordCount: 31,
   },
   openGraph: {
@@ -26,10 +23,9 @@ const metadata: PageMetadata = {
     description:
       'We finished an epoxy-flake floor in the service bays at a local auto shop. Oil and road grime clean up easily, and the textured surface gives the techs secure footing. #commercialflooring',
     image: {
-      url: '/placeholder.png',
-      type: 'image/png',
-      caption:
-        'Epoxy-Flake Auto Service Bay Floor',
+      url: '/content/i06-repair-bay.jpg',
+      type: 'image/jpeg',
+      caption: 'Epoxy-Flake Auto Service Bay Floor',
     },
   },
   breadcrumbs: [

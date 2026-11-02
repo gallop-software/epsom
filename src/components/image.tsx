@@ -5,15 +5,15 @@ export interface ImageProps {
   /** Studio key, e.g. `/uploads/2021/02/photo.jpg`. */
   src: string
   alt?: string | undefined
-  /** Intrinsic size, as the WordPress markup declared it. */
+  /** Intrinsic size of the image. */
   width?: number | undefined
   height?: number | undefined
   /**
-   * Keep the declared width:height ratio after the file loads. WordPress's
-   * resized copies round to their own sizes (525×700); Studio's do not.
+   * Keep the declared width:height ratio after the file loads, even if the
+   * file's own ratio differs slightly.
    */
   keepRatio?: boolean | undefined
-  /** `sizes` attribute (defaults to WordPress's `(max-width: Wpx) 100vw, Wpx`). */
+  /** `sizes` attribute (defaults to `(max-width: Wpx) 100vw, Wpx`). */
   sizes?: string | undefined
   /** Studio variant used as the fallback `src`. */
   size?: 'small' | 'medium' | 'large' | 'full' | undefined

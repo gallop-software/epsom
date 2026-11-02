@@ -5,13 +5,12 @@ import { Content } from './content'
 const metadata: PageMetadata = {
   title: 'Epoxy-Chip Home Garage Floor - Bedrock Flooring',
   path: '/epoxy-chip-home-garage-floor/',
-  publishDate: '2021-02-19T07:12:58+00:00',
-  modifiedDate: '2022-01-14T03:44:10+00:00',
-  date: '2021-02-19T07:12:58',
+  publishDate: '2026-02-19T07:12:58+00:00',
+  modifiedDate: '2026-02-19T07:12:58+00:00',
+  date: '2026-02-19T07:12:58',
   author: 'Bedrock Flooring',
   categories: ['Residential Concrete Flooring Projects'],
-  featuredImage:
-    '/placeholder.png',
+  featuredImage: '/content/r01-garage-chip.jpg',
   excerpt:
     'We wrapped up this home garage with a black and white chip blend. The textured finish hides dust between cleanings and rinses off without much effort.',
   authors: [{ name: 'Bedrock Flooring' }],
@@ -21,8 +20,8 @@ const metadata: PageMetadata = {
     description:
       'We wrapped up this home garage with a black and white chip blend. The textured finish hides dust between cleanings and rinses off without much effort.',
     image: {
-      url: '/placeholder.png',
-      type: 'image/png',
+      url: '/content/r01-garage-chip.jpg',
+      type: 'image/jpeg',
       caption: 'Epoxy-Chip Home Garage Floor',
     },
   },

@@ -19,7 +19,7 @@ export function ProjectsBand({ title, posts, href, label }: ProjectsBandProps) {
     <Section
       className="bg-body-light px-col-5 py-col-15"
       maxWidth="max-w-[1120px]"
-      imageSrc="/uploads/2021/02/section_diagonals-4.svg"
+      imageSrc="/patterns/section_diagonals-4.svg"
       parallax
       overlayColor="bg-body-light/60"
     >

@@ -10,29 +10,27 @@ export function Content() {
     <>
       <PostHero
         title={TITLE}
-        image="/placeholder.png"
-        date="2021-02-19T07:29:48"
+        image="/content/c06-sealed-corridor.jpg"
+        date="2026-02-19T07:29:48"
       />
       <PostBody categories={['Commercial Concrete Flooring Projects']}>
         <Paragraph>
-          Old VCT came up at this farm and ranch store so we could seal the concrete underneath. Products show well on the glossy surface, and upkeep is simple.
+          Old VCT came up at this farm and ranch store so we could seal the
+          concrete underneath. Products show well on the glossy surface, and
+          upkeep is simple.
         </Paragraph>
         <PostGallery
           images={[
             {
-              src: '/placeholder.png',
+              src: '/content/c06-sealed-corridor.jpg',
               alt: 'Sealed Concrete Retail Display Floor',
             },
             {
-              src: '/placeholder.png',
+              src: '/content/c09-store-entrance.jpg',
               alt: 'Sealed Concrete Retail Display Floor',
             },
             {
-              src: '/placeholder.png',
-              alt: 'Sealed Concrete Retail Display Floor',
-            },
-            {
-              src: '/placeholder.png',
+              src: '/content/c16-hotel-lobby.jpg',
               alt: 'Sealed Concrete Retail Display Floor',
             },
           ]}

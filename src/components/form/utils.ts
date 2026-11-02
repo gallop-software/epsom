@@ -1,5 +1,5 @@
 // ============================================================================
-// Shared Input Styles (the theme's WPForms fields: white, square, Muli light).
+// Shared Input Styles (white, square, Muli light).
 // Grey borders on light sections; white on dark ones (`<Form tone="dark">`).
 // ============================================================================
 

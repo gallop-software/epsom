@@ -5,7 +5,6 @@ import { Heading } from '@/components/heading'
 import { Image } from '@/components/image'
 import { PageHeader } from '@/components/page-header'
 import { Paragraph } from '@/components/paragraph'
-import { VideoEmbed } from '@/components/video-embed'
 import {
   categoryHref,
   formatPostDate,
@@ -51,7 +50,7 @@ export function PostArchive({
           </div>
         ) : (
           <div className="flow-root bg-body shadow-card">
-            <Paragraph>Sorry, no content matched your criteria.</Paragraph>
+            <Paragraph>Nothing to show here yet.</Paragraph>
           </div>
         )}
         {pages > 1 && (
@@ -73,30 +72,21 @@ function PostCard({ post }: { post: BlogPost }) {
     post.metadata
   return (
     <article className="relative z-1 mb-[12%] flex flex-col bg-body shadow-card md:mb-0">
-      {/* video posts show their video in place of the featured image */}
-      {post.metadata.video ? (
-        <VideoEmbed
-          src={post.metadata.video}
-          title={title}
-          margin="mb-0"
-        />
-      ) : (
-        <Link
-          href={href}
-          aria-hidden="true"
-          tabIndex={-1}
-          className="relative block overflow-hidden pb-[64%]"
-        >
-          {/* WordPress showed a 1440×880 centre crop of the (square) photo,
+      <Link
+        href={href}
+        aria-hidden="true"
+        tabIndex={-1}
+        className="relative block overflow-hidden pb-[64%]"
+      >
+        {/* A 1440×880 centre crop of the (square) photo,
               covering the box: 104.8% of the box width, centred */}
-          <Image
-            src={featuredImage}
-            alt={title}
-            sizes="(max-width: 860px) 95vw, 545px"
-            className="absolute top-1/2 left-1/2 h-auto w-[104.8%] max-w-none -translate-x-1/2 -translate-y-1/2"
-          />
-        </Link>
-      )}
+        <Image
+          src={featuredImage}
+          alt={title}
+          sizes="(max-width: 860px) 95vw, 545px"
+          className="absolute top-1/2 left-1/2 h-auto w-[104.8%] max-w-none -translate-x-1/2 -translate-y-1/2"
+        />
+      </Link>
       <header className="relative my-10 px-[8.75%] text-center">
         {/* a <div>: the article's content-link highlight is for paragraphs */}
         <div className="mb-6 text-2xs leading-normal text-muted">
@@ -155,7 +145,7 @@ function PostCard({ post }: { post: BlogPost }) {
   )
 }
 
-/** Genesis's numbered archive pagination. */
+/** Numbered archive pagination. */
 function Pagination({
   page,
   pages,
@@ -205,7 +195,7 @@ function Pagination({
     >
       {/* the theme's list sits 20px inside its block above and below the row */}
       <ul className="m-0 list-none px-0 py-5 md:py-0">
-        {/* inline-blocks separated by whitespace, as Genesis printed them */}
+        {/* inline-blocks separated by whitespace */}
         {items.map((item) => (
           <Fragment key={item.key}>
             <li className="mx-[3px] mb-1.5 inline-block">

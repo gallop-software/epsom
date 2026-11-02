@@ -5,7 +5,7 @@ type StatcounterProps = {
   security: string
 }
 
-/** Statcounter's invisible counter, configured as on the WordPress site. */
+/** Statcounter's invisible counter. */
 export default function Statcounter({ project, security }: StatcounterProps) {
   if (!project || !security) return null
 

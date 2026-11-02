@@ -2,12 +2,13 @@
 
 ## 2026-11-02
 
-- Epsom 1.0.0: template for concrete floor contractors, built from a production flooring site
+- Epsom 1.0.0: template for concrete floor contractors
 - Add a block preview page for every block (`/block/<route>/<block>/`, `npm run blocks`)
-- Remove the WordPress migration tooling, redirects and the unused search index
+- Remove migration tooling, redirects and the unused search index
 - Move media to the template's own bucket, served from `epsom-cdn.gallop.software`
 - Rebrand the demo to the fictional Bedrock Flooring; `NEXT_PUBLIC_CALENDLY_URL` sets the booking link
-- Rewrite all copy, and replace all photos and videos with placeholders
+- Rewrite all copy; replace all photos and videos with AI-generated demo images
+- Remove the HLS video player and video posts; video sections are now photo features
 
 ## 2026-10-12
 

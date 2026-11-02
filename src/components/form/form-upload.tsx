@@ -6,7 +6,7 @@ import { Icon } from '@/components/icon'
 import { FormField } from './form-field'
 
 // ============================================================================
-// FormUpload Component (Speedwell's, in WPForms' dropzone style)
+// FormUpload Component (dropzone style)
 // ============================================================================
 
 export type FormUploadProps = {
@@ -135,7 +135,7 @@ export function FormUpload({
             className="mb-[5px] h-10 w-10 opacity-50"
           />
           <span className="block">
-            Click or drag a file to this area to upload.
+            Drop a file here, or click to choose one.
           </span>
         </div>
 

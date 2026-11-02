@@ -1,22 +1,21 @@
 import { Container } from '@/components/container'
 import { Heading } from '@/components/heading'
 import { Spacer } from '@/components/spacer'
-import { VideoFeature } from '@/components/video-feature'
+import { ImageFeature } from '@/components/image-feature'
 
-export default function Video() {
+export default function Feature() {
   return (
     <>
       <Spacer height="h-[39px]" />
       <Container
         width="wide"
-        id="video"
+        id="feature"
         className="mt-25 md:mt-30"
       >
-        <VideoFeature
-          src="/videos/placeholder-video-hls/master.m3u8"
-          poster="/placeholder.png"
-          title="Bedrock Flooring Home and Garage Floors Video"
-          pattern="/uploads/2024/02/dots.png"
+        <ImageFeature
+          image="/content/r05-living-polished.jpg"
+          title="Bedrock Flooring Home and Garage Floors"
+          pattern="/patterns/dots.png"
         >
           <Heading
             as="h2"
@@ -32,7 +31,7 @@ export default function Video() {
           >
             Bringing Our Commercial Know-How Home to Your Garage
           </Heading>
-        </VideoFeature>
+        </ImageFeature>
       </Container>
     </>
   )

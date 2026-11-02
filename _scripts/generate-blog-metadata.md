@@ -17,7 +17,7 @@ npm run blog
 
 ## What It Does
 
-1. Scans each post folder in `src/app/(post)/` and `src/app/(video-post)/`
+1. Scans each post folder in `src/app/(post)/`
 2. Extracts the metadata block from each post's `page.tsx`
 3. Sorts posts by date (newest first)
 4. Generates `_data/_blog.json` with compiled metadata

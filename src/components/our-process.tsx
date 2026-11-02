@@ -18,7 +18,7 @@ export function OurProcess() {
         <ProcessSteps>
           <ProcessColumn>
             <ProcessStep
-              image="/placeholder.png"
+              image="/content/g02-walkthrough.jpg"
               title="Planning"
             >
               We sit down with you first and talk through which floor makes
@@ -26,7 +26,7 @@ export function OurProcess() {
               so we map out the work ahead of time to keep the job smooth.
             </ProcessStep>
             <ProcessStep
-              image="/placeholder.png"
+              image="/content/g01-grinding.jpg"
               title="Walkthrough"
             >
               No one likes surprises on a job. We meet you on site and go over
@@ -37,7 +37,7 @@ export function OurProcess() {
           </ProcessColumn>
           <ProcessColumn>
             <ProcessStep
-              image="/placeholder.png"
+              image="/content/g03-roller.jpg"
               title="The Install"
             >
               Once you are ready, our crew gets to work on the floor. We take
@@ -45,7 +45,7 @@ export function OurProcess() {
               things are going until the last coat is down.
             </ProcessStep>
             <ProcessStep
-              image="/placeholder.png"
+              image="/content/g04-finished.jpg"
               title="Handoff"
             >
               When the floor is done, we clear out our gear and leave the space

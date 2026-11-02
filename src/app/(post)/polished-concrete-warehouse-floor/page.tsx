@@ -5,13 +5,12 @@ import { Content } from './content'
 const metadata: PageMetadata = {
   title: 'Polished Concrete Warehouse Floor - Bedrock Flooring',
   path: '/polished-concrete-warehouse-floor/',
-  publishDate: '2021-05-31T21:32:44+00:00',
-  modifiedDate: '2022-01-14T03:44:09+00:00',
-  date: '2021-05-31T16:32:44',
+  publishDate: '2026-05-31T21:32:44+00:00',
+  modifiedDate: '2026-05-31T21:32:44+00:00',
+  date: '2026-05-31T16:32:44',
   author: 'Bedrock Flooring',
   categories: ['Commercial Concrete Flooring Projects'],
-  featuredImage:
-    '/placeholder.png',
+  featuredImage: '/content/i04-warehouse-polished.jpg',
   excerpt:
     'A tired epoxy coating and chipped joints had to go in this storage warehouse. We ground the slab down to polished concrete and cut fresh joints, so the floor looks clean and can take daily forklift traffic. #commercialflooring #polishedconcrete',
   authors: [{ name: 'Bedrock Flooring' }],
@@ -24,8 +23,8 @@ const metadata: PageMetadata = {
     description:
       'A tired epoxy coating and chipped joints had to go in this storage warehouse. We ground the slab down to polished concrete and cut fresh joints, so the floor looks clean and can take daily forklift traffic. #commercialflooring #polishedconcrete',
     image: {
-      url: '/placeholder.png',
-      type: 'image/png',
+      url: '/content/i04-warehouse-polished.jpg',
+      type: 'image/jpeg',
       caption: 'Polished Concrete Warehouse Floor',
     },
   },

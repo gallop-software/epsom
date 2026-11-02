@@ -8,7 +8,7 @@ export interface ShowcaseImage {
   src: string
   alt?: string | undefined
   caption?: string | undefined
-  /** Size WordPress declared for the tile; it sets the tile's aspect ratio. */
+  /** Declared size of the tile; it sets the tile's aspect ratio. */
   width?: number | undefined
   height?: number | undefined
 }

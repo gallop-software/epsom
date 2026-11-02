@@ -1,6 +1,6 @@
 import { Heading } from '@/components/heading'
 import { Spacer } from '@/components/spacer'
-import { VideoFilter } from '@/components/video-filter'
+import { ImageFilter } from '@/components/image-filter'
 
 function Intro({ title, subtitle }: { title: string; subtitle: string }) {
   return (
@@ -23,19 +23,18 @@ function Intro({ title, subtitle }: { title: string; subtitle: string }) {
   )
 }
 
-export default function Videos() {
+export default function Features() {
   return (
     <>
       <Spacer height="h-28.5" />
-      <VideoFilter
-        id="video"
-        pattern="/uploads/2024/02/dots.png"
+      <ImageFilter
+        id="feature"
+        pattern="/patterns/dots.png"
         panels={[
           {
-            id: 'commercial-video',
+            id: 'commercial-feature',
             label: 'Commercial',
-            src: '/videos/placeholder-video-hls/master.m3u8',
-            poster: '/placeholder.png',
+            image: '/content/c05-grocery-produce.jpg',
             title: 'A Look at Bedrock Commercial Floors',
             children: (
               <Intro
@@ -45,10 +44,9 @@ export default function Videos() {
             ),
           },
           {
-            id: 'residential-video',
+            id: 'residential-feature',
             label: 'Residential',
-            src: '/videos/placeholder-video-hls/master.m3u8',
-            poster: '/placeholder.png',
+            image: '/content/r04-cabin-polished.jpg',
             title: 'A Look at Bedrock Residential Floors',
             children: (
               <Intro
@@ -58,10 +56,9 @@ export default function Videos() {
             ),
           },
           {
-            id: 'industrial-video',
+            id: 'industrial-feature',
             label: 'Industrial',
-            src: '/videos/placeholder-video-hls/master.m3u8',
-            poster: '/placeholder.png',
+            image: '/content/g02-walkthrough.jpg',
             title: 'A Look at Bedrock Industrial Floors',
             children: (
               <Intro

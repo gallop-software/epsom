@@ -11,13 +11,13 @@ import {
   StickyScroll,
 } from '@/components/sticky-scroll'
 
-const pattern = '/uploads/2021/02/dot-wave-sec-1.svg'
+const pattern = '/patterns/dot-wave-sec-1.svg'
 
 export default function FloorTypes() {
   return (
     <StickyScroll>
       <StickyImage
-        src="/placeholder.png"
+        src="/content/r02-garage-metallic.jpg"
         caption="Garage Floor in Metallic Epoxy"
       />
       <ScrollPanel
@@ -51,7 +51,7 @@ export default function FloorTypes() {
       </ScrollPanel>
 
       <StickyImage
-        src="/placeholder.png"
+        src="/content/c18-salesfloor-chip.jpg"
         caption="Shop Floor in Epoxy Chip"
         captionAlign="left"
       />
@@ -88,7 +88,7 @@ export default function FloorTypes() {
       </ScrollPanel>
 
       <StickyImage
-        src="/placeholder.png"
+        src="/content/c02-grocery-aisle.jpg"
         caption="Polished Concrete on a Busy Grocery Sales Floor"
       />
       <ScrollPanel bgColor="bg-body">

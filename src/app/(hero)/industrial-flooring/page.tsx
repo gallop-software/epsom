@@ -1,7 +1,7 @@
 import { PageWrapper } from '@/components/page-wrapper'
 import { generatePageMetadata, type PageMetadata } from '@/utils/page-helpers'
 import Hero from './_blocks/hero'
-import Video from './_blocks/video'
+import Feature from './_blocks/feature'
 import Benefits from './_blocks/benefits'
 import FloorTypes from './_blocks/floor-types'
 import Gallery from './_blocks/gallery'
@@ -12,7 +12,7 @@ function Content() {
   return (
     <>
       <Hero />
-      <Video />
+      <Feature />
       <Benefits />
       <FloorTypes />
       <Gallery />
@@ -27,13 +27,13 @@ const metadata: PageMetadata = {
   path: '/industrial-flooring/',
   description:
     'Bedrock Flooring builds industrial floors that handle forklift traffic and shop work while keeping a clean, sharp look.',
-  publishDate: '2024-01-12T19:32:39+00:00',
-  modifiedDate: '2024-04-05T21:52:40+00:00',
+  publishDate: '2026-01-12T19:32:39+00:00',
+  modifiedDate: '2026-01-12T19:32:39+00:00',
   openGraph: {
     type: 'article',
     image: {
-      url: '/placeholder.png',
-      type: 'image/png',
+      url: '/content/i01-distribution-chip.jpg',
+      type: 'image/jpeg',
       caption: 'Industrial Floor Systems',
     },
   },

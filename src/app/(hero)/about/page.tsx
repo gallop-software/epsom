@@ -23,13 +23,13 @@ const metadata: PageMetadata = {
   path: '/about/',
   description:
     'Meet Bedrock Flooring, the Red Mesa, Texas crew that puts down polished, epoxy and resinous concrete floors with straight talk and careful work.',
-  publishDate: '2021-02-02T04:14:01+00:00',
-  modifiedDate: '2024-08-22T19:19:49+00:00',
+  publishDate: '2026-02-02T04:14:01+00:00',
+  modifiedDate: '2026-02-02T04:14:01+00:00',
   openGraph: {
     type: 'article',
     image: {
-      url: '/placeholder.png',
-      type: 'image/png',
+      url: '/content/c04-venue.jpg',
+      type: 'image/jpeg',
       caption: 'Polished Concrete Office Floor in Red Mesa, TX',
     },
   },

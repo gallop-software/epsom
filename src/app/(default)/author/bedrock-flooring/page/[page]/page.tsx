@@ -28,7 +28,7 @@ function pageMetadata(page: number): PageMetadata {
       type: 'profile',
       url: '/author/bedrock-flooring/',
       image: {
-        url: '/brand/favicon.png',
+        url: '/brand/icon-b.png',
         type: 'image/png',
       },
     },

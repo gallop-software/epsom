@@ -41,9 +41,7 @@ export function IconCard({ image, alt, title, children }: IconCardProps) {
             src={image}
             alt={alt}
             sizes="100px"
-            rounded="rounded-full"
-            aspect="aspect-square"
-            className="w-25 max-w-full object-cover"
+            className="w-25 max-w-full"
           />
         </figure>
         <Heading

@@ -9,7 +9,7 @@ export default function Services() {
       <Spacer height="h-12.5" />
       <IconCards>
         <IconCard
-          image="/placeholder.png"
+          image="/content/circles/circle-polished.png"
           title="Polished Floors"
         >
           We grind the slab in stages, moving to finer and finer diamond tooling
@@ -18,7 +18,7 @@ export default function Services() {
           once the job is done.
         </IconCard>
         <IconCard
-          image="/placeholder.png"
+          image="/content/circles/circle-resinous.png"
           title="Resinous Floors for Kitchens"
         >
           Poured right over your existing slab, a resinous system cures into one
@@ -27,7 +27,7 @@ export default function Services() {
           commercial kitchens and food prep rooms.
         </IconCard>
         <IconCard
-          image="/placeholder.png"
+          image="/content/circles/circle-garage.png"
           title="Garage Epoxy Coatings"
         >
           We pair a two-part epoxy with decorative vinyl flakes in the blend you
@@ -36,7 +36,7 @@ export default function Services() {
           simple routine.
         </IconCard>
         <IconCard
-          image="/placeholder.png"
+          image="/content/circles/circle-warehouse.png"
           title="Warehouse Floors"
         >
           Warehouses, service bays, showrooms and production floors all work

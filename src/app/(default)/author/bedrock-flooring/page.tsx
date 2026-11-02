@@ -16,7 +16,7 @@ function Content() {
   )
 }
 
-// The one WordPress author's archive (paged: page/[page])
+// The author's archive (paged: page/[page])
 const metadata: PageMetadata = {
   title: `Posts by the Bedrock Flooring Crew${pageSuffix(posts, page)}`,
   path: archivePath('/author/bedrock-flooring/', page),
@@ -26,7 +26,7 @@ const metadata: PageMetadata = {
     type: 'profile',
     url: '/author/bedrock-flooring/',
     image: {
-      url: '/brand/favicon.png',
+      url: '/brand/icon-b.png',
       type: 'image/png',
     },
   },

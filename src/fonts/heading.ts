@@ -1,7 +1,7 @@
 import localFont from 'next/font/local'
 
-// Oswald (headings, buttons, navigation, quotes), the exact files the
-// WordPress-era site loaded from Google Fonts (converted to woff2).
+// Oswald (headings, buttons, navigation, quotes): Google Fonts files
+// converted to woff2.
 export const _headingFont = localFont({
   src: [
     {

@@ -9,7 +9,7 @@ import { openCalendly } from '@/utils/calendly'
 /**
  * Below 1024px: a yellow "Schedule Free Estimate" bar that slides up from
  * the bottom once the page has scrolled 600px. Also opens the scheduler for
- * links to `?action=schedule`, as the WordPress-era site did.
+ * links to `?action=schedule`.
  */
 export function MobileCta() {
   const [shown, setShown] = useState(false)

@@ -10,8 +10,8 @@ export function Content() {
     <>
       <PostHero
         title={TITLE}
-        image="/placeholder.png"
-        date="2021-03-05T09:32:01"
+        image="/content/r13-mudroom-chip.jpg"
+        date="2026-03-05T09:32:01"
       />
       <PostBody categories={['Residential Concrete Flooring Projects']}>
         <Paragraph>
@@ -25,31 +25,15 @@ export function Content() {
         <PostGallery
           images={[
             {
-              src: '/placeholder.png',
+              src: '/content/r13-mudroom-chip.jpg',
               alt: 'New-Build Garage Epoxy-Chip Coating',
             },
             {
-              src: '/placeholder.png',
+              src: '/content/r22-garage-tan.jpg',
               alt: 'New-Build Garage Epoxy-Chip Coating',
             },
             {
-              src: '/placeholder.png',
-              alt: 'New-Build Garage Epoxy-Chip Coating',
-            },
-            {
-              src: '/placeholder.png',
-              alt: 'New-Build Garage Epoxy-Chip Coating',
-            },
-            {
-              src: '/placeholder.png',
-              alt: 'New-Build Garage Epoxy-Chip Coating',
-            },
-            {
-              src: '/placeholder.png',
-              alt: 'New-Build Garage Epoxy-Chip Coating',
-            },
-            {
-              src: '/placeholder.png',
+              src: '/content/r07-garage-workbench.jpg',
               alt: 'New-Build Garage Epoxy-Chip Coating',
             },
           ]}

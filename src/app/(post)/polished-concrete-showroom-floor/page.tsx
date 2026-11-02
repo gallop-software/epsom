@@ -5,12 +5,12 @@ import { Content } from './content'
 const metadata: PageMetadata = {
   title: 'Polished Concrete Showroom Floor - Bedrock Flooring',
   path: '/polished-concrete-showroom-floor/',
-  publishDate: '2021-02-26T17:47:00+00:00',
-  modifiedDate: '2022-01-14T03:44:10+00:00',
-  date: '2021-02-26T11:47:00',
+  publishDate: '2026-02-26T17:47:00+00:00',
+  modifiedDate: '2026-02-26T17:47:00+00:00',
+  date: '2026-02-26T11:47:00',
   author: 'Bedrock Flooring',
   categories: ['Commercial Concrete Flooring Projects'],
-  featuredImage: '/placeholder.png',
+  featuredImage: '/content/c01-showroom.jpg',
   excerpt:
     'We polished this dealership showroom floor and got it ready for the inventory to roll back in. #CommercialFlooring',
   authors: [{ name: 'Bedrock Flooring' }],
@@ -20,8 +20,8 @@ const metadata: PageMetadata = {
     description:
       'We polished this dealership showroom floor and got it ready for the inventory to roll back in. #CommercialFlooring',
     image: {
-      url: '/placeholder.png',
-      type: 'image/png',
+      url: '/content/c01-showroom.jpg',
+      type: 'image/jpeg',
       caption: 'Polished Concrete Showroom Floor',
     },
   },

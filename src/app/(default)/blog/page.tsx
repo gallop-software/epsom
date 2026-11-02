@@ -16,12 +16,12 @@ function Content() {
   )
 }
 
-// The WordPress posts page (paged archives: blog/page/[page])
+// The posts page (paged archives: blog/page/[page])
 const metadata: PageMetadata = {
   title: `Flooring Blog${pageSuffix(posts, page)} - Bedrock Flooring`,
   path: archivePath('/blog/', page),
-  publishDate: '2021-02-03T02:17:30+00:00',
-  modifiedDate: '2021-05-18T13:58:44+00:00',
+  publishDate: '2026-02-03T02:17:30+00:00',
+  modifiedDate: '2026-02-03T02:17:30+00:00',
   pageType: ['WebPage', 'CollectionPage'],
   openGraph: { type: 'article', url: '/blog/' },
   primaryImage: false,

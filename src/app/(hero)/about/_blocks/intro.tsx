@@ -12,7 +12,7 @@ export default function Intro() {
       id="more"
       className="flex items-center overflow-hidden bg-accent2 px-[5vw] pb-17.5 text-overlay-text sm:pt-17.5 lg:sticky lg:bottom-0 lg:h-screen-header lg:py-0"
       maxWidth="w-full max-w-[750px]"
-      imageSrc="/uploads/2021/02/dot-wave-sec-1.svg"
+      imageSrc="/patterns/dot-wave-sec-1.svg"
       imageClassName="opacity-100"
       imageMode="background"
       overlayColor="bg-accent2/50"

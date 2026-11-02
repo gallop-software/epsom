@@ -1,12 +1,12 @@
 import { Heading } from '@/components/heading'
-import { HeroVideo } from '@/components/hero-video'
+import { HeroBanner } from '@/components/hero-banner'
 
 export default function Hero() {
   return (
-    <HeroVideo
-      video="/videos/placeholder-loop.mp4"
+    <HeroBanner
+      image="/heroes/hero-commercial.jpg"
       caption="Polishing a slab"
-      downLink="#video"
+      downLink="#feature"
     >
       <Heading
         as="h1"
@@ -16,6 +16,6 @@ export default function Hero() {
       >
         Concrete Floors for Business
       </Heading>
-    </HeroVideo>
+    </HeroBanner>
   )
 }

@@ -3,8 +3,7 @@ import { Navbar } from '@/components/navbar'
 import { MobileCta } from '@/components/navbar/mobile-cta'
 
 /**
- * White-header pages without the photo strip above the footer (the WordPress
- * "page-no-cta" template).
+ * White-header pages without the photo strip above the footer.
  */
 export default function NoCtaLayout({
   children,

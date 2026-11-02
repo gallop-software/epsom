@@ -2,7 +2,7 @@
 
 Epsom is a Next.js template for concrete floor contractors and specialty flooring companies, built on the Gallop Canon architecture system. Canon provides ESLint rules (`@gallop.software/canon/eslint`) and an audit CLI (`gallop audit`) that enforce the patterns below. The `CLAUDE.md` file is the canonical AI reference — there is no auto-generation pipeline.
 
-"Bedrock Flooring" of Red Mesa, Texas is fictional demo content, including its clients, customers, testimonials, phone and email. See **Rebranding** below. All photos and videos are placeholders: replace them with your own. Every block is built from a theme's exact computed styles, so some class strings look unusual (`h-[50.656px]`, `px-[calc(min(90%,640px)*0.05)]`); keep them unless the design is changing.
+"Bedrock Flooring" of Red Mesa, Texas is fictional demo content, including its clients, customers, testimonials, phone and email. See **Rebranding** below. Photos are AI-generated demo images: replace them with your own. Every block is built from a theme's exact computed styles, so some class strings look unusual (`h-[50.656px]`, `px-[calc(min(90%,640px)*0.05)]`); keep them unless the design is changing.
 
 ## Rebranding: where company content lives
 
@@ -20,15 +20,15 @@ Company identity is not centralized in one config file; these are the places it 
 | Form email logo | `src/app/api/submit-form/route.ts` |
 | Author name and archive | `src/components/post-hero.tsx`, `post-archive.tsx`, `src/utils/structured-data.ts`, `src/app/sitemap.ts`, `src/app/(default)/author/bedrock-flooring/` |
 | Page copy and SEO titles | each route's `page.tsx` and `_blocks/` |
-| Blog posts | `src/app/(post)/`, `src/app/(video-post)/` (then `npm run blog`) |
-| Images and videos | Placeholders in Gallop Studio (`/placeholder.png` for every image, `/videos/placeholder-loop.mp4` and `/videos/placeholder-video-hls/` for video): upload your own with `gallop studio upload`, then update the paths |
+| Blog posts | `src/app/(post)/` (then `npm run blog`) |
+| Images | AI-generated demo photos in Gallop Studio (`/content/`, `/content/circles/`, `/heroes/`): upload your own with `gallop studio upload`, then update the paths |
 
 ## Auto-Generated Files — Never Edit Manually
 
 | File | Regenerate With | Triggered By |
 |---|---|---|
 | `_data/_studio.json` | Gallop Studio (`gallop studio …`) | Image additions, moves, removals |
-| `_data/_blog.json` | `npm run blog` | Adding/editing posts in `src/app/(post)/` or `src/app/(video-post)/` |
+| `_data/_blog.json` | `npm run blog` | Adding/editing posts in `src/app/(post)/` |
 | `src/app/(demo)/block/[[...slug]]/_block-index.ts` | `npm run blocks` | Block additions/removals |
 
 ## Build Commands
@@ -61,7 +61,7 @@ src/
 │       └── _blocks/  # Co-located page-specific blocks
 ├── components/   # Reusable UI primitives and block families
 ├── fonts/        # next/font/local: _bodyFont = Muli, _headingFont = Oswald, _quoteFont = leftquote
-├── hooks/        # smooth-scroll, transitions-ready, analytics, use-active-video
+├── hooks/        # smooth-scroll, transitions-ready, analytics
 ├── styles/       # tailwind.css is the design system (Tailwind v4 @theme)
 ├── tools/        # page-slug and post-slug helpers
 ├── utils/        # page-helpers (PageMetadata), structured-data, studio-helpers, blog, calendly, send-email
@@ -76,7 +76,6 @@ src/app/
 ├── (hero)/           # Transparent header over a full-bleed hero (home, about, service pages)
 ├── (no-cta)/         # White header, no photo strip above the footer (gallery)
 ├── (post)/<slug>/    # Blog posts at the site root: page.tsx (metadata) + content.tsx
-├── (video-post)/<slug>/  # Video posts: white header, no featured-image band
 ├── (demo)/block/[[...slug]]/  # Block preview: one page per block at /block/<route>/<block>/
 ├── api/submit-form/  # Form endpoint (Turnstile, honeypot, Mailgun or Cloudflare Email)
 ├── layout.tsx        # Fonts → CSS vars, body classes, analytics, TransitionsReady
@@ -91,7 +90,7 @@ src/app/
 ### Page Contract (Pattern 005)
 
 ```tsx
-function Content() { return (<><Hero /><Video /><Cta /></>) }          // blocks from ./_blocks
+function Content() { return (<><Hero /><Feature /><Cta /></>) }          // blocks from ./_blocks
 const metadata: PageMetadata = { title, description, path: '/route/', publishDate, modifiedDate, openGraph: { type, image }, breadcrumbs }
 export const generateMetadata = () => generatePageMetadata(metadata)
 export default function Page() { return <PageWrapper metadata={metadata}><Content /></PageWrapper> }
@@ -110,7 +109,7 @@ export default function Page() { return <PageWrapper metadata={metadata}><Conten
 - Data-driven archives (`blog`, `category`, `author`, `tag`) render `post-archive` from `_data/_blog.json` and have no blocks
 
 **Posts:**
-- Each post is a folder directly in `src/app/(post)/<slug>/` (or `(video-post)/<slug>/`) with `page.tsx` (route + metadata) and `content.tsx` (the body). New posts are written by hand in the same shape
+- Each post is a folder directly in `src/app/(post)/<slug>/` with `page.tsx` (route + metadata) and `content.tsx` (the body). New posts are written by hand in the same shape
 - `npm run blog` extracts the metadata from each post's `page.tsx` into `_data/_blog.json`, which the archives (6 per page), sitemap and recent-project lists read through `utils/blog.ts`
 
 **Components:**
@@ -120,12 +119,6 @@ export default function Page() { return <PageWrapper metadata={metadata}><Conten
 **Images:**
 - Every image is a Gallop Studio key (`/uploads/YYYY/MM/name.ext`) rendered through `Image`, served from `https://epsom-cdn.gallop.software` (R2 bucket `epsom`)
 - Import new media with `gallop studio upload <file> --to uploads/YYYY/MM`. Never copy files into `public/`
-
-**Videos:**
-- Promo videos are HLS streams in Studio: `/videos/<name>-hls/master.m3u8` with 1080p/720p/480p renditions, and `/videos/<name>-poster.jpg`
-- Encode with `gallop studio ffmpeg` (see `gallop studio ffmpeg --help`), then `gallop studio upload <dir> --to videos/<name>-hls`
-- hls.js needs a CORS rule on the bucket (GET/HEAD from the site, and `localhost:3000` for development). A new domain must be added to it
-- Hero background clips are plain MP4s in `/uploads/`
 
 ### DO — What AI IS Allowed To Do
 
@@ -150,6 +143,16 @@ export default function Page() { return <PageWrapper metadata={metadata}><Conten
 - Import from `_scripts/` in runtime code (Node-only)
 - Read `_data/*.json` from disk at runtime (`fs.readFileSync` + `process.cwd()`) — there is no filesystem on edge/Workers runtimes, so it silently returns empty; import via `@/data/*` instead
 - Manually edit files in `_data/` (generated only)
+
+## Cloudflare Workers Constraints
+
+The site deploys to Cloudflare Workers (OpenNext), which is not Node.js:
+
+- There is no filesystem at runtime. `fs.readFileSync` on `_data/` silently returns nothing, so import generated JSON through `@/data/*`
+- `nodejs_compat` in `wrangler.jsonc` is required
+- Worker `name` and the `WORKER_SELF_REFERENCE` service in `wrangler.jsonc` must match
+- `.env.production` is the only source of live settings: `npm run cf:build` loads it ahead of `.env.local`
+- `NEXT_PUBLIC_*` values are inlined at build time; everything else is a Worker secret (`npm run cf:secrets`)
 
 ## Enforced Patterns (ESLint)
 
@@ -179,13 +182,13 @@ These patterns are not enforced by ESLint but should be followed.
 
 - **005: Page Structure**: PageWrapper, generatePageMetadata pattern
 - **010: Spacing System**: Tailwind's scale (`mb-7.5`, `h-25`); brackets only for odd px values and widths
-- **011: Responsive Mobile-First**: sm/md/lg/xl breakpoint usage (see Design Tokens: they are not Tailwind's defaults)
+- **011: Responsive Mobile-First**: sm/md/lg/xl breakpoint usage (see Color Token System: they are not Tailwind's defaults)
 - **013: New Component Pattern**: Props for margin/color/fontSize
 - **015: No Inline Hover Styles**: Tailwind for hover states
 - **016: Client Extraction**: Extract hooks to components, not blocks (see Pattern 001 for enforcement)
 - **017: SEO Metadata**: PageMetadata structure, structured data
 
-## Design Tokens
+## Color Token System
 
 All tokens live in `src/styles/tailwind.css` `@theme`.
 
@@ -199,11 +202,10 @@ All tokens live in `src/styles/tailwind.css` `@theme`.
 ## Component Quick Reference
 
 - **Primitives**: `Container` (content/wide column widths), `Columns` (plain `<div>` children keep the last child's bottom margin), `Section` (full-width band: background image or pattern, parallax, overlay), `Heading`, `Paragraph`, `Button`/`Buttons` (offset border; `textColor` for fills), `Quote` (+ `size="large"`), `List`, `Spacer`, `Image` (Studio-backed `<img>` with srcset), `Icon` (Iconify)
-- **Block families**: `hero-video` (+ `typewriter-heading`, `play-button`, downLink), `video-filter`, `video-feature`, `icon-cards`, `sticky-scroll`, `estimate-cta`, `elegant-heading`, `post-cards`, `logo-gallery` (3 or 5 per row, optional caption), `showcase-gallery`, `process-steps`, `calendly-button` (optional `href` fallback)
+- **Block families**: `hero-banner` (+ `typewriter-heading`, downLink), `image-filter`, `image-feature`, `icon-cards`, `sticky-scroll`, `estimate-cta`, `elegant-heading`, `post-cards`, `logo-gallery` (3 or 5 per row, optional caption), `showcase-gallery`, `process-steps`, `calendly-button` (optional `href` fallback)
 - **Shared sections**: `our-process` (the four steps), `projects-band` (recent posts of a category), `brands` (client logos)
 - **Page parts**: `page-header` (white title band), `details` (FAQ accordion row), `team-grid` (ready for your team's photos; not on a page in the demo), `contact-icons`
-- **Video**: `hls-video` is an HLS player (hls.js, loads near the viewport, plays muted in view, one at a time); `video-feature` and `video-filter` use it, and the hero `play-button` makes the video it scrolls to play with sound
-- **Blog**: `post-hero`, `post-body`, `post-gallery`, `video-embed` (HLS at column width), `post-archive` (cards + pagination)
+- **Blog**: `post-hero`, `post-body`, `post-gallery`, `post-archive` (cards + pagination)
 - **Forms**: `form/` posts to `api/submit-form` (honeypot `companyWebsite`, invisible Turnstile when `NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY` is set). Fields: `FormInput`, `FormName`, `FormSelect`, `FormTextArea`, `FormUpload` (`name="files"` → attachments), `FormButton`; a visible label when `label` is set; `tone="dark"` for dark sections. The Contact form confirms to the visitor (`CONFIRMED_FORMS` in the route). Turnstile rejects automated browsers: test forms in a real one
 - **Lightbox**: `lightbox-wrapper` + `lightbox/` on `a.lightbox-item` links, colored by `--color--gallery*`
 - **Chrome**: `navbar/` (`navbar/config.ts`, `mobile-cta`), `footer/` (`footer/config.ts`)
@@ -212,7 +214,7 @@ All tokens live in `src/styles/tailwind.css` `@theme`.
 
 valtio store at `src/state.ts`. Read with `useSnapshot(state)`, write with `state.propName = value`.
 
-Available state: `playVideo`, `offsetTop`, `windowHeight`, `lastOffsetTop`, `isScrolling`, `dialogOpen`, `scrollingDirection`, `lastScrollingDirection`, `lockScrollDirection`, `activeVideoId`.
+Available state: `offsetTop`, `windowHeight`, `lastOffsetTop`, `isScrolling`, `dialogOpen`, `scrollingDirection`, `lastScrollingDirection`, `lockScrollDirection`.
 
 ## Template-Specific Rules
 

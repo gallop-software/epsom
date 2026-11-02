@@ -5,13 +5,12 @@ import { Content } from './content'
 const metadata: PageMetadata = {
   title: 'Sealed Concrete Agricultural Building Floor - Bedrock Flooring',
   path: '/sealed-concrete-agricultural-building-floor/',
-  publishDate: '2021-04-05T19:52:08+00:00',
-  modifiedDate: '2022-01-14T03:44:09+00:00',
-  date: '2021-04-05T14:52:08',
+  publishDate: '2026-04-05T19:52:08+00:00',
+  modifiedDate: '2026-04-05T19:52:08+00:00',
+  date: '2026-04-05T14:52:08',
   author: 'Bedrock Flooring',
   categories: ['Commercial Concrete Flooring Projects'],
-  featuredImage:
-    '/placeholder.png',
+  featuredImage: '/content/i07-ag-building.jpg',
   excerpt:
     'Years of tile adhesive covered the slab in this farm co-op building. We ground it clean and applied a tough sealer, and the old concrete came up with rich color. #commercialflooring',
   authors: [{ name: 'Bedrock Flooring' }],
@@ -24,8 +23,8 @@ const metadata: PageMetadata = {
     description:
       'Years of tile adhesive covered the slab in this farm co-op building. We ground it clean and applied a tough sealer, and the old concrete came up with rich color. #commercialflooring',
     image: {
-      url: '/placeholder.png',
-      type: 'image/png',
+      url: '/content/i07-ag-building.jpg',
+      type: 'image/jpeg',
       caption: 'Sealed Concrete Agricultural Building Floor',
     },
   },

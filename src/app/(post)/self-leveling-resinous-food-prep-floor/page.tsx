@@ -5,24 +5,26 @@ import { Content } from './content'
 const metadata: PageMetadata = {
   title: 'Self-Leveling Resinous Food Prep Floor - Bedrock Flooring',
   path: '/self-leveling-resinous-food-prep-floor/',
-  publishDate: '2021-02-23T15:43:18+00:00',
-  modifiedDate: '2022-01-14T03:44:10+00:00',
-  date: '2021-02-23T15:43:18',
+  publishDate: '2026-02-23T15:43:18+00:00',
+  modifiedDate: '2026-02-23T15:43:18+00:00',
+  date: '2026-02-23T15:43:18',
   author: 'Bedrock Flooring',
   categories: ['Commercial Concrete Flooring Projects'],
-  featuredImage:
-    '/placeholder.png',
+  featuredImage: '/content/f02-kitchen-gray.jpg',
   excerpt:
     'A worn rubber floor came out of this grocery prep room so we could pour a self-leveling resinous system. The crew now has one continuous surface from wall to wall.',
   authors: [{ name: 'Bedrock Flooring' }],
-  article: { headline: 'Self-Leveling Resinous Food Prep Floor', wordCount: 30 },
+  article: {
+    headline: 'Self-Leveling Resinous Food Prep Floor',
+    wordCount: 30,
+  },
   openGraph: {
     type: 'article',
     description:
       'A worn rubber floor came out of this grocery prep room so we could pour a self-leveling resinous system. The crew now has one continuous surface from wall to wall.',
     image: {
-      url: '/placeholder.png',
-      type: 'image/png',
+      url: '/content/f02-kitchen-gray.jpg',
+      type: 'image/jpeg',
       caption: 'Self-Leveling Resinous Food Prep Floor',
     },
   },

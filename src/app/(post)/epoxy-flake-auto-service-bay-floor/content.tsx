@@ -3,16 +3,15 @@ import { PostBody } from '@/components/post-body'
 import { PostGallery } from '@/components/post-gallery'
 import { PostHero } from '@/components/post-hero'
 
-const TITLE =
-  'Epoxy-Flake Auto Service Bay Floor'
+const TITLE = 'Epoxy-Flake Auto Service Bay Floor'
 
 export function Content() {
   return (
     <>
       <PostHero
         title={TITLE}
-        image="/placeholder.png"
-        date="2021-04-14T09:07:47"
+        image="/content/i06-repair-bay.jpg"
+        date="2026-04-14T09:07:47"
       />
       <PostBody categories={['Commercial Concrete Flooring Projects']}>
         <Paragraph>
@@ -26,31 +25,15 @@ export function Content() {
         <PostGallery
           images={[
             {
-              src: '/placeholder.png',
+              src: '/content/i06-repair-bay.jpg',
               alt: 'Epoxy-Flake Auto Service Bay Floor',
             },
             {
-              src: '/placeholder.png',
+              src: '/content/c18-salesfloor-chip.jpg',
               alt: 'Epoxy-Flake Auto Service Bay Floor',
             },
             {
-              src: '/placeholder.png',
-              alt: 'Epoxy-Flake Auto Service Bay Floor',
-            },
-            {
-              src: '/placeholder.png',
-              alt: 'Epoxy-Flake Auto Service Bay Floor',
-            },
-            {
-              src: '/placeholder.png',
-              alt: 'Epoxy-Flake Auto Service Bay Floor',
-            },
-            {
-              src: '/placeholder.png',
-              alt: 'Epoxy-Flake Auto Service Bay Floor',
-            },
-            {
-              src: '/placeholder.png',
+              src: '/content/i10-coated-slab.jpg',
               alt: 'Epoxy-Flake Auto Service Bay Floor',
             },
           ]}

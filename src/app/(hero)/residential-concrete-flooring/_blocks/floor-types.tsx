@@ -11,13 +11,13 @@ import {
   StickyScroll,
 } from '@/components/sticky-scroll'
 
-const pattern = '/uploads/2021/02/dot-wave-sec-1.svg'
+const pattern = '/patterns/dot-wave-sec-1.svg'
 
 export default function FloorTypes() {
   return (
     <StickyScroll>
       <StickyImage
-        src="/placeholder.png"
+        src="/content/r03-patio-covered.jpg"
         alt="Epoxy-coated floor at a home"
         caption="Epoxy-chip back patio, Red Mesa, TX"
       />
@@ -48,7 +48,7 @@ export default function FloorTypes() {
       </ScrollPanel>
 
       <StickyImage
-        src="/placeholder.png"
+        src="/content/r02-garage-metallic.jpg"
         alt="Epoxy-coated floor at a home"
         caption="Metallic epoxy garage floor, Red Mesa, TX"
         captionAlign="left"
@@ -63,10 +63,11 @@ export default function FloorTypes() {
           fontSize="text-xl"
           color="text-contrast"
         >
-          Make your <strong>garage</strong> <strong>or shop</strong> a place you want
-          to spend time, a real <strong>living space</strong>, with a floor that
-          fits how you use it. Pick from stained, sealed, epoxy-coated or polished
-          concrete, and we will handle the job from bare slab to final coat.
+          Make your <strong>garage</strong> <strong>or shop</strong> a place you
+          want to spend time, a real <strong>living space</strong>, with a floor
+          that fits how you use it. Pick from stained, sealed, epoxy-coated or
+          polished concrete, and we will handle the job from bare slab to final
+          coat.
         </Paragraph>
         <Buttons>
           <Button
@@ -79,7 +80,7 @@ export default function FloorTypes() {
       </ScrollPanel>
 
       <StickyImage
-        src="/placeholder.png"
+        src="/content/r04-cabin-polished.jpg"
         alt="Polished concrete floor at a home"
         caption="Polished concrete floor in a country cabin"
       />
@@ -92,25 +93,28 @@ export default function FloorTypes() {
         </Heading>
         <List>
           <Li>
-            <strong>Easy upkeep:</strong> a mop and plain water handle most messes.
-            Dust and grime sit on top instead of settling into the surface.
+            <strong>Easy upkeep:</strong> a mop and plain water handle most
+            messes. Dust and grime sit on top instead of settling into the
+            surface.
           </Li>
           <Li>
-            <strong>Good value:</strong> Your existing slab does the heavy lifting,
-            so there is less to buy and less to tear out. We also plan the work
-            around your schedule, so the garage is not tied up for long.
+            <strong>Good value:</strong> Your existing slab does the heavy
+            lifting, so there is less to buy and less to tear out. We also plan
+            the work around your schedule, so the garage is not tied up for
+            long.
           </Li>
           <Li>
-            <strong>Lasting protection:</strong> A coating shields the slab from daily
-            wear, which helps keep repair bills down over the years.
+            <strong>Lasting protection:</strong> A coating shields the slab from
+            daily wear, which helps keep repair bills down over the years.
           </Li>
           <Li>
-            <strong>Your style:</strong> Mix and match epoxy colors and flake blends
-            until the floor looks the way you pictured it from the start.
+            <strong>Your style:</strong> Mix and match epoxy colors and flake
+            blends until the floor looks the way you pictured it from the start.
           </Li>
           <Li>
-            <strong>Spill protection:</strong> A tough topcoat helps keep motor oil,
-            household chemicals, road grime and hot tires from marking the floor.
+            <strong>Spill protection:</strong> A tough topcoat helps keep motor
+            oil, household chemicals, road grime and hot tires from marking the
+            floor.
           </Li>
         </List>
         <Quote cite="– Nora B., Homeowner">
@@ -125,7 +129,7 @@ export default function FloorTypes() {
       </ScrollPanel>
 
       <StickyImage
-        src="/placeholder.png"
+        src="/content/r22-garage-tan.jpg"
         caption="Epoxy-chip garage floor, Red Mesa, TX"
         captionAlign="left"
       />
@@ -144,13 +148,13 @@ export default function FloorTypes() {
           fontSize="text-xl"
           color="text-overlay-text"
         >
-          Give plain concrete the warmth and polish of a high-end floor. Go for a
-          rustic scored layout in several shades, a single clean stain color, or
-          a one-of-a-kind pattern, and we will work with you until it looks right.
-          Indoors or out, <strong>Bedrock Flooring</strong>{' '}
-          delivers a finish that shrugs off everyday spills and stays simple to
-          keep clean. We top the work with protective sealers that help guard the
-          color against sun and wear, so the finished surface keeps looking good.
+          Give plain concrete the warmth and polish of a high-end floor. Go for
+          a rustic scored layout in several shades, a single clean stain color,
+          or a one-of-a-kind pattern, and we will work with you until it looks
+          right. Indoors or out, <strong>Bedrock Flooring</strong> delivers a
+          finish that shrugs off everyday spills and stays simple to keep clean.
+          We top the work with protective sealers that help guard the color
+          against sun and wear, so the finished surface keeps looking good.
         </Paragraph>
       </ScrollPanel>
     </StickyScroll>

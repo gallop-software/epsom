@@ -4,14 +4,12 @@ import type { ReactNode } from 'react'
 import { Icon } from '@/components/icon'
 import { studioUrl } from '@/utils/studio-helpers'
 
-export interface HeroVideoProps {
-  /** Studio key of the background video. */
-  video?: string | undefined
-  /** Studio key of a background photo, in place of a video. */
-  image?: string | undefined
+export interface HeroBannerProps {
+  /** Studio key of the background photo. */
+  image: string
   /** Bottom-left caption (desktop) / centred under the content (≤1023px). */
   caption?: string | undefined
-  /** Scrim opacity over the video (default `opacity-50`). */
+  /** Scrim opacity over the photo (default `opacity-50`). */
   dim?: string | undefined
   /** Scrim colour (default `bg-overlay`, black). */
   overlayColor?: string | undefined
@@ -21,18 +19,17 @@ export interface HeroVideoProps {
 }
 
 /**
- * Full-viewport video (or photo) hero with a chevron bottom edge (auto height
+ * Full-viewport photo hero with a chevron bottom edge (auto height
  * below 1024px).
  */
-export function HeroVideo({
-  video,
+export function HeroBanner({
   image,
   caption,
   dim = 'opacity-50',
   overlayColor = 'bg-overlay',
   downLink,
   children,
-}: HeroVideoProps) {
+}: HeroBannerProps) {
   return (
     <section
       className={clsx(
@@ -43,22 +40,10 @@ export function HeroVideo({
         'md:[clip-path:polygon(0_0,100%_0,100%_calc(100%_-_60px),50%_100%,0_calc(100%_-_60px))]'
       )}
     >
-      {video && (
-        <video
-          className="absolute inset-0 -z-2 block h-full w-full object-cover"
-          src={studioUrl(video, 'full')}
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
-      )}
-      {image && (
-        <div
-          className="absolute inset-0 -z-2 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url("${studioUrl(image, 'full')}")` }}
-        />
-      )}
+      <div
+        className="absolute inset-0 -z-2 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url("${studioUrl(image, 'full')}")` }}
+      />
       <div className={clsx('absolute inset-0 z-1', overlayColor, dim)} />
       <div className="relative z-2 w-full px-[5%] lg:[@media(max-height:600px)]:py-17.5">
         <div className="mx-auto max-w-[1120px] [&>:last-child]:mb-0">

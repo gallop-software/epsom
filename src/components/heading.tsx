@@ -16,7 +16,7 @@ const HEADING_SIZE: Record<HeadingLevel, string> = {
 export interface HeadingProps {
   /** Semantic element. */
   as?: HeadingLevel
-  /** Visual scale; defaults to `as` (WordPress `h1`/`h4` style classes). */
+  /** Visual scale; defaults to `as`. */
   styleAs?: HeadingLevel
   id?: string | undefined
   /** Text colour class (default `text-contrast-light`). */

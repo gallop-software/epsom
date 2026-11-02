@@ -11,7 +11,7 @@ export default function Story() {
   return (
     <StickyScroll>
       <StickyImage
-        src="/placeholder.png"
+        src="/content/g01-grinding.jpg"
         caption="Concrete Polished with Diamond Tooling"
       />
       <ScrollPanel>
@@ -31,7 +31,7 @@ export default function Story() {
       </ScrollPanel>
 
       <StickyImage
-        src="/placeholder.png"
+        src="/content/g04-finished.jpg"
         caption="Seamless High-Build Coating in a Shop"
         captionAlign="left"
       />

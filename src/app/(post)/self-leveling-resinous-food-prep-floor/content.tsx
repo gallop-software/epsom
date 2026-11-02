@@ -10,33 +10,27 @@ export function Content() {
     <>
       <PostHero
         title={TITLE}
-        image="/placeholder.png"
-        date="2021-02-23T15:43:18"
+        image="/content/f02-kitchen-gray.jpg"
+        date="2026-02-23T15:43:18"
       />
       <PostBody categories={['Commercial Concrete Flooring Projects']}>
         <Paragraph>
-          A worn rubber floor came out of this grocery prep room so we could pour a self-leveling resinous system. The crew now has one continuous surface from wall to wall.
+          A worn rubber floor came out of this grocery prep room so we could
+          pour a self-leveling resinous system. The crew now has one continuous
+          surface from wall to wall.
         </Paragraph>
         <PostGallery
           images={[
             {
-              src: '/placeholder.png',
+              src: '/content/f02-kitchen-gray.jpg',
               alt: 'Self-Leveling Resinous Food Prep Floor',
             },
             {
-              src: '/placeholder.png',
+              src: '/content/f04-prep-room.jpg',
               alt: 'Self-Leveling Resinous Food Prep Floor',
             },
             {
-              src: '/placeholder.png',
-              alt: 'Self-Leveling Resinous Food Prep Floor',
-            },
-            {
-              src: '/placeholder.png',
-              alt: 'Self-Leveling Resinous Food Prep Floor',
-            },
-            {
-              src: '/placeholder.png',
+              src: '/content/f01-kitchen-line.jpg',
               alt: 'Self-Leveling Resinous Food Prep Floor',
             },
           ]}

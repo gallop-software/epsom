@@ -10,8 +10,8 @@ export function Content() {
     <>
       <PostHero
         title={TITLE}
-        image="/placeholder.png"
-        date="2021-03-12T09:49:13"
+        image="/content/f05-meat-room.jpg"
+        date="2026-03-12T09:49:13"
       />
       <PostBody categories={['Commercial Concrete Flooring Projects']}>
         <Paragraph>
@@ -28,27 +28,15 @@ export function Content() {
         <PostGallery
           images={[
             {
-              src: '/placeholder.png',
+              src: '/content/f05-meat-room.jpg',
               alt: 'Resinous Butcher Shop Floor',
             },
             {
-              src: '/placeholder.png',
+              src: '/content/f06-deli.jpg',
               alt: 'Resinous Butcher Shop Floor',
             },
             {
-              src: '/placeholder.png',
-              alt: 'Resinous Butcher Shop Floor',
-            },
-            {
-              src: '/placeholder.png',
-              alt: 'Resinous Butcher Shop Floor',
-            },
-            {
-              src: '/placeholder.png',
-              alt: 'Resinous Butcher Shop Floor',
-            },
-            {
-              src: '/placeholder.png',
+              src: '/content/f04-prep-room.jpg',
               alt: 'Resinous Butcher Shop Floor',
             },
           ]}

@@ -12,7 +12,7 @@ const BLOCK_INDEX_PATH = join(
   '(demo)/block/[[...slug]]/_block-index.ts'
 )
 
-// Helper function to recursively find all _blocks/ directories under src/app/
+// Recursively find all _blocks/ directories under src/app/
 async function findBlocksDirs(dir) {
   const entries = await readdir(dir, { withFileTypes: true })
   const results = []
@@ -51,7 +51,7 @@ async function collectAllBlocks() {
       const blockName = file.replace('.tsx', '')
       const slug = urlSlug ? `${urlSlug}/${blockName}` : blockName
 
-      // Deduplicate by slug (shared blocks like cover/testimonial appear in multiple routes)
+      // Deduplicate by slug (shared blocks appear in multiple routes)
       if (!seen.has(slug)) {
         seen.add(slug)
         allFiles.push({ filename: file, slug, blocksDir })
@@ -60,25 +60,6 @@ async function collectAllBlocks() {
   }
 
   return allFiles
-}
-
-async function generateBlocksCatalog() {
-  try {
-    console.log('Starting blocks catalog generation...\n')
-
-    // Collect all block files from _blocks/ directories
-    const blockFiles = await collectAllBlocks()
-    console.log(`Found ${blockFiles.length} block files\n`)
-
-    // Generate block index
-    console.log('Generating block index...')
-    await generateBlockIndex(blockFiles)
-
-    console.log('=== Blocks Catalog Generation Complete ===')
-  } catch (error) {
-    console.error('Fatal error:', error)
-    process.exit(1)
-  }
 }
 
 async function generateBlockIndex(blockFiles) {
@@ -113,9 +94,19 @@ async function generateBlockIndex(blockFiles) {
 
   await writeFile(BLOCK_INDEX_PATH, lines.join('\n'), 'utf-8')
   console.log(
-    `✓ Block index saved to ${BLOCK_INDEX_PATH} with ${entries.length} entries\n`
+    `✓ Block index saved to ${BLOCK_INDEX_PATH} with ${entries.length} entries`
   )
 }
 
-// Run the script
-generateBlocksCatalog()
+async function main() {
+  try {
+    const blockFiles = await collectAllBlocks()
+    console.log(`Found ${blockFiles.length} block files`)
+    await generateBlockIndex(blockFiles)
+  } catch (error) {
+    console.error('Fatal error:', error)
+    process.exit(1)
+  }
+}
+
+main()

@@ -10,8 +10,8 @@ export function Content() {
     <>
       <PostHero
         title={TITLE}
-        image="/placeholder.png"
-        date="2021-05-05T16:20:28"
+        image="/content/f10-restaurant-epoxy.jpg"
+        date="2026-05-05T16:20:28"
       />
       <PostBody categories={['Commercial Concrete Flooring Projects']}>
         <Paragraph>
@@ -25,23 +25,15 @@ export function Content() {
         <PostGallery
           images={[
             {
-              src: '/placeholder.png',
+              src: '/content/f10-restaurant-epoxy.jpg',
               alt: 'Seamless Epoxy Dining Room Floor',
             },
             {
-              src: '/placeholder.png',
+              src: '/content/c12-restaurant.jpg',
               alt: 'Seamless Epoxy Dining Room Floor',
             },
             {
-              src: '/placeholder.png',
-              alt: 'Seamless Epoxy Dining Room Floor',
-            },
-            {
-              src: '/placeholder.png',
-              alt: 'Seamless Epoxy Dining Room Floor',
-            },
-            {
-              src: '/placeholder.png',
+              src: '/content/f11-kitchen-flake.jpg',
               alt: 'Seamless Epoxy Dining Room Floor',
             },
           ]}

@@ -10,12 +10,14 @@ export function Content() {
     <>
       <PostHero
         title={TITLE}
-        image="/placeholder.png"
-        date="2021-02-26T00:15:11"
+        image="/content/f03-cooler.jpg"
+        date="2026-02-26T00:15:11"
       />
       <PostBody categories={['Commercial Concrete Flooring Projects']}>
         <Paragraph>
-          {'A new walk-in meat cooler at a grocery store needed a tough floor, so we installed a resinous system.'}
+          {
+            'A new walk-in meat cooler at a grocery store needed a tough floor, so we installed a resinous system.'
+          }
           <br />
           {' The cutting room floor is next on our list. '}
           <a href="https://www.instagram.com/explore/tags/concrete/">
@@ -34,27 +36,15 @@ export function Content() {
         <PostGallery
           images={[
             {
-              src: '/placeholder.png',
+              src: '/content/f03-cooler.jpg',
               alt: 'Resinous Walk-In Cooler Floor',
             },
             {
-              src: '/placeholder.png',
+              src: '/content/f04-prep-room.jpg',
               alt: 'Resinous Walk-In Cooler Floor',
             },
             {
-              src: '/placeholder.png',
-              alt: 'Resinous Walk-In Cooler Floor',
-            },
-            {
-              src: '/placeholder.png',
-              alt: 'Resinous Walk-In Cooler Floor',
-            },
-            {
-              src: '/placeholder.png',
-              alt: 'Resinous Walk-In Cooler Floor',
-            },
-            {
-              src: '/placeholder.png',
+              src: '/content/f02-kitchen-gray.jpg',
               alt: 'Resinous Walk-In Cooler Floor',
             },
           ]}

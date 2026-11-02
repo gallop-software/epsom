@@ -12,13 +12,13 @@ import {
   StickyScroll,
 } from '@/components/sticky-scroll'
 
-const pattern = '/uploads/2021/02/dot-wave-sec-1.svg'
+const pattern = '/patterns/dot-wave-sec-1.svg'
 
 export default function FloorTypes() {
   return (
     <StickyScroll>
       <StickyImage
-        src="/placeholder.png"
+        src="/content/c01-showroom.jpg"
         caption="Polished concrete showroom floor, Red Mesa, TX"
       />
       <ScrollPanel
@@ -53,7 +53,7 @@ export default function FloorTypes() {
       </ScrollPanel>
 
       <StickyImage
-        src="/placeholder.png"
+        src="/content/c02-grocery-aisle.jpg"
         caption="Polished concrete grocery aisle, Red Mesa, TX"
         captionAlign="left"
       />
@@ -102,7 +102,7 @@ export default function FloorTypes() {
       </ScrollPanel>
 
       <StickyImage
-        src="/placeholder.png"
+        src="/content/i03-maintenance-epoxy.jpg"
         caption="Epoxy mortar coating on a shop floor, Red Mesa, TX"
       />
       <ScrollPanel>
@@ -135,7 +135,7 @@ export default function FloorTypes() {
       </ScrollPanel>
 
       <StickyImage
-        src="/placeholder.png"
+        src="/content/c03-office-lobby.jpg"
         alt="Polished concrete in a commercial space"
         caption="Polished concrete office lobby, Red Mesa, TX"
         captionAlign="left"

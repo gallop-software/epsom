@@ -15,7 +15,7 @@ export function EstimateCta({
     <Section
       className="bg-accent2 px-col-5 py-col-30 text-overlay-text"
       maxWidth="max-w-[1600px]"
-      imageSrc="/uploads/2021/02/dot-wave-sec-1.svg"
+      imageSrc="/patterns/dot-wave-sec-1.svg"
       imageClassName={patternOpacity}
     >
       <Heading
