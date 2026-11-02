@@ -197,6 +197,7 @@ All tokens live in `src/styles/tailwind.css` `@theme`.
 - **Type scale** is in px (`text-base` = 17px body; headings via `Heading`'s scale)
 - **Layout**: `h-header`/`pt-header`/`top-header` = 94px; `h-screen-header` = 100vh - 94px (sticky-scroll panes)
 - **Viewport-tall sections** use `h-viewport`, `h-screen-header` or `min-h-screen-header`, never `h-screen` or raw `vh`: `use-iframe-height` freezes `--viewport-height` inside the gallop.software preview, which grows to fit its content and would otherwise never settle
+- **Sticky blocks in the preview**: mark the sticky element `data-preview-scroll`, and `use-iframe-height` asks the gallop.software block preview for a viewport-tall frame that scrolls, so the effect plays
 - **Section padding** is a share of the content column (`--content-column`: 90% up to 640px, 750px from 1024px): `px-col-5`, `py-col-15`, `pb-col-19`, `py-col-30`; `px-cards` for the icon-card row
 - **Transitions** default to CSS `ease`, and are off until `<html class="ready">` (WebKit would otherwise animate pseudo-elements in on load)
 

@@ -66,4 +66,8 @@ The component is used in `src/app/layout.tsx` to enable automatic height adjustm
 
 ## Viewport-Tall Sections
 
-The frame grows to fit the page, so `100vh` would grow with it and never settle. Inside an iframe the hook freezes `--viewport-height` at the frame's height, up to 800px, because a reloaded frame starts at the height it already grew to. Use `h-viewport`, `h-screen-header` or `min-h-screen-header` for viewport-tall sections, not `h-screen`.
+The frame grows to fit the page, so `100vh` would grow with it and never settle. Inside an iframe the hook freezes `--viewport-height` at 800px, the height the preview frame starts at. Use `h-viewport`, `h-screen-header` or `min-h-screen-header` for viewport-tall sections, not `h-screen`.
+
+## Sticky Blocks
+
+Sticky needs something to scroll, so a frame grown to fit the block would never show the effect. While an element marked `data-preview-scroll` is sticking on a `/block/` page, the hook reports a viewport-tall frame with `scroll: true`, and the parent lets the frame scroll on its own. Below the sticky breakpoint it reports the full height again.
