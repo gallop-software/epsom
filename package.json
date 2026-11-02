@@ -1,0 +1,101 @@
+{
+  "name": "epsom",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A Next.js template for concrete floor contractors and specialty flooring companies. Show off services, project galleries, video, and free-estimate forms, and get highly ranked on Google. Manage content and images with AI using Gallop software. No CMS required.",
+  "homepage": "https://epsom-cloudflare.gallop.software",
+  "author": {
+    "name": "Gallop",
+    "url": "https://gallop.software"
+  },
+  "contributors": [
+    {
+      "name": "Chris Baldelomar",
+      "url": "https://github.com/webplantmedia"
+    },
+    {
+      "name": "Niel Wostan",
+      "url": "https://github.com/NielWostan"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gallop-software/epsom"
+  },
+  "bugs": {
+    "url": "https://github.com/gallop-software/epsom/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "npm run blog && next build",
+    "start": "next start",
+    "lint": "eslint src/",
+    "lint:file": "eslint",
+    "prettier": "prettier --write .",
+    "ts": "tsc --noEmit",
+    "lint:next": "eslint src/ --rule 'gallop/no-client-blocks: off' --rule 'gallop/no-container-in-section: off' --rule 'gallop/prefer-component-props: off'",
+    "lint:gallop": "eslint 'src/app/**/_blocks/' --rule 'gallop/no-client-blocks: warn' --rule 'gallop/no-container-in-section: warn' --rule 'gallop/prefer-component-props: warn'",
+    "audit": "gallop audit",
+    "audit:strict": "gallop audit --strict",
+    "audit:json": "gallop audit --json",
+    "blog": "node _scripts/generate-blog-metadata.mjs",
+    "blocks": "node _scripts/generate-blocks-catalog.mjs",
+    "cf:setup": "cp -n .env.production.sample .env.production 2>/dev/null; echo 'Edit .env.production, then run: npm run cf:secrets (push secrets) and deploy'",
+    "cf:build": "npm run blog && node _scripts/production-env.mjs build",
+    "cf:preview": "node _scripts/production-env.mjs dev-vars && npm run cf:build && opennextjs-cloudflare preview",
+    "cf:deploy": "npm run cf:build && opennextjs-cloudflare deploy",
+    "cf:upload": "npm run cf:build && opennextjs-cloudflare upload",
+    "cf:secrets": "wrangler secret bulk .env.production",
+    "cf:typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+    "refresh": "rm -rf node_modules .next && npm install",
+    "clean": "rm -rf node_modules .next package-lock.json && npm install",
+    "update:check": "npx npm-check-updates",
+    "update:patch": "npx npm-check-updates -u --target patch && npm run clean",
+    "update:minor": "npx npm-check-updates -u --target minor && npm run clean",
+    "update:major": "npx npm-check-updates -u --target latest && npm run clean",
+    "update:interactive": "npx npm-check-updates -i",
+    "update:doctor": "npx npm-check-updates --doctor -u",
+    "unused": "knip",
+    "check": "npm run lint && npm run ts"
+  },
+  "dependencies": {
+    "@headlessui/react": "^2.2.10",
+    "@iconify/icons-heroicons": "^1.2.9",
+    "@iconify/icons-lucide": "^1.2.135",
+    "@iconify/icons-mdi": "^1.2.48",
+    "@marsidev/react-turnstile": "^1.6.3",
+    "@next/third-parties": "^16.3.2",
+    "@opennextjs/cloudflare": "^1.20.14",
+    "@vercel/analytics": "^1.6.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.43.0",
+    "hls.js": "^1.7.3",
+    "luxon": "^3.7.2",
+    "next": "^16.3.2",
+    "react": "^19",
+    "react-dom": "^19.2.8",
+    "react-intersection-observer": "^10.1.0",
+    "swiper": "^12.2.0",
+    "valtio": "^2.3.2",
+    "yet-another-react-lightbox": "^3.32.2"
+  },
+  "devDependencies": {
+    "@gallop.software/canon": "^2.34.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/luxon": "^3.7.5",
+    "@types/node": "^24",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "^16.3.2",
+    "knip": "^5.88.1",
+    "postcss": "^8.5.26",
+    "prettier": "^3.9.6",
+    "prettier-plugin-organize-imports": "^4.3.0",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5",
+    "wrangler": "^4.125.0"
+  }
+}

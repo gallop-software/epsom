@@ -1,0 +1,219 @@
+@import 'tailwindcss';
+
+/*
+ * Epsom design system: colors, type scale, breakpoints and layout tokens.
+ */
+@theme {
+  /* Breakpoints replace Tailwind defaults. */
+  --breakpoint-sm: 601px;
+  --breakpoint-md: 861px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1201px;
+  --breakpoint-2xl: 1536px;
+
+  --font-body: var(--font-body-family);
+  --font-heading: var(--font-heading-family);
+  --font-accent: var(--font-heading-family);
+  --font-quote: var(--font-quote-family);
+
+  /* Body sizes (tiny, xsmall, small, body, large, larger) then heading sizes. */
+  --text-2xs: 13px;
+  --text-2xs--line-height: 1.5;
+  --text-xs: 14px;
+  --text-xs--line-height: 1.5;
+  --text-sm: 16px;
+  --text-sm--line-height: 1.5;
+  --text-base: 17px;
+  --text-base--line-height: 1.5;
+  --text-lg: 20px;
+  --text-lg--line-height: 1.5;
+  --text-xl: 24px;
+  --text-xl--line-height: 1.5;
+  --text-2xl: 26px;
+  --text-2xl--line-height: 1.5;
+  --text-3xl: 28px;
+  --text-3xl--line-height: 1.2;
+  --text-4xl: 36px;
+  --text-4xl--line-height: 1.2;
+  --text-5xl: 50px;
+  --text-5xl--line-height: 1.2;
+  --text-6xl: 54px;
+  --text-6xl--line-height: 1.2;
+  --text-7xl: 70px;
+  --text-7xl--line-height: 1.2;
+
+  /* WordPress-era transitions used the CSS default easing. */
+  --default-transition-timing-function: ease;
+
+  --leading-heading: 1.2;
+  --tracking-heading: 2px;
+  --tracking-button: 0.5px;
+
+  /* Fixed header height. */
+  --spacing-header: 94px;
+
+  /* Section padding as a share of the content column (--content-column). */
+  --spacing-col-4: calc(var(--content-column) * 0.04);
+  --spacing-col-5: calc(var(--content-column) * 0.05);
+  --spacing-col-10: calc(var(--content-column) * 0.1);
+  --spacing-col-15: calc(var(--content-column) * 0.15);
+  --spacing-col-19: calc(var(--content-column) * 0.19);
+  --spacing-col-20: calc(var(--content-column) * 0.2);
+  --spacing-col-30: calc(var(--content-column) * 0.3);
+  /* Side padding of the icon-card row. */
+  --spacing-cards: calc(min(750px, 100vw - var(--content-column) * 0.1) * 0.1);
+
+  /* ── Surface / Background ── */
+  --color-body: #ffffff;
+  --color-body-light: #f7f7f7;
+  --color-body-dark: #edecee;
+  --color-body2: #f5f5f5;
+
+  /* ── Text / Foreground ── */
+  --color-contrast: #222222;
+  --color-contrast-light: #333333;
+  --color-contrast-dark: #000000;
+
+  /* Secondary text (entry meta) and form borders. */
+  --color-muted: #888888;
+  --color-form-border: #dcdadd;
+  --color-required: #ff0000;
+  --color-link-hover: #444444;
+  --color-upload: #fcfcfc;
+  --color-upload-border: #cccccc;
+
+  /* Genesis Blocks profile box: text and avatar placeholder. */
+  --color-profile-text: #32373c;
+  --color-profile-avatar: #dddddd;
+
+  /* ── Overlay (fixed context — image/video scrims) ── */
+  --color-overlay: #000000;
+  --color-overlay-text: #ffffff;
+  /* Behind the Careers and Schedule parallax photos. */
+  --color-photo-dark: #121212;
+  --color-photo-darker: #0d0d0d;
+
+  /* ── Primary (yellow) ── */
+  --color-accent: #ffcc2a;
+  --color-accent-light: #ffd44a;
+  --color-accent-dark: #e6b826;
+  --color-accent-contrast: #222222;
+
+  /* ── Secondary (navy) ── */
+  --color-accent2: #043f61;
+  --color-accent2-light: #2a5c79;
+  --color-accent2-dark: #033552;
+  --color-accent2-contrast: #ffffff;
+
+  --color-accent3: #a44e9e;
+  --color-accent3-light: #b269ad;
+  --color-accent3-dark: #8c4287;
+  --color-accent3-contrast: #ffffff;
+
+  --color-accent4: #d43c31;
+  --color-accent4-light: #db5a50;
+  --color-accent4-dark: #b8332a;
+  --color-accent4-contrast: #ffffff;
+
+  --color-accent5: #42b97c;
+  --color-accent5-light: #5fc490;
+  --color-accent5-dark: #389e6a;
+  --color-accent5-contrast: #ffffff;
+
+  --color-accent6: #0000ff;
+  --color-accent6-light: #2727ff;
+  --color-accent6-dark: #0000d9;
+  --color-accent6-contrast: #ffffff;
+
+  --shadow-header: 0 10px 30px 0 rgb(0 0 0 / 0.1);
+  --shadow-card: 0 2px 30px 0 rgb(0 0 0 / 0.07);
+  --shadow-card-hover: 0 2px 30px 0 rgb(0 0 0 / 0.15);
+  --shadow-mobile-cta: 0 -2px 30px 0 rgb(0 0 0 / 0.3);
+}
+
+@layer base {
+  /* The theme's content column: 90% up to 640px, 750px from 1024px. */
+  :root {
+    --content-column: min(90vw, 640px);
+    /* Lightbox (components/lightbox): the dark backdrop and white controls of the old site. */
+    --color--gallery: color-mix(in srgb, var(--color-overlay) 90%, transparent);
+    --color--gallery-contrast: var(--color-overlay-text);
+  }
+  @media (width >= 1024px) {
+    :root {
+      --content-column: 750px;
+    }
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /* The theme kept images inline and top-aligned (preflight makes them block). */
+  img,
+  video {
+    display: inline;
+    vertical-align: top;
+  }
+
+  strong,
+  b {
+    font-weight: 700;
+  }
+}
+
+/* gallop "mover": the hero's down arrow bobs 5px. */
+@keyframes mover {
+  to {
+    transform: translateY(5px);
+  }
+}
+/* The theme's site column (title bands, archives, post footers): 90% wide, then 960px from 1024px, 1100px from
+   1201px and 1200px from 1361px. */
+@utility site-wrap {
+  width: 90%;
+  margin-inline: auto;
+  @media (width >= 1024px) {
+    width: 960px;
+  }
+  @media (width >= 1201px) {
+    width: 1100px;
+  }
+  @media (width >= 1361px) {
+    width: 1200px;
+  }
+}
+
+/* The theme's content links: the text's own colour with a yellow highlighter underline that grows on hover. */
+@utility highlight-link {
+  text-decoration: none;
+  box-shadow: inset 0 -7px 0 0 color-mix(in srgb, var(--color-accent) 40%, transparent);
+  transition: all 0.4s;
+  &:hover {
+    color: var(--color-link-hover);
+    box-shadow: inset 0 -10px 0 0 color-mix(in srgb, var(--color-accent) 40%, transparent);
+  }
+}
+
+@utility animate-mover {
+  animation: mover 1s infinite alternate;
+}
+
+/* Sticky-scroll panes are one viewport tall under the fixed header. */
+@utility h-screen-header {
+  height: calc(100vh - 94px);
+}
+@utility min-h-screen-header {
+  min-height: calc(100vh - 94px);
+}
+
+/*
+ * No transitions until the page has painted: WebKit runs transitions on the
+ * first style of ::before/::after, so the button offset borders would slide
+ * and fade in on every load. TransitionsReady adds `.ready` after mount.
+ */
+html:not(.ready) *,
+html:not(.ready) *::before,
+html:not(.ready) *::after {
+  transition: none !important;
+}
