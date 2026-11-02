@@ -55,7 +55,9 @@ export default async function Page({ params }: PageProps) {
   const { default: Content } = await importFn()
 
   return (
-    <div className="overflow-hidden">
+    // overflow-clip, not overflow-hidden: hidden makes this the scroll container,
+    // which stops sticky blocks from sticking. No header here, so no header offset.
+    <div className="overflow-clip [--spacing-header:0px]">
       <main
         className={clsx(
           '[&>.content-wrapper]:px-6 [&>.content-wrapper]:lg:px-8 [&>.content-wrapper]:mx-auto [&>.content-wrapper]:max-w-3xl',

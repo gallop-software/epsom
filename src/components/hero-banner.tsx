@@ -38,7 +38,7 @@ export function HeroBanner({
     <section
       className={clsx(
         'relative z-1 flex w-full items-center overflow-hidden bg-overlay',
-        'min-h-100 py-17.5 lg:h-screen lg:min-h-0 lg:pt-header lg:pb-0',
+        'min-h-100 py-17.5 lg:h-viewport lg:min-h-0 lg:pt-header lg:pb-0',
         '[@media(max-height:600px)]:h-auto [@media(max-height:600px)]:min-h-100',
         '[clip-path:polygon(0_0,100%_0,100%_calc(100%_-_40px),50%_100%,0_calc(100%_-_40px))]',
         'md:[clip-path:polygon(0_0,100%_0,100%_calc(100%_-_60px),50%_100%,0_calc(100%_-_60px))]'

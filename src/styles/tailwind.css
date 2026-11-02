@@ -201,12 +201,20 @@
   animation: mover 1s infinite alternate;
 }
 
+/*
+ * Viewport-tall sections. --viewport-height is unset for normal visitors, so
+ * these are 100vh. Inside a preview iframe that grows to fit its content,
+ * use-iframe-height freezes it, or 100vh would grow with the frame forever.
+ */
+@utility h-viewport {
+  height: var(--viewport-height, 100vh);
+}
 /* Sticky-scroll panes are one viewport tall under the fixed header. */
 @utility h-screen-header {
-  height: calc(100vh - 94px);
+  height: calc(var(--viewport-height, 100vh) - var(--spacing-header));
 }
 @utility min-h-screen-header {
-  min-height: calc(100vh - 94px);
+  min-height: calc(var(--viewport-height, 100vh) - var(--spacing-header));
 }
 
 /*

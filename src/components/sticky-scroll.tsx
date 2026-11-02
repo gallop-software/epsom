@@ -27,7 +27,7 @@ export function StickyImage({
 }: StickyImageProps) {
   const left = captionAlign === 'left'
   return (
-    <figure className="relative z-1 mb-0 h-[70vh] w-full overflow-hidden lg:sticky lg:top-header lg:float-left lg:h-screen-header lg:w-2/5 [.scroll-panel+&]:clear-both">
+    <figure className="relative z-1 mb-0 h-[calc(var(--viewport-height,100vh)*0.7)] w-full overflow-hidden lg:sticky lg:top-header lg:float-left lg:h-screen-header lg:w-2/5 [.scroll-panel+&]:clear-both">
       <Image
         src={src}
         alt={alt}

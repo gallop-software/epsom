@@ -3,6 +3,7 @@ import { _bodyFont } from '@/fonts/body'
 import { _headingFont } from '@/fonts/heading'
 import { _quoteFont } from '@/fonts/quote'
 import type { Metadata } from 'next'
+import IframeHeight from '@/hooks/use-iframe-height'
 import SmoothScroll from '@/hooks/smooth-scroll'
 import TransitionsReady from '@/hooks/transitions-ready'
 import { baseURL, siteName } from './metadata'
@@ -51,6 +52,7 @@ export default function RootLayout({
         {children}
         <SmoothScroll />
         <TransitionsReady />
+        <IframeHeight />
         {process.env.VERCEL === '1' && <Analytics />}
       </body>
       {track && process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS && (

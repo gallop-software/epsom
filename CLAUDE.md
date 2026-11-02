@@ -61,7 +61,7 @@ src/
 │       └── _blocks/  # Co-located page-specific blocks
 ├── components/   # Reusable UI primitives and block families
 ├── fonts/        # next/font/local: _bodyFont = Muli, _headingFont = Oswald, _quoteFont = leftquote
-├── hooks/        # smooth-scroll, transitions-ready, use-active-video
+├── hooks/        # smooth-scroll, transitions-ready, use-active-video, use-iframe-height
 ├── styles/       # tailwind.css is the design system (Tailwind v4 @theme)
 ├── tools/        # page-slug and post-slug helpers
 ├── utils/        # page-helpers (PageMetadata), structured-data, studio-helpers, blog, calendly, send-email
@@ -196,6 +196,7 @@ All tokens live in `src/styles/tailwind.css` `@theme`.
 - **Breakpoints** replace Tailwind's defaults: `sm` 601, `md` 861, `lg` 1024, `xl` 1201px
 - **Type scale** is in px (`text-base` = 17px body; headings via `Heading`'s scale)
 - **Layout**: `h-header`/`pt-header`/`top-header` = 94px; `h-screen-header` = 100vh - 94px (sticky-scroll panes)
+- **Viewport-tall sections** use `h-viewport`, `h-screen-header` or `min-h-screen-header`, never `h-screen` or raw `vh`: `use-iframe-height` freezes `--viewport-height` inside the gallop.software preview, which grows to fit its content and would otherwise never settle
 - **Section padding** is a share of the content column (`--content-column`: 90% up to 640px, 750px from 1024px): `px-col-5`, `py-col-15`, `pb-col-19`, `py-col-30`; `px-cards` for the icon-card row
 - **Transitions** default to CSS `ease`, and are off until `<html class="ready">` (WebKit would otherwise animate pseudo-elements in on load)
 
