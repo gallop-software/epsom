@@ -51,9 +51,7 @@ export const blockImports: Record<string, () => Promise<{ default: ComponentType
   'residential-concrete-flooring/process': () => import('@/app/(hero)/residential-concrete-flooring/_blocks/process'),
   'residential-concrete-flooring/projects': () => import('@/app/(hero)/residential-concrete-flooring/_blocks/projects'),
   'residential-concrete-flooring/testimonial': () => import('@/app/(hero)/residential-concrete-flooring/_blocks/testimonial'),
-  'schedule-free-estimate/header': () => import('@/app/(default)/schedule-free-estimate/_blocks/header'),
   'services': () => import('@/app/(hero)/_blocks/services'),
-  'specialties/header': () => import('@/app/(default)/specialties/_blocks/header'),
 }
 
 export const blockSlugs = Object.keys(blockImports)

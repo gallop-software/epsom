@@ -61,7 +61,7 @@ src/
 │       └── _blocks/  # Co-located page-specific blocks
 ├── components/   # Reusable UI primitives and block families
 ├── fonts/        # next/font/local: _bodyFont = Muli, _headingFont = Oswald, _quoteFont = leftquote
-├── hooks/        # smooth-scroll, transitions-ready, analytics, use-active-video
+├── hooks/        # smooth-scroll, transitions-ready, use-active-video
 ├── styles/       # tailwind.css is the design system (Tailwind v4 @theme)
 ├── tools/        # page-slug and post-slug helpers
 ├── utils/        # page-helpers (PageMetadata), structured-data, studio-helpers, blog, calendly, send-email
@@ -72,7 +72,7 @@ src/
 
 ```
 src/app/
-├── (default)/        # White header; content starts below it (+ blog, category, author, tag archives)
+├── (default)/        # White header; content starts below it (+ blog, category, author archives)
 ├── (hero)/           # Transparent header over a full-bleed hero (home, about, service pages)
 ├── (no-cta)/         # White header, no photo strip above the footer (gallery)
 ├── (post)/<slug>/    # Blog posts at the site root: page.tsx (metadata) + content.tsx
@@ -103,10 +103,10 @@ export default function Page() { return <PageWrapper metadata={metadata}><Conten
 **Blocks:**
 - Each page's sections are blocks co-located in `_blocks/` beside its `page.tsx`, so every page has its own blocks and every block has a preview page at `/block/<route>/<block>/` (home blocks at `/block/<block>/`)
 - Run `npm run blocks` after adding or removing a block
-- A block's default export takes no props; the preview route renders it on its own
+- A block's default export takes no props; the preview route renders it on its own, marked `noindex`
 - Singleton naming: `hero.tsx` (one per page), numbered when multiple: `content-2.tsx`, `content-3.tsx`
 - Import with relative paths: `import Hero from './_blocks/hero'`
-- Data-driven archives (`blog`, `category`, `author`, `tag`) render `post-archive` from `_data/_blog.json` and have no blocks
+- Data-driven archives (`blog`, `category`, `author`) render `post-archive` from `_data/_blog.json` and have no blocks
 
 **Posts:**
 - Each post is a folder directly in `src/app/(post)/<slug>/` with `page.tsx` (route + metadata) and `content.tsx` (the body). New posts are written by hand in the same shape
@@ -117,8 +117,8 @@ export default function Page() { return <PageWrapper metadata={metadata}><Conten
 - Complex components: Folder with `index.tsx`
 
 **Images:**
-- Every image is a Gallop Studio key (`/uploads/YYYY/MM/name.ext`) rendered through `Image`, served from `https://epsom-cdn.gallop.software` (R2 bucket `epsom`)
-- Import new media with `gallop studio upload <file> --to uploads/YYYY/MM`. Never copy files into `public/`
+- Every image is a Gallop Studio key rendered through `Image`, served from `https://epsom-cdn.gallop.software` (R2 bucket `epsom`). Keys live in `/content/` (photos), `/content/circles/` (round service graphics), `/heroes/`, `/brand/` and `/patterns/`
+- Import new media with `gallop studio upload <file> --to content`. Never copy files into `public/`
 
 ### DO — What AI IS Allowed To Do
 
@@ -204,7 +204,7 @@ All tokens live in `src/styles/tailwind.css` `@theme`.
 - **Primitives**: `Container` (content/wide column widths), `Columns` (plain `<div>` children keep the last child's bottom margin), `Section` (full-width band: background image or pattern, parallax, overlay), `Heading`, `Paragraph`, `Button`/`Buttons` (offset border; `textColor` for fills), `Quote` (+ `size="large"`), `List`, `Spacer`, `Image` (Studio-backed `<img>` with srcset), `Icon` (Iconify)
 - **Block families**: `hero-banner` (photo or looping HLS video background; + `typewriter-heading`, downLink), `image-filter`, `image-feature`, `icon-cards`, `sticky-scroll`, `estimate-cta`, `elegant-heading`, `post-cards`, `logo-gallery` (3 or 5 per row, optional caption), `showcase-gallery`, `process-steps`, `calendly-button` (optional `href` fallback)
 - **Shared sections**: `our-process` (the four steps), `projects-band` (recent posts of a category), `brands` (client logos)
-- **Page parts**: `page-header` (white title band), `details` (FAQ accordion row), `team-grid` (ready for your team's photos; not on a page in the demo), `contact-icons`
+- **Page parts**: `page-header` (white title band), `details` (FAQ accordion row), `contact-icons`
 - **Video**: `hls-video` is the HLS player (hls.js, loads near the viewport, plays muted in view, one at a time). Encode with `gallop studio ffmpeg` (`gallop studio ffmpeg --help`) into 1080p, 720p and 480p renditions plus a `master.m3u8`, then `gallop studio upload <dir> --to videos/<name>-hls`. The bucket's CORS rule must allow the site's origin (GET/HEAD)
 - **Blog**: `post-hero`, `post-body`, `post-gallery`, `post-archive` (cards + pagination)
 - **Forms**: `form/` posts to `api/submit-form` (honeypot `companyWebsite`, invisible Turnstile when `NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY` is set). Fields: `FormInput`, `FormName`, `FormSelect`, `FormTextArea`, `FormUpload` (`name="files"` → attachments), `FormButton`; a visible label when `label` is set; `tone="dark"` for dark sections. The Contact form confirms to the visitor (`CONFIRMED_FORMS` in the route). Turnstile rejects automated browsers: test forms in a real one

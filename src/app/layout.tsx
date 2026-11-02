@@ -6,10 +6,7 @@ import type { Metadata } from 'next'
 import SmoothScroll from '@/hooks/smooth-scroll'
 import TransitionsReady from '@/hooks/transitions-ready'
 import { baseURL, siteName } from './metadata'
-import GoogleAds from '@/hooks/google-ads'
-import Heap from '@/hooks/heap'
-import Statcounter from '@/hooks/statcounter'
-import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { Analytics } from '@vercel/analytics/react'
 
 export const metadata: Metadata = {
@@ -56,29 +53,9 @@ export default function RootLayout({
         <TransitionsReady />
         {process.env.VERCEL === '1' && <Analytics />}
       </body>
-      {track && process.env.NEXT_PUBLIC_HEAP_APP_ID && (
-        <Heap appId={String(process.env.NEXT_PUBLIC_HEAP_APP_ID)} />
-      )}
-      {track && process.env.NEXT_PUBLIC_STATCOUNTER_PROJECT && (
-        <Statcounter
-          project={String(process.env.NEXT_PUBLIC_STATCOUNTER_PROJECT)}
-          security={String(process.env.NEXT_PUBLIC_STATCOUNTER_SECURITY)}
-        />
-      )}
-      {track && process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER && (
-        <GoogleTagManager
-          gtmId={String(process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER)}
-        />
-      )}
       {track && process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS && (
         <GoogleAnalytics
           gaId={String(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS)}
-        />
-      )}
-      {track && process.env.NEXT_PUBLIC_GOOGLE_ADS_ID && (
-        <GoogleAds
-          adId={String(process.env.NEXT_PUBLIC_GOOGLE_ADS_ID)}
-          loadGtagJs={false}
         />
       )}
     </html>

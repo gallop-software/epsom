@@ -606,8 +606,8 @@ epsom/
 │   │   │   ├── contact/
 │   │   │   │   ├── page.tsx
 │   │   │   │   └── _blocks/  # Co-located page blocks
-│   │   │   ├── blog/, category/, author/, tag/  # Paged post archives
-│   │   │   └── .../           # careers, faq, specialties, schedule-free-estimate
+│   │   │   ├── blog/, category/, author/  # Paged post archives
+│   │   │   └── .../           # careers, faq
 │   │   ├── (hero)/            # Transparent header over a full-bleed hero
 │   │   │   ├── layout.tsx
 │   │   │   ├── page.tsx       # Home page
@@ -748,36 +748,36 @@ Your AI assistant runs these for you — see [Deploy to Cloudflare Workers](#dep
 
 Every dependency is battle-tested in production and chosen for stability, performance, and long-term maintainability.
 
-- **Next.js** `16.2.6` - React framework with App Router
+- **Next.js** `16.4.2` - React framework with App Router
 - **React** `19` - UI library
-- **React DOM** `19.2.6` - React rendering
-- **Tailwind CSS** `4.3.0` - Utility-first CSS framework
+- **React DOM** `19.2.8` - React rendering
+- **Tailwind CSS** `4.3.3` - Utility-first CSS framework
 - **Headless UI** `2.2.10` - Unstyled accessible components
-- **hls.js** `1.7` - Adaptive video streaming
+- **hls.js** `1.7.4` - Adaptive video streaming
 - **Valtio** `2.3.2` - State management
-- **Marsidev React Turnstile** `1.6` - Form spam protection
-- **Yet Another React Lightbox** `3.32.0` - Image gallery
+- **Marsidev React Turnstile** `1.6.3` - Form spam protection
+- **Yet Another React Lightbox** `3.32.2` - Image gallery
 - **Luxon** `3.7.2` - DateTime library
-- **React Intersection Observer** `10.0.3` - Scroll-based animations and lazy loading
+- **React Intersection Observer** `10.1.0` - Scroll-based animations and lazy loading
 - **Iconify Icons** - Icon sets (Heroicons, Lucide, Material Design)
 - **clsx** `2.1.1` - Conditional className utility
 - **Vercel Analytics** `1.6.1` - Analytics integration
-- **Next Third Parties** `16.2.6` - Third-party script optimization
-- **OpenNext Cloudflare** `1.20.2` - Adapter for deploying to Cloudflare Workers
+- **Next Third Parties** `16.3.2` - Third-party script optimization
+- **OpenNext Cloudflare** `1.20.14` - Adapter for deploying to Cloudflare Workers
 
 ### Development
 
 Tools for building and developing the site:
 
-- **TypeScript** `5` - Type safety and IntelliSense
-- **ESLint** `9` - Code linting
-- **ESLint Config Next** `16.2.6` - Next.js lint rules
-- **Prettier** `3.8.3` - Code formatting
+- **TypeScript** `5.9.3` - Type safety and IntelliSense
+- **ESLint** `9.39.4` - Code linting
+- **ESLint Config Next** `16.4.2` - Next.js lint rules
+- **Prettier** `3.9.6` - Code formatting
 - **Prettier Plugin Organize Imports** `4.3.0` - Auto-organize imports
-- **Prettier Plugin Tailwindcss** `0.8.0` - Sort Tailwind classes
-- **PostCSS** `8.5.15` - CSS transformations
+- **Prettier Plugin Tailwindcss** `0.8.1` - Sort Tailwind classes
+- **PostCSS** `8.5.26` - CSS transformations
 - **Knip** `5.88.1` - Unused file and export detection
-- **Wrangler** `4.113.0` - Cloudflare CLI, used by the `cf:*` scripts
+- **Wrangler** `4.152.0` - Cloudflare CLI, used by the `cf:*` scripts
 - **Gallop Canon** `2.34.0` - ESLint rules and architecture audit CLI
 
 ---

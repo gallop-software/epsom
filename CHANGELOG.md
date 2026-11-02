@@ -10,6 +10,7 @@
 - Rewrite all copy; replace all photos and videos with AI-generated demo images
 - Remove the HLS video player and video posts; video sections are now photo features
 - Home page hero is a looping AI-generated video, streamed as HLS from R2
+- Remove empty pages and unused analytics hooks; block previews are `noindex`
 
 ## 2026-10-12
 

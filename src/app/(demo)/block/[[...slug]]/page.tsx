@@ -1,7 +1,13 @@
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { LightboxWrapper } from '@/components/lightbox-wrapper'
 import clsx from 'clsx'
 import { blockImports, blockSlugs } from './_block-index'
+
+// Block previews are thin, repeated fragments: keep them out of search results.
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+}
 
 interface PageProps {
   params: Promise<{

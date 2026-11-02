@@ -30,10 +30,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: 'weekly' as const,
   }))
 
-  // The other archives: the author and the (empty) "featured" tag
-  const archives = ['/author/bedrock-flooring/', '/tag/featured/'].map(
-    (uri) => ({ url: baseURL + uri, changeFrequency: 'weekly' as const })
-  )
+  // The author archive
+  const archives = ['/author/bedrock-flooring/'].map((uri) => ({
+    url: baseURL + uri,
+    changeFrequency: 'weekly' as const,
+  }))
 
   return [...pages, ...posts, ...categories, ...archives]
 }
