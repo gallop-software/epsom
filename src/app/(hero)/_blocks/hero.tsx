@@ -9,7 +9,7 @@ export default function Hero() {
     <HeroBanner
       downLink="#feature"
       image="/heroes/hero-home.jpg"
-      video="/heroes/hero-home.mp4"
+      video="/videos/hero-home-hls/master.m3u8"
       caption="Working Out of Red Mesa, Texas"
     >
       <Heading

@@ -1944,8 +1944,44 @@
     "c": 1,
     "a": 1793300827448
   },
-  "/heroes/hero-home.mp4": {
+  "/videos/hero-home-hls/1080p/index.m3u8": {
     "c": 1,
-    "a": 1793650902131
+    "a": 1793651065388
+  },
+  "/videos/hero-home-hls/1080p/seg-000.ts": {
+    "c": 1,
+    "a": 1793651066035
+  },
+  "/videos/hero-home-hls/1080p/seg-001.ts": {
+    "c": 1,
+    "a": 1793651066576
+  },
+  "/videos/hero-home-hls/480p/index.m3u8": {
+    "c": 1,
+    "a": 1793651066813
+  },
+  "/videos/hero-home-hls/480p/seg-000.ts": {
+    "c": 1,
+    "a": 1793651067093
+  },
+  "/videos/hero-home-hls/480p/seg-001.ts": {
+    "c": 1,
+    "a": 1793651067361
+  },
+  "/videos/hero-home-hls/720p/index.m3u8": {
+    "c": 1,
+    "a": 1793651067606
+  },
+  "/videos/hero-home-hls/720p/seg-000.ts": {
+    "c": 1,
+    "a": 1793651067932
+  },
+  "/videos/hero-home-hls/720p/seg-001.ts": {
+    "c": 1,
+    "a": 1793651068177
+  },
+  "/videos/hero-home-hls/master.m3u8": {
+    "c": 1,
+    "a": 1793651068408
   }
 }

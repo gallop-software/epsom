@@ -25,7 +25,7 @@ Just chat with AI inside our Gallop AI Editor using Gallop templates, and you wi
 - ⚛️ **React 19** for cutting-edge performance
 - 🎨 **Tailwind CSS 4** for pixel-perfect design
 - 📝 **TSX-powered content** - No CMS required
-- 🧱 **Service pages built from blocks** - Heroes, photo features, icon cards, sticky-scroll panels, galleries, process steps and client logos, each with its own preview page
+- 🧱 **Service pages built from blocks** - Video and photo heroes, photo features, icon cards, sticky-scroll panels, galleries, process steps and client logos, each with its own preview page
 - 🗂️ **Project blog** - Project posts with galleries, and category, tag and author archives
 - 📅 **Free-estimate booking** with Calendly (set `NEXT_PUBLIC_CALENDLY_URL`)
 - 🖼️ **Image processing** with automatic optimization and lightbox galleries
@@ -639,6 +639,7 @@ epsom/
 │   │   ├── lightbox/         # Lightbox gallery
 │   │   ├── page-wrapper.tsx  # Page wrapper with structured data
 │   │   ├── hero-banner.tsx
+│   │   ├── hls-video.tsx
 │   │   ├── image-feature.tsx
 │   │   ├── icon-cards.tsx
 │   │   ├── sticky-scroll.tsx
@@ -752,6 +753,7 @@ Every dependency is battle-tested in production and chosen for stability, perfor
 - **React DOM** `19.2.6` - React rendering
 - **Tailwind CSS** `4.3.0` - Utility-first CSS framework
 - **Headless UI** `2.2.10` - Unstyled accessible components
+- **hls.js** `1.7` - Adaptive video streaming
 - **Valtio** `2.3.2` - State management
 - **Marsidev React Turnstile** `1.6` - Form spam protection
 - **Yet Another React Lightbox** `3.32.0` - Image gallery

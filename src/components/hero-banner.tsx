@@ -1,13 +1,14 @@
 import arrowLongDownIcon from '@iconify/icons-heroicons/arrow-long-down'
 import { clsx } from 'clsx'
 import type { ReactNode } from 'react'
+import { HlsVideo } from '@/components/hls-video'
 import { Icon } from '@/components/icon'
 import { studioUrl } from '@/utils/studio-helpers'
 
 export interface HeroBannerProps {
   /** Studio key of the background photo (also the video's poster). */
   image: string
-  /** Studio key of an optional looping background video (MP4, no sound). */
+  /** Studio key of an optional background video's HLS master playlist (no sound). */
   video?: string | undefined
   /** Bottom-left caption (desktop) / centred under the content (≤1023px). */
   caption?: string | undefined
@@ -48,14 +49,12 @@ export function HeroBanner({
         style={{ backgroundImage: `url("${studioUrl(image, 'full')}")` }}
       />
       {video && (
-        <video
-          className="absolute inset-0 -z-2 block h-full w-full object-cover"
-          src={studioUrl(video, 'full')}
-          poster={studioUrl(image, 'full')}
-          autoPlay
-          muted
-          loop
-          playsInline
+        <HlsVideo
+          src={video}
+          poster={image}
+          fill
+          controls={false}
+          className="-z-2"
         />
       )}
       <div className={clsx('absolute inset-0 z-1', overlayColor, dim)} />
