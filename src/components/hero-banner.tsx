@@ -5,8 +5,10 @@ import { Icon } from '@/components/icon'
 import { studioUrl } from '@/utils/studio-helpers'
 
 export interface HeroBannerProps {
-  /** Studio key of the background photo. */
+  /** Studio key of the background photo (also the video's poster). */
   image: string
+  /** Studio key of an optional looping background video (MP4, no sound). */
+  video?: string | undefined
   /** Bottom-left caption (desktop) / centred under the content (≤1023px). */
   caption?: string | undefined
   /** Scrim opacity over the photo (default `opacity-50`). */
@@ -19,11 +21,12 @@ export interface HeroBannerProps {
 }
 
 /**
- * Full-viewport photo hero with a chevron bottom edge (auto height
+ * Full-viewport photo (or looping video) hero with a chevron bottom edge (auto height
  * below 1024px).
  */
 export function HeroBanner({
   image,
+  video,
   caption,
   dim = 'opacity-50',
   overlayColor = 'bg-overlay',
@@ -44,6 +47,17 @@ export function HeroBanner({
         className="absolute inset-0 -z-2 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url("${studioUrl(image, 'full')}")` }}
       />
+      {video && (
+        <video
+          className="absolute inset-0 -z-2 block h-full w-full object-cover"
+          src={studioUrl(video, 'full')}
+          poster={studioUrl(image, 'full')}
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+      )}
       <div className={clsx('absolute inset-0 z-1', overlayColor, dim)} />
       <div className="relative z-2 w-full px-[5%] lg:[@media(max-height:600px)]:py-17.5">
         <div className="mx-auto max-w-[1120px] [&>:last-child]:mb-0">

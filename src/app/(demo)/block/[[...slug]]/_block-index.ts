@@ -3,93 +3,57 @@
 
 import type { ComponentType } from 'react'
 
-export const blockImports: Record<
-  string,
-  () => Promise<{ default: ComponentType }>
-> = {
-  about: () => import('@/app/(hero)/_blocks/about'),
+export const blockImports: Record<string, () => Promise<{ default: ComponentType }>> = {
+  'about': () => import('@/app/(hero)/_blocks/about'),
   'about/brands': () => import('@/app/(hero)/about/_blocks/brands'),
   'about/cta': () => import('@/app/(hero)/about/_blocks/cta'),
   'about/hero': () => import('@/app/(hero)/about/_blocks/hero'),
   'about/intro': () => import('@/app/(hero)/about/_blocks/intro'),
   'about/story': () => import('@/app/(hero)/about/_blocks/story'),
-  brands: () => import('@/app/(hero)/_blocks/brands'),
+  'brands': () => import('@/app/(hero)/_blocks/brands'),
   'careers/careers': () => import('@/app/(default)/careers/_blocks/careers'),
-  'commercial-concrete-flooring/cta': () =>
-    import('@/app/(hero)/commercial-concrete-flooring/_blocks/cta'),
-  'commercial-concrete-flooring/feature': () =>
-    import('@/app/(hero)/commercial-concrete-flooring/_blocks/feature'),
-  'commercial-concrete-flooring/floor-types': () =>
-    import('@/app/(hero)/commercial-concrete-flooring/_blocks/floor-types'),
-  'commercial-concrete-flooring/gallery': () =>
-    import('@/app/(hero)/commercial-concrete-flooring/_blocks/gallery'),
-  'commercial-concrete-flooring/hero': () =>
-    import('@/app/(hero)/commercial-concrete-flooring/_blocks/hero'),
-  'commercial-concrete-flooring/intro': () =>
-    import('@/app/(hero)/commercial-concrete-flooring/_blocks/intro'),
-  'commercial-concrete-flooring/process': () =>
-    import('@/app/(hero)/commercial-concrete-flooring/_blocks/process'),
-  'commercial-concrete-flooring/projects': () =>
-    import('@/app/(hero)/commercial-concrete-flooring/_blocks/projects'),
-  'contact/contact-form': () =>
-    import('@/app/(default)/contact/_blocks/contact-form'),
+  'commercial-concrete-flooring/cta': () => import('@/app/(hero)/commercial-concrete-flooring/_blocks/cta'),
+  'commercial-concrete-flooring/feature': () => import('@/app/(hero)/commercial-concrete-flooring/_blocks/feature'),
+  'commercial-concrete-flooring/floor-types': () => import('@/app/(hero)/commercial-concrete-flooring/_blocks/floor-types'),
+  'commercial-concrete-flooring/gallery': () => import('@/app/(hero)/commercial-concrete-flooring/_blocks/gallery'),
+  'commercial-concrete-flooring/hero': () => import('@/app/(hero)/commercial-concrete-flooring/_blocks/hero'),
+  'commercial-concrete-flooring/intro': () => import('@/app/(hero)/commercial-concrete-flooring/_blocks/intro'),
+  'commercial-concrete-flooring/process': () => import('@/app/(hero)/commercial-concrete-flooring/_blocks/process'),
+  'commercial-concrete-flooring/projects': () => import('@/app/(hero)/commercial-concrete-flooring/_blocks/projects'),
+  'contact/contact-form': () => import('@/app/(default)/contact/_blocks/contact-form'),
   'contact/details': () => import('@/app/(default)/contact/_blocks/details'),
-  cta: () => import('@/app/(hero)/_blocks/cta'),
+  'cta': () => import('@/app/(hero)/_blocks/cta'),
   'faq/questions': () => import('@/app/(default)/faq/_blocks/questions'),
-  features: () => import('@/app/(hero)/_blocks/features'),
+  'features': () => import('@/app/(hero)/_blocks/features'),
   'floor-types': () => import('@/app/(hero)/_blocks/floor-types'),
-  'food-service-flooring/benefits': () =>
-    import('@/app/(hero)/food-service-flooring/_blocks/benefits'),
-  'food-service-flooring/cta': () =>
-    import('@/app/(hero)/food-service-flooring/_blocks/cta'),
-  'food-service-flooring/feature': () =>
-    import('@/app/(hero)/food-service-flooring/_blocks/feature'),
-  'food-service-flooring/gallery': () =>
-    import('@/app/(hero)/food-service-flooring/_blocks/gallery'),
-  'food-service-flooring/hero': () =>
-    import('@/app/(hero)/food-service-flooring/_blocks/hero'),
-  'food-service-flooring/kitchens': () =>
-    import('@/app/(hero)/food-service-flooring/_blocks/kitchens'),
-  'food-service-flooring/process': () =>
-    import('@/app/(hero)/food-service-flooring/_blocks/process'),
+  'food-service-flooring/benefits': () => import('@/app/(hero)/food-service-flooring/_blocks/benefits'),
+  'food-service-flooring/cta': () => import('@/app/(hero)/food-service-flooring/_blocks/cta'),
+  'food-service-flooring/feature': () => import('@/app/(hero)/food-service-flooring/_blocks/feature'),
+  'food-service-flooring/gallery': () => import('@/app/(hero)/food-service-flooring/_blocks/gallery'),
+  'food-service-flooring/hero': () => import('@/app/(hero)/food-service-flooring/_blocks/hero'),
+  'food-service-flooring/kitchens': () => import('@/app/(hero)/food-service-flooring/_blocks/kitchens'),
+  'food-service-flooring/process': () => import('@/app/(hero)/food-service-flooring/_blocks/process'),
   'gallery/gallery': () => import('@/app/(no-cta)/gallery/_blocks/gallery'),
-  hero: () => import('@/app/(hero)/_blocks/hero'),
-  'industrial-flooring/benefits': () =>
-    import('@/app/(hero)/industrial-flooring/_blocks/benefits'),
-  'industrial-flooring/contact': () =>
-    import('@/app/(hero)/industrial-flooring/_blocks/contact'),
-  'industrial-flooring/feature': () =>
-    import('@/app/(hero)/industrial-flooring/_blocks/feature'),
-  'industrial-flooring/floor-types': () =>
-    import('@/app/(hero)/industrial-flooring/_blocks/floor-types'),
-  'industrial-flooring/gallery': () =>
-    import('@/app/(hero)/industrial-flooring/_blocks/gallery'),
-  'industrial-flooring/hero': () =>
-    import('@/app/(hero)/industrial-flooring/_blocks/hero'),
-  'industrial-flooring/process': () =>
-    import('@/app/(hero)/industrial-flooring/_blocks/process'),
+  'hero': () => import('@/app/(hero)/_blocks/hero'),
+  'industrial-flooring/benefits': () => import('@/app/(hero)/industrial-flooring/_blocks/benefits'),
+  'industrial-flooring/contact': () => import('@/app/(hero)/industrial-flooring/_blocks/contact'),
+  'industrial-flooring/feature': () => import('@/app/(hero)/industrial-flooring/_blocks/feature'),
+  'industrial-flooring/floor-types': () => import('@/app/(hero)/industrial-flooring/_blocks/floor-types'),
+  'industrial-flooring/gallery': () => import('@/app/(hero)/industrial-flooring/_blocks/gallery'),
+  'industrial-flooring/hero': () => import('@/app/(hero)/industrial-flooring/_blocks/hero'),
+  'industrial-flooring/process': () => import('@/app/(hero)/industrial-flooring/_blocks/process'),
   'recent-projects': () => import('@/app/(hero)/_blocks/recent-projects'),
-  'residential-concrete-flooring/cta': () =>
-    import('@/app/(hero)/residential-concrete-flooring/_blocks/cta'),
-  'residential-concrete-flooring/feature': () =>
-    import('@/app/(hero)/residential-concrete-flooring/_blocks/feature'),
-  'residential-concrete-flooring/floor-types': () =>
-    import('@/app/(hero)/residential-concrete-flooring/_blocks/floor-types'),
-  'residential-concrete-flooring/gallery': () =>
-    import('@/app/(hero)/residential-concrete-flooring/_blocks/gallery'),
-  'residential-concrete-flooring/hero': () =>
-    import('@/app/(hero)/residential-concrete-flooring/_blocks/hero'),
-  'residential-concrete-flooring/process': () =>
-    import('@/app/(hero)/residential-concrete-flooring/_blocks/process'),
-  'residential-concrete-flooring/projects': () =>
-    import('@/app/(hero)/residential-concrete-flooring/_blocks/projects'),
-  'residential-concrete-flooring/testimonial': () =>
-    import('@/app/(hero)/residential-concrete-flooring/_blocks/testimonial'),
-  'schedule-free-estimate/header': () =>
-    import('@/app/(default)/schedule-free-estimate/_blocks/header'),
-  services: () => import('@/app/(hero)/_blocks/services'),
-  'specialties/header': () =>
-    import('@/app/(default)/specialties/_blocks/header'),
+  'residential-concrete-flooring/cta': () => import('@/app/(hero)/residential-concrete-flooring/_blocks/cta'),
+  'residential-concrete-flooring/feature': () => import('@/app/(hero)/residential-concrete-flooring/_blocks/feature'),
+  'residential-concrete-flooring/floor-types': () => import('@/app/(hero)/residential-concrete-flooring/_blocks/floor-types'),
+  'residential-concrete-flooring/gallery': () => import('@/app/(hero)/residential-concrete-flooring/_blocks/gallery'),
+  'residential-concrete-flooring/hero': () => import('@/app/(hero)/residential-concrete-flooring/_blocks/hero'),
+  'residential-concrete-flooring/process': () => import('@/app/(hero)/residential-concrete-flooring/_blocks/process'),
+  'residential-concrete-flooring/projects': () => import('@/app/(hero)/residential-concrete-flooring/_blocks/projects'),
+  'residential-concrete-flooring/testimonial': () => import('@/app/(hero)/residential-concrete-flooring/_blocks/testimonial'),
+  'schedule-free-estimate/header': () => import('@/app/(default)/schedule-free-estimate/_blocks/header'),
+  'services': () => import('@/app/(hero)/_blocks/services'),
+  'specialties/header': () => import('@/app/(default)/specialties/_blocks/header'),
 }
 
 export const blockSlugs = Object.keys(blockImports)

@@ -9,6 +9,7 @@
 - Rebrand the demo to the fictional Bedrock Flooring; `NEXT_PUBLIC_CALENDLY_URL` sets the booking link
 - Rewrite all copy; replace all photos and videos with AI-generated demo images
 - Remove the HLS video player and video posts; video sections are now photo features
+- Home page hero is a looping AI-generated video
 
 ## 2026-10-12
 

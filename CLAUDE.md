@@ -2,7 +2,7 @@
 
 Epsom is a Next.js template for concrete floor contractors and specialty flooring companies, built on the Gallop Canon architecture system. Canon provides ESLint rules (`@gallop.software/canon/eslint`) and an audit CLI (`gallop audit`) that enforce the patterns below. The `CLAUDE.md` file is the canonical AI reference — there is no auto-generation pipeline.
 
-"Bedrock Flooring" of Red Mesa, Texas is fictional demo content, including its clients, customers, testimonials, phone and email. See **Rebranding** below. Photos are AI-generated demo images: replace them with your own. Every block is built from a theme's exact computed styles, so some class strings look unusual (`h-[50.656px]`, `px-[calc(min(90%,640px)*0.05)]`); keep them unless the design is changing.
+"Bedrock Flooring" of Red Mesa, Texas is fictional demo content, including its clients, customers, testimonials, phone and email. See **Rebranding** below. Photos and the home hero video are AI-generated demo media: replace them with your own. Every block is built from a theme's exact computed styles, so some class strings look unusual (`h-[50.656px]`, `px-[calc(min(90%,640px)*0.05)]`); keep them unless the design is changing.
 
 ## Rebranding: where company content lives
 
@@ -21,7 +21,7 @@ Company identity is not centralized in one config file; these are the places it 
 | Author name and archive | `src/components/post-hero.tsx`, `post-archive.tsx`, `src/utils/structured-data.ts`, `src/app/sitemap.ts`, `src/app/(default)/author/bedrock-flooring/` |
 | Page copy and SEO titles | each route's `page.tsx` and `_blocks/` |
 | Blog posts | `src/app/(post)/` (then `npm run blog`) |
-| Images | AI-generated demo photos in Gallop Studio (`/content/`, `/content/circles/`, `/heroes/`): upload your own with `gallop studio upload`, then update the paths |
+| Images and video | AI-generated demo media in Gallop Studio (`/content/`, `/content/circles/`, `/heroes/`, including `/heroes/hero-home.mp4`): upload your own with `gallop studio upload`, then update the paths |
 
 ## Auto-Generated Files — Never Edit Manually
 
@@ -202,7 +202,7 @@ All tokens live in `src/styles/tailwind.css` `@theme`.
 ## Component Quick Reference
 
 - **Primitives**: `Container` (content/wide column widths), `Columns` (plain `<div>` children keep the last child's bottom margin), `Section` (full-width band: background image or pattern, parallax, overlay), `Heading`, `Paragraph`, `Button`/`Buttons` (offset border; `textColor` for fills), `Quote` (+ `size="large"`), `List`, `Spacer`, `Image` (Studio-backed `<img>` with srcset), `Icon` (Iconify)
-- **Block families**: `hero-banner` (+ `typewriter-heading`, downLink), `image-filter`, `image-feature`, `icon-cards`, `sticky-scroll`, `estimate-cta`, `elegant-heading`, `post-cards`, `logo-gallery` (3 or 5 per row, optional caption), `showcase-gallery`, `process-steps`, `calendly-button` (optional `href` fallback)
+- **Block families**: `hero-banner` (photo or looping MP4 background; + `typewriter-heading`, downLink), `image-filter`, `image-feature`, `icon-cards`, `sticky-scroll`, `estimate-cta`, `elegant-heading`, `post-cards`, `logo-gallery` (3 or 5 per row, optional caption), `showcase-gallery`, `process-steps`, `calendly-button` (optional `href` fallback)
 - **Shared sections**: `our-process` (the four steps), `projects-band` (recent posts of a category), `brands` (client logos)
 - **Page parts**: `page-header` (white title band), `details` (FAQ accordion row), `team-grid` (ready for your team's photos; not on a page in the demo), `contact-icons`
 - **Blog**: `post-hero`, `post-body`, `post-gallery`, `post-archive` (cards + pagination)

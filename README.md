@@ -1,10 +1,10 @@
 # Epsom
 
-[![Epsom Theme](public/images/screenshot.jpg)](https://epsom-cloudflare.gallop.software/)
+[![Epsom Theme](public/images/screenshot.jpg)](https://epsom.gallop.software/)
 
 A bold, AI-built website template for concrete floor contractors and specialty flooring companies. Show off your services and project galleries, take free-estimate requests and bookings, look more professional than the competition, and rank #1 on Google, all without a CMS.
 
-**☁️ Demo:** [epsom-cloudflare.gallop.software](https://epsom-cloudflare.gallop.software/)  
+**☁️ Demo:** [epsom.gallop.software](https://epsom.gallop.software/)  
 **🎨 Template:** [gallop.software/templates](https://gallop.software/templates)  
 **📦 Repository:** [github.com/gallop-software/epsom](https://github.com/gallop-software/epsom)  
 **🏷️ Category:** Flooring Contractor Template
@@ -286,7 +286,7 @@ Connect with other Gallop users on Discord or Slack. Share your progress, swap A
 
 ## Rebranding
 
-"Bedrock Flooring" of Red Mesa, Texas is fictional demo content, including its clients, customers, testimonials, phone and email. Photos are AI-generated demo images. Replace them, and the copy, with your own before you publish.
+"Bedrock Flooring" of Red Mesa, Texas is fictional demo content, including its clients, customers, testimonials, phone and email. Photos and the home hero video are AI-generated demo media. Replace them, and the copy, with your own before you publish.
 
 | What | Where |
 |---|---|
@@ -361,7 +361,7 @@ Congratulations! Your site is now live to the world. Share your new URL and star
 
 ### Deploy to Cloudflare Workers
 
-Epsom runs on Cloudflare Workers via the [OpenNext](https://opennext.js.org/cloudflare) adapter. See it live: **[epsom-cloudflare.gallop.software](https://epsom-cloudflare.gallop.software/)**.
+Epsom runs on Cloudflare Workers via the [OpenNext](https://opennext.js.org/cloudflare) adapter. See it live: **[epsom.gallop.software](https://epsom.gallop.software/)**.
 
 **Step 1 — Connect Cloudflare in the Publish view** (`Cmd+6`). Once saved, the editor puts your Cloudflare credentials (`CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`) into the terminal environment and makes them available to the AI chat. Wrangler reads those variables automatically, which means **nobody has to run `npx wrangler login`, and no token is ever pasted into a file.**
 

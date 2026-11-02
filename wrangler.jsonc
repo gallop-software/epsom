@@ -7,7 +7,7 @@
   // Serve only from the custom domain. Leaving workers.dev on would expose a
   // second public host with identical content.
   "workers_dev": false,
-  // The epsom-cloudflare.gallop.software custom domain is attached to this
+  // The epsom.gallop.software custom domain is attached to this
   // Worker at the account level (Workers > Domains), as on the other Gallop
   // templates. Your own site: add it under Settings > Domains & Routes, or list
   // it here as { "pattern": "yourdomain.com", "custom_domain": true } in "routes".
