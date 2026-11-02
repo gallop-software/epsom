@@ -4,19 +4,16 @@ import { PlayButton } from '@/components/play-button'
 
 export default function Hero() {
   return (
-    <HeroVideo
-      video="/videos/placeholder-loop.mp4"
-      overlayColor="bg-contrast-light"
-    >
+    <HeroVideo video="/videos/placeholder-loop.mp4">
       <Heading
         as="h1"
         color="text-overlay-text"
         textAlign="text-center"
         className="mx-auto max-w-[750px]"
       >
-        Pickleball Court Builders
+        Floors for Industrial Spaces
       </Heading>
-      <PlayButton href="#pickleball-video" />
+      <PlayButton href="#industrial-video" />
     </HeroVideo>
   )
 }

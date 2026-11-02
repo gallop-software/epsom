@@ -198,12 +198,12 @@ export function Footer({
             Copyright &copy;&nbsp;{DateTime.now().year} &middot; All Rights
             Reserved &middot; crafted by{' '}
             <a
-              href="https://webplant.media"
+              href="https://gallop.software"
               target="_blank"
               rel="noreferrer"
               className="underline"
             >
-              webplant.media
+              gallop.software
             </a>
           </Paragraph>
         </div>

@@ -13,12 +13,12 @@ import {
 
 const pattern = '/uploads/2021/02/dot-wave-sec-1.svg'
 
-export default function Courts() {
+export default function Kitchens() {
   return (
     <StickyScroll>
       <StickyImage
         src="/placeholder.png"
-        alt="Pickleball Court Builders"
+        alt="Food Service Floor Systems"
       />
       <ScrollPanel
         highlight
@@ -29,23 +29,23 @@ export default function Courts() {
           as="h2"
           color="text-overlay-text"
         >
-          Pickleball Court Builders
+          Food Service Floor Systems
         </Heading>
         <Paragraph
           fontSize="text-lg"
           color="text-overlay-text"
         >
-          Pickleball keeps growing, and Bedrock can help your facility keep up
-          with courts built for steady, regular use. We lay tough acrylic
-          surfaces that ask for little upkeep and play well inside a gym or out
-          in the open air. Players get a predictable bounce and sure footing,
-          and you get a court that is simple to look after. Whether your group
-          plays for fun or keeps score in league games, we can set up the colors
-          and surface to suit how you play.
+          Food service work is hard on a slab, and Bedrock can help your kitchen
+          keep up with floors built for steady, daily use. We lay tough resin
+          surfaces that ask for little upkeep and work well in a restaurant, a
+          prep room or a walk-in cooler. Cooks get sure footing on a textured
+          surface, and you get a floor that is simple to look after. Whether you
+          run a small cafe or a busy brewery, we can set up the colors and
+          texture to suit how you work.
         </Paragraph>
         <Buttons>
           <Button
-            href="#our-courts"
+            href="#our-kitchens"
             textColor="text-contrast"
           >
             See the Features
@@ -55,39 +55,40 @@ export default function Courts() {
 
       <StickyImage
         src="/placeholder.png"
-        alt="Pickleball Court Builders"
+        alt="Food Service Floor Systems"
       />
       <ScrollPanel>
         <Heading
           as="h2"
-          id="our-courts"
+          id="our-kitchens"
         >
-          Every court we build is…
+          Every floor we build is…
         </Heading>
         <List spacing="medium">
           <Li>
-            Made to take regular, heavy play and keep its good looks for the
+            Made to take daily kitchen traffic and keep its good looks for the
             long haul.
           </Li>
+          <Li>Finished with a texture that holds its grip under quick feet.</Li>
           <Li>
-            Finished with a texture that holds its grip under quick feet.
+            Simple to look after, with routine mopping and washdowns at closing
+            time.
           </Li>
           <Li>
-            Simple to look after, with far less upkeep than a lawn or clay
-            surface.
+            A good fit for every room, from the dining area to the walk-in
+            cooler and dock.
           </Li>
           <Li>
-            A good fit for every player, from first-timers to seasoned league
-            regulars.
+            Surfaced to feel steady and sure underfoot through a long, busy
+            shift.
           </Li>
           <Li>
-            Surfaced with a little cushion that feels easier on knees and
-            ankles.
+            Set up the way you want to work, with a surface tuned to your
+            kitchen.
           </Li>
           <Li>
-            Set up the way you want to play, with a surface tuned to your group.
+            Coated with resin products chosen for serious, regular kitchen use.
           </Li>
-          <Li>Coated with acrylic products chosen for serious, regular play.</Li>
         </List>
         <Spacer height="h-7.5" />
         <Buttons>
@@ -99,23 +100,23 @@ export default function Courts() {
 
       <StickyImage
         src="/placeholder.png"
-        alt="Finished Pickleball Court"
+        alt="Finished Food Service Floor"
       />
       <ScrollPanel
         highlight
         bgColor="bg-accent"
         pattern={pattern}
       >
-        <Heading as="h2">Tough Acrylic Courts</Heading>
+        <Heading as="h2">Tough Kitchen Floors</Heading>
         <Paragraph
           fontSize="text-xl"
           color="text-contrast-light"
         >
-          A Bedrock court looks as good as it plays, with a clean surface that
-          feels steady and comfortable underfoot. Pick bright colors and line
-          layouts that suit your gym, park or backyard and make the space your
-          own. Then step out on a court that is ready for regular games and open
-          to new players and old hands alike.
+          A Bedrock floor looks as good as it works, with a clean surface that
+          feels steady and comfortable underfoot. Pick bright colors and
+          finishes that suit your restaurant, kitchen or brewery and make the
+          space your own. Then step out on a floor that is ready for the regular
+          rush and open to new cooks and old hands alike.
         </Paragraph>
       </ScrollPanel>
     </StickyScroll>

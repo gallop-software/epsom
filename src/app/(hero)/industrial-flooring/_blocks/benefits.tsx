@@ -11,13 +11,13 @@ export default function Benefits() {
       <IconCards>
         <IconCard
           image="/placeholder.png"
-          title="Made For Hard Hangar Use"
+          title="Made For Hard Plant Use"
         >
-          A hangar floor takes rolling loads, tug traffic and dropped tools
-          every working day, so it has to earn its place. We build each system
-          around how your hangar actually runs, from the traffic it sees to the
-          work done on it, and the result looks far better than a bare gray
-          slab.
+          An industrial floor takes forklift traffic, pallet loads and dropped
+          tools every working day, so it has to earn its place. We build each
+          system around how your plant actually runs, from the traffic it sees
+          to the work done on it, and the result looks far better than a bare
+          gray slab.
         </IconCard>
         <IconCard
           image="/placeholder.png"
@@ -25,13 +25,13 @@ export default function Benefits() {
         >
           An epoxy-chip floor layers tough industrial coatings with decorative
           flakes in the colors you pick. Those layers shield the slab below and
-          give the hangar a finished look you can be proud of.
+          give the building a finished look you can be proud of.
         </IconCard>
         <IconCard
           image="/placeholder.png"
           title="Stands Up To Fluids"
         >
-          Hangars see oil, fuel, hydraulic fluid and cleaning solvents, and a
+          Plants and shops see oil, coolant, hydraulic fluid and solvents, and a
           bare slab soaks them up. Our coatings are chosen to shrug off those
           spills, which keeps the space practical for the crew and looking sharp
           whenever a client or owner walks through the door.
@@ -53,7 +53,7 @@ export default function Benefits() {
             href="#form"
             color="accent2"
           >
-            Ready to Upgrade Your Hangar?
+            Ready to Upgrade Your Floor?
           </Button>
           <Button
             href="#more"

@@ -31,8 +31,8 @@ export default function Hero() {
           'Commercial',
           'Stained Concrete',
           'Warehouse',
-          'Aviation',
-          'Sports Court',
+          'Industrial',
+          'Food Service',
         ]}
         after="Flooring"
         startDelay={1500}
@@ -51,12 +51,12 @@ export default function Hero() {
           Commercial Floors
         </Button>
         <Button
-          href="/aviation-flooring/"
+          href="/industrial-flooring/"
           variant="outline"
           color="body"
           offset="light"
         >
-          Aviation Floors
+          Industrial Floors
         </Button>
       </Buttons>
       <PlayButton href="#commercial-video" />

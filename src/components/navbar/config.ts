@@ -19,8 +19,8 @@ export const mainMenu: MenuItem[] = [
   { label: 'Home', href: '/' },
   { label: 'Residential', href: '/residential-concrete-flooring/' },
   { label: 'Commercial', href: '/commercial-concrete-flooring/' },
-  { label: 'Aviation', href: '/aviation-flooring/' },
-  { label: 'Pickleball', href: '/pickleball-court-installers/' },
+  { label: 'Industrial', href: '/industrial-flooring/' },
+  { label: 'Food Service', href: '/food-service-flooring/' },
   { label: 'About', href: '/about/' },
   { label: 'Contact', href: '/contact/', highlight: true },
 ]

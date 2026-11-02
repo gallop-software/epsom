@@ -58,15 +58,15 @@ export default function Videos() {
             ),
           },
           {
-            id: 'aviation-video',
-            label: 'Aviation',
+            id: 'industrial-video',
+            label: 'Industrial',
             src: '/videos/placeholder-video-hls/master.m3u8',
             poster: '/placeholder.png',
-            title: 'A Look at Bedrock Aviation Floors',
+            title: 'A Look at Bedrock Industrial Floors',
             children: (
               <Intro
-                title="Floors for Flight"
-                subtitle="Tough Floor Systems Made for Hangars and Aviation Work"
+                title="Floors for Industry"
+                subtitle="Tough Floor Systems Made for Plants and Warehouse Work"
               />
             ),
           },

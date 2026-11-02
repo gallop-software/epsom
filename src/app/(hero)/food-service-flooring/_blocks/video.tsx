@@ -9,13 +9,13 @@ export default function Video() {
       id="video"
     >
       <div
-        id="pickleball-video"
+        id="food-service-video"
         className="mt-25 md:mt-30"
       >
         <VideoFeature
           src="/videos/placeholder-video-hls/master.m3u8"
           poster="/placeholder.png"
-          title="Bedrock Flooring Court Building Video"
+          title="Bedrock Flooring Food Service Floors Video"
           pattern="/uploads/2024/02/dots.png"
         >
           <Heading
@@ -23,14 +23,14 @@ export default function Video() {
             textAlign="max-md:text-center"
             className="large-anchor-offset"
           >
-            Sports Courts Built Right Here in Red Mesa
+            Kitchen Floors Built Right Here in Red Mesa
           </Heading>
           <Heading
             as="h4"
             color="text-accent2"
             textAlign="max-md:text-center"
           >
-            Courts for every game
+            Floors for every kitchen
           </Heading>
         </VideoFeature>
       </div>

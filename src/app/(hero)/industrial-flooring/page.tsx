@@ -23,10 +23,10 @@ function Content() {
 }
 
 const metadata: PageMetadata = {
-  title: 'Aircraft Hangar Floor Systems - Bedrock Flooring',
-  path: '/aviation-flooring/',
+  title: 'Industrial Floor Systems - Bedrock Flooring',
+  path: '/industrial-flooring/',
   description:
-    'Bedrock Flooring builds hangar floors that handle aircraft traffic and shop work while keeping a clean, sharp look.',
+    'Bedrock Flooring builds industrial floors that handle forklift traffic and shop work while keeping a clean, sharp look.',
   publishDate: '2024-01-12T19:32:39+00:00',
   modifiedDate: '2024-04-05T21:52:40+00:00',
   openGraph: {
@@ -34,12 +34,12 @@ const metadata: PageMetadata = {
     image: {
       url: '/placeholder.png',
       type: 'image/png',
-      caption: 'Aircraft Hangar Floors',
+      caption: 'Industrial Floor Systems',
     },
   },
   breadcrumbs: [
     { name: 'Home', href: '/' },
-    { name: 'Aircraft Hangar Floors', href: '/aviation-flooring/' },
+    { name: 'Industrial Floor Systems', href: '/industrial-flooring/' },
   ],
 }
 

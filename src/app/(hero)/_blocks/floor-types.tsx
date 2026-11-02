@@ -141,17 +141,17 @@ export default function FloorTypes() {
           styleAs="h1"
           textAlign="text-left"
         >
-          Floors for Aircraft Hangars
+          Floors for Industrial Spaces
         </Heading>
         <Spacer height="h-14" />
         <Heading as="h2">More to come…</Heading>
         <Spacer height="h-14" />
         <Buttons>
           <Button
-            href="/aviation-flooring/"
+            href="/industrial-flooring/"
             color="body"
           >
-            Read About Our Aviation Floors
+            Read About Our Industrial Floors
           </Button>
         </Buttons>
       </ScrollPanel>

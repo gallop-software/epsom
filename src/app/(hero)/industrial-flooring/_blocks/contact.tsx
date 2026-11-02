@@ -24,14 +24,14 @@ export default function Contact() {
         color="text-overlay-text"
         textAlign="text-center"
       >
-        Talk to Our Hangar Floor Crew
+        Talk to Our Industrial Floor Crew
       </Heading>
       <Paragraph
         fontSize="text-lg"
         textAlign="text-center"
         margin="mb-0"
       >
-        Bedrock Flooring works out of Red Mesa, Texas, and we treat every hangar
+        Bedrock Flooring works out of Red Mesa, Texas, and we treat every plant
         job like our name is on the slab. Tell us about your space and how you
         use it, and we will walk you through the floor options that fit. We show
         up when we say we will, keep the work area tidy, answer questions
@@ -43,7 +43,7 @@ export default function Contact() {
         <Form tone="dark">
           <FormInput
             name="emailSubject"
-            defaultValue="Aviation Flooring Form"
+            defaultValue="Industrial Flooring Form"
             hidden
           />
           <FormName required />
@@ -61,19 +61,24 @@ export default function Contact() {
             autoComplete="email"
           />
           <FormInput
-            name="airport"
-            label="Airport Code"
+            name="facilityCity"
+            label="Facility City"
             required
           />
           <FormInput
-            name="hangarSize"
-            label="Hangar Footprint"
+            name="facilitySize"
+            label="Facility Footprint"
             required
           />
           <FormSelect
-            name="hangarUse"
+            name="facilityUse"
             label="How It Is Used"
-            options={['Private', 'FBO Tenant', 'Maintenance', 'Something Else']}
+            options={[
+              'Warehouse',
+              'Manufacturing',
+              'Maintenance',
+              'Something Else',
+            ]}
             required
           />
           <FormButton

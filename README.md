@@ -615,7 +615,7 @@ epsom/
 │   │   │   ├── page.tsx       # Home page
 │   │   │   ├── _blocks/       # Home page blocks
 │   │   │   ├── about/
-│   │   │   └── .../           # commercial, residential, aviation and pickleball pages
+│   │   │   └── .../           # commercial, residential, industrial and food service pages
 │   │   ├── (no-cta)/          # No photo strip above the footer (gallery)
 │   │   ├── (post)/            # Blog posts at the site root
 │   │   │   ├── layout.tsx

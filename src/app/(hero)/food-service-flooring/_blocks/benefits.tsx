@@ -10,29 +10,29 @@ export default function Benefits() {
       <IconCards padding="px-col-10">
         <IconCard
           image="/placeholder.png"
-          title="True, even ball response"
+          title="Textures that suit the work"
         >
-          We can tune the acrylic blend and surface grit to speed up or slow
-          down the ball, so the court plays the way your group likes it, whether
-          that means fast rallies or relaxed weekend games.
+          We can tune the resin blend and surface grit to add more grip or ease
+          it back, so the floor works the way your kitchen runs, whether that
+          means a busy cook line or a quiet prep room.
         </IconCard>
         <IconCard
           image="/placeholder.png"
           title="Comfort and sure footing"
         >
-          Players get steady, predictable traction and a surface with a bit of
-          give that feels kinder to knees and ankles. We build these courts with
-          comfort and safe movement in mind, so your group can stay out and keep
-          playing a little longer.
+          Staff get steady, predictable traction on a floor chosen with wet
+          shoes and long shifts in mind. We build these floors with comfort and
+          safe movement in mind, so your crew can get through a busy service
+          with less to worry about.
         </IconCard>
         <IconCard
           image="/placeholder.png"
-          title="A Court Built To Stay"
+          title="A Floor Built To Stay"
         >
-          Every Bedrock court gets an acrylic coating that forms a firm, even,
-          hard-working surface for play. We apply it with care so it stands up
-          to foot traffic, sun and storms, and the court keeps looking sharp
-          from one season to the next.
+          Every Bedrock kitchen floor gets a resin coating that forms a firm,
+          even, hard-working surface for service. We apply it with care so it
+          stands up to foot traffic, hot water and cleaners, and the floor keeps
+          looking sharp year to year.
         </IconCard>
       </IconCards>
       <Spacer height="h-12.5" />

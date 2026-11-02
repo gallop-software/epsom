@@ -4,16 +4,19 @@ import { PlayButton } from '@/components/play-button'
 
 export default function Hero() {
   return (
-    <HeroVideo video="/videos/placeholder-loop.mp4">
+    <HeroVideo
+      video="/videos/placeholder-loop.mp4"
+      overlayColor="bg-contrast-light"
+    >
       <Heading
         as="h1"
         color="text-overlay-text"
         textAlign="text-center"
         className="mx-auto max-w-[750px]"
       >
-        Floors for Aircraft Hangars
+        Food Service Floor Systems
       </Heading>
-      <PlayButton href="#aviation-video" />
+      <PlayButton href="#food-service-video" />
     </HeroVideo>
   )
 }

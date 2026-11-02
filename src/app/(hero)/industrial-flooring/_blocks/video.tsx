@@ -9,13 +9,13 @@ export default function Video() {
       id="video"
     >
       <div
-        id="aviation-video"
+        id="industrial-video"
         className="mt-25 md:mt-30"
       >
         <VideoFeature
           src="/videos/placeholder-video-hls/master.m3u8"
           poster="/placeholder.png"
-          title="Bedrock Flooring Hangar Floors Video"
+          title="Bedrock Flooring Industrial Floors Video"
           pattern="/uploads/2024/02/dots.png"
         >
           <Heading
@@ -23,14 +23,14 @@ export default function Video() {
             textAlign="max-md:text-center"
             className="large-anchor-offset"
           >
-            Hangar Floor Coatings From Your Red Mesa Crew
+            Industrial Floor Coatings From Your Red Mesa Crew
           </Heading>
           <Heading
             as="h4"
             color="text-accent2"
             textAlign="max-md:text-center"
           >
-            TOUGH, GOOD-LOOKING FLOORS MADE FOR AIRCRAFT SPACES
+            TOUGH, GOOD-LOOKING FLOORS MADE FOR WORKING PLANTS
           </Heading>
         </VideoFeature>
       </div>
