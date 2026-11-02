@@ -23,14 +23,14 @@ export default function Hero() {
       <TypewriterHeading
         word="Bedrock"
         words={[
-          'Diamond-Polished',
+          'Polished',
           'Garage Epoxy',
           'Epoxy-Chip',
           'Resinous',
-          'Sealed Concrete',
+          'Sealed',
           'Retail Store',
           'Commercial',
-          'Stained Concrete',
+          'Stained',
           'Warehouse',
           'Industrial',
           'Food Service',
