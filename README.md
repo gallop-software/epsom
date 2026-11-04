@@ -35,6 +35,7 @@ Just chat with AI inside our Gallop AI Editor using Gallop templates, and you wi
 - 🎯 **SEO and AI optimized** with structured data
 - 🤖 **AI-friendly** codebase structure
 - 🛡️ **Gallop Canon** - AI guardrails for consistent, reliable code
+- 📈 **Admin toolbar** for signed-in people: page views and FlowTrace, which reports each visit that calls, emails or sends a form (Cloudflare only), plus an optional demo with made-up data
 - ☁️ **Deploys to Cloudflare Workers or Vercel**
 
 ---
@@ -538,6 +539,21 @@ Workers is not Node.js, and two limits shape how you write code for it:
 | `npm run cf:typegen` | Regenerate `cloudflare-env.d.ts` from your bindings |
 
 ---
+
+### Admin Toolbar, Analytics and FlowTrace
+
+On Cloudflare the site counts its own page views and reports each visit that converts. Someone signed in gets a toolbar across the top of the site. On Vercel the site works, but none of this does.
+
+Set it up once, using your own account:
+
+1. Create the database with `npx wrangler d1 create epsom`, and put its id in `wrangler.jsonc` (the one committed is the Epsom demo's). If you name it differently, change the `db:migrate` scripts too.
+2. Enable Cloudflare Email Sending on a subdomain of yours, and put it in `.env.production` as `EMAIL_DOMAIN`, with `EMAIL_TO`, `EMAIL_FROM_NAME` and `EMAIL_DEV_TO`. Mail goes out from `contact@` that subdomain.
+3. In `.env.production`, set `BETTER_AUTH_SECRET` and `CRON_SECRET` (each from `openssl rand -base64 32`), `AUTH_URL` (your live address) and `AUTH_ALLOWED_EMAILS` (who can sign in and gets the FlowTrace emails).
+4. Run `npm run db:migrate`, `npm run cf:secrets`, `npm run cf:deploy`.
+
+Sign in from the **Login** link in the footer, with a code or a link sent by email. Locally run `npm run db:migrate:local` first; the code is printed in the dev server's log and no mail goes out.
+
+**The demo.** `NEXT_PUBLIC_ADMIN_DEMO=true` lets anyone try the toolbar: a **Try the admin toolbar** button opens it with a **Demo** label. Every number and visit is made up in the visitor's browser (`src/utils/demo-api.ts`) from your real pages and posts; nothing is saved and the real routes are never called. The one real thing it does is **Send me a test report**, which emails a report on a made-up visit to an address the visitor gives: once per address, five a day per visitor, forty a day in all. It is for the template's showcase: keep it `false` on your own site, where it shows visitors nothing.
 
 ## About Gallop Templates
 

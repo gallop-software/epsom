@@ -34,7 +34,7 @@ export function Navbar({ transparent = false }: { transparent?: boolean }) {
     <header
       className={clsx(
         'site-header relative z-99 min-h-header w-full bg-body transition-all duration-400',
-        'lg:fixed lg:top-0 lg:h-header',
+        'lg:fixed lg:top-(--admin-bar) lg:h-header',
         open && 'shadow-header',
         sticky
           ? 'lg:bg-body lg:shadow-header'

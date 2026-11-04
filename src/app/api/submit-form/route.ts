@@ -1,6 +1,6 @@
 import {
   sendConfirmation,
-  sendEmail,
+  sendFormEmail,
   type EmailAttachment,
 } from '@/utils/send-email'
 import { studioUrl } from '@/utils/studio-helpers'
@@ -235,7 +235,7 @@ export async function POST(req: Request) {
     return reject('Attachments are too large.')
   }
 
-  const ok = await sendEmail({
+  const ok = await sendFormEmail({
     subject,
     html,
     ...(email && {
@@ -248,8 +248,8 @@ export async function POST(req: Request) {
   if (ok && email && CONFIRMED_FORMS.has(emailSubjectValue)) {
     const greeting = escapeHtml(first || displayName)
     await sendConfirmation({
-      to: displayName ? `${displayName} <${email}>` : email,
-      subject: `${process.env.MAILGUN_FROM_NAME} Contact Confirmation${displayName ? `: ${displayName}` : ''}`,
+      to: email,
+      subject: `${process.env.EMAIL_FROM_NAME || process.env.MAILGUN_FROM_NAME} Contact Confirmation${displayName ? `: ${displayName}` : ''}`,
       html: renderEmailHtml(
         displayPayload,
         `<p class="row">Hi${greeting ? ` ${greeting}` : ''},</p><p class="row">Thanks for getting in touch. We have your message, and someone from our team will reply soon.</p>`

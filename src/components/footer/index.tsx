@@ -13,6 +13,7 @@ import { Image } from '@/components/image'
 import { List, Li } from '@/components/list'
 import { Paragraph } from '@/components/paragraph'
 import { recentPosts } from '@/utils/blog'
+import { FooterAuthLink } from './auth-link'
 
 const widget =
   'mb-15 flow-root lg:mb-10 lg:w-[calc(25%_+_20px)] lg:shrink-0 lg:px-10 [&_p:last-child]:mb-0'
@@ -204,7 +205,8 @@ export function Footer({
               className="underline"
             >
               gallop.software
-            </a>
+            </a>{' '}
+            &middot; <FooterAuthLink />
           </Paragraph>
         </div>
       </div>

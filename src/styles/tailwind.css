@@ -227,3 +227,129 @@ html:not(.ready) *::before,
 html:not(.ready) *::after {
   transition: none !important;
 }
+
+/* The admin toolbar (src/components/admin-bar.tsx), fixed across the top for
+   someone signed in, as medicine-opera's. The browser sets data-admin-bar on
+   <html> once it knows, and the page moves down to make room; the HTML itself
+   is the same for everyone. A margin rather than medicine-opera's padding,
+   with body positioned, so the hero page's absolutely placed navbar moves
+   down too. */
+html {
+  --admin-bar: 0px;
+  /* The system's own font, for what only signed-in people see: the
+     dashboard and sign-in (.admin-theme) and the admin toolbar */
+  --admin-font:
+    ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+}
+/* The admin toolbar's height, WordPress's: 46px on a phone, 32px from md up */
+html[data-admin-bar] {
+  --admin-bar: 46px;
+}
+@media (width >= 48rem) {
+  html[data-admin-bar] {
+    --admin-bar: 32px;
+  }
+}
+html[data-admin-bar] body {
+  position: relative;
+  margin-top: var(--admin-bar);
+}
+
+/*
+ * The admin toolbar's look (src/components/admin-bar.tsx): WordPress's admin
+ * bar. Dark grey with light text, and blue on hover, whatever the site's own
+ * colours. The site's tokens are redefined here so the bar is written against
+ * them like everything else.
+ */
+.admin-bar-theme {
+  --font-body: var(--admin-font);
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1;
+
+  --color-body: #1d2327;
+  --color-body-light: #2c3338;
+  --color-body-dark: #101517;
+  --color-contrast: #f0f0f1;
+  --color-contrast-light: #a7aaad;
+  --color-contrast-dark: #ffffff;
+  --color-accent: #72aee6;
+  --color-accent-light: #9ec2e6;
+  --color-accent-dark: #4f94d4;
+  --color-accent-contrast: #1d2327;
+
+  color-scheme: dark;
+  background-color: var(--color-body);
+  color: var(--color-contrast);
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+/*
+ * The dashboard and sign-in pages ((admin) route group): a plain, neutral
+ * look of their own, the same on every site, whatever the site's colours and
+ * fonts. The site's tokens are redefined inside .admin-theme, so components
+ * written against them (Button, Heading, Paragraph) follow without change.
+ * The font utilities resolve their variables at the root, so they are
+ * redefined directly rather than through the *-family variables.
+ */
+.admin-theme {
+  --font-body: var(--admin-font);
+  --font-heading: var(--admin-font);
+  --font-heading2: var(--admin-font);
+  --font-heading3: var(--admin-font);
+  --font-accent: var(--admin-font);
+
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.4;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.45;
+  --text-base: 1rem;
+  --text-base--line-height: 1.5;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.5;
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 1.4;
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: 1.3;
+  --text-3xl: 1.75rem;
+  --text-3xl--line-height: 1.25;
+
+  --color-body: #f4f4f5;
+  --color-body-light: #ffffff;
+  --color-body-dark: #e4e4e7;
+  --color-body2: #e9e9ec;
+  --color-contrast: #18181b;
+  --color-contrast-light: #71717a;
+  --color-contrast-dark: #18181b;
+  --color-accent: #2563eb;
+  --color-accent-light: #60a5fa;
+  --color-accent-dark: #1d4ed8;
+  --color-accent-contrast: #ffffff;
+  --color-accent4: #ffffff;
+  --color-accent4-light: #a1a1aa;
+  --color-accent4-dark: #e4e4e7;
+
+  color-scheme: light;
+  background-color: var(--color-body);
+  color: var(--color-contrast);
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+/* This site's headings are uppercase and widely spaced; the admin screens' are not. */
+.admin-theme :is(h1, h2, h3, h4, h5, h6) {
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+@layer utilities {
+  /* The admin toolbar scrolls sideways as one row on a phone */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}

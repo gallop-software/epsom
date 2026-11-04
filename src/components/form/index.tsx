@@ -3,6 +3,7 @@
 import { Turnstile, type TurnstileInstance } from '@marsidev/react-turnstile'
 import React, { Children, isValidElement, useRef, useState } from 'react'
 import { clsx } from 'clsx'
+import { trackConversion } from '@/hooks/flow-trace'
 
 // Sub-components
 import { FormInput } from './form-input'
@@ -142,6 +143,15 @@ function Form({
     turnstile.current?.reset()
 
     if (response.ok) {
+      // Tracking never stands between the visitor and the sent message
+      try {
+        trackConversion(
+          'form',
+          typeof obj.emailSubject?.value === 'string'
+            ? obj.emailSubject.value
+            : 'Form'
+        )
+      } catch {}
       form.reset()
       form.dispatchEvent(new Event('form-cleared', { bubbles: true }))
     } else {

@@ -9,7 +9,8 @@ type PageSlugItem = {
 }
 
 // (post): posts are listed from _data/_blog.json (getPostSlugs)
-const BLOCKED_ROUTE_GROUPS = ['(demo)', '(post)']
+// (admin): /login and /dashboard only redirect, and are not for search
+const BLOCKED_ROUTE_GROUPS = ['(demo)', '(post)', '(admin)']
 const EXCLUDED_FOLDERS = [
   'api',
   'post', // Posts are handled separately

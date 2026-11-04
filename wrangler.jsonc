@@ -1,6 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "main": ".open-next/worker.js",
+  // worker-entry.ts wraps .open-next/worker.js and adds the scheduled handler.
+  "main": "worker-entry.ts",
   "name": "epsom",
   "compatibility_date": "2026-07-19",
   "compatibility_flags": ["nodejs_compat"],
@@ -11,6 +12,20 @@
   // Worker at the account level (Workers > Domains), as on the other Gallop
   // templates. Your own site: add it under Settings > Domains & Routes, or list
   // it here as { "pattern": "yourdomain.com", "custom_domain": true } in "routes".
+  // Form mail and sign-in codes when EMAIL_DOMAIN is set (src/utils/send-email.ts).
+  "send_email": [{ "name": "EMAIL" }],
+  // Sign-in, page views and FlowTrace. Schema in _scripts/migrations; apply with
+  // `npm run db:migrate`. (No "remote": it makes local dev ask for an account.)
+  "d1_databases": [
+    {
+      "binding": "AUTH_DB",
+      "database_name": "epsom",
+      "database_id": "28ec0120-1ded-4e0d-9c63-2100961a00ee",
+      "migrations_dir": "_scripts/migrations",
+    },
+  ],
+  // Every ten minutes: FlowTrace's unsent reports and its summaries (worker-entry.ts).
+  "triggers": { "crons": ["*/10 * * * *"] },
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS",

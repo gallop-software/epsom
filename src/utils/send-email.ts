@@ -1,4 +1,5 @@
 import { getCloudflareContext } from '@opennextjs/cloudflare'
+import { serverEnv } from '@/utils/server-env'
 
 // Site mail goes out through one of two providers, chosen by configuration:
 //
@@ -156,8 +157,8 @@ async function postToMailgun(body: FormData) {
 }
 
 /**
- * Sends the visitor a confirmation of their submission (Mailgun only), from the
- * site, with replies going to the owner.
+ * Sends the visitor a confirmation of their submission, from the site, with
+ * replies going to the owner.
  *
  * @returns Whether the provider accepted the message
  */
@@ -168,8 +169,20 @@ export async function sendConfirmation({
   devOnly,
 }: SendConfirmationOptions): Promise<boolean> {
   try {
+    const mailer = getEmailBinding()
+    if (mailer) {
+      const name = process.env.EMAIL_FROM_NAME || 'Website'
+      const result = await mailer.send({
+        from: { email: `contact@${process.env.EMAIL_DOMAIN}`, name },
+        to: devOnly ? String(process.env.EMAIL_DEV_TO) : to,
+        replyTo: { email: String(process.env.EMAIL_TO), name },
+        subject,
+        html,
+      })
+      return Boolean(result.messageId)
+    }
     if (!process.env.MAILGUN_API_KEY) {
-      throw new Error('Confirmations need MAILGUN_API_KEY')
+      throw new Error('Confirmations need EMAIL_DOMAIN or MAILGUN_API_KEY')
     }
     const fromName = process.env.MAILGUN_FROM_NAME
     const body = new FormData()
@@ -201,7 +214,9 @@ export async function sendConfirmation({
  *
  * @returns Whether the provider accepted the message
  */
-export async function sendEmail(options: SendEmailOptions): Promise<boolean> {
+export async function sendFormEmail(
+  options: SendEmailOptions
+): Promise<boolean> {
   try {
     const mailer = getEmailBinding()
     if (mailer) return await sendWithCloudflare(mailer, options)
@@ -213,5 +228,121 @@ export async function sendEmail(options: SendEmailOptions): Promise<boolean> {
     const { code, message } = error as { code?: string; message?: string }
     console.error('send-email: email not sent', code, message)
     return false
+  }
+}
+
+// --- Mail to exactly who it names: sign-in codes and FlowTrace reports ---
+
+export type Address = string | { name?: string; email: string }
+
+type NamedMailer = {
+  send(message: {
+    from: Address
+    to: Address
+    replyTo?: Address
+    subject: string
+    html: string
+    text: string
+  }): Promise<{ messageId: string }>
+}
+
+/** The bare address of an `Address`, lowercased. */
+export function emailOf(address: Address): string {
+  return (typeof address === 'string' ? address : address.email)
+    .trim()
+    .toLowerCase()
+}
+
+function mailgunAddress(address: Address): string {
+  return typeof address === 'string' || !address.name
+    ? emailOf(address)
+    : `${address.name} <${address.email}>`
+}
+
+/**
+ * Sends an email to who it names, with no copies, through whichever provider
+ * form mail uses: Cloudflare when EMAIL_DOMAIN is set, Mailgun otherwise.
+ * `bodyHtml` is the whole document, from a renderer in `email-template.ts`.
+ *
+ * Under `next dev` nothing is sent: the subject goes to the dev server log, and
+ * a sign-in code's subject has the code in it.
+ *
+ * **By default a failure is swallowed** and resolves to an empty id. Pass
+ * `required: true` when the email is the thing, as with a sign-in code, and a
+ * failure throws so the caller can say so.
+ */
+export async function sendEmail({
+  to,
+  replyTo,
+  subject,
+  bodyHtml,
+  text,
+  required = false,
+}: {
+  to: Address
+  /** Defaults to the site's own inbox. */
+  replyTo?: Address
+  subject: string
+  bodyHtml: string
+  text: string
+  /** Throw instead of failing quietly. See above. */
+  required?: boolean
+}): Promise<{ messageId: string }> {
+  if (process.env.NODE_ENV === 'development') {
+    console.info(
+      `[email, not delivered in development] to ${emailOf(to)}: ${subject}`
+    )
+    return { messageId: 'development' }
+  }
+
+  try {
+    const domain = await serverEnv('EMAIL_DOMAIN')
+    if (domain) {
+      const { env } = await getCloudflareContext({ async: true })
+      const mailer = (env as unknown as { EMAIL?: NamedMailer }).EMAIL
+      if (!mailer) throw new Error('The EMAIL binding is missing')
+      const replies = replyTo ?? (await serverEnv('EMAIL_TO'))
+      const { messageId } = await mailer.send({
+        from: {
+          email: `contact@${domain}`,
+          name: (await serverEnv('EMAIL_FROM_NAME')) || 'Website',
+        },
+        to,
+        subject,
+        html: bodyHtml,
+        text,
+        ...(replies ? { replyTo: replies } : {}),
+      })
+      // An answer with no id is not a send, and would otherwise pass for success
+      if (!messageId) throw new Error('Cloudflare gave no message id')
+      return { messageId }
+    }
+
+    if (!(await serverEnv('MAILGUN_API_KEY'))) {
+      throw new Error(
+        'No mail provider is configured: set EMAIL_DOMAIN or MAILGUN_API_KEY'
+      )
+    }
+    const fromName = process.env.MAILGUN_FROM_NAME
+    const replies = replyTo ?? process.env.MAILGUN_SMTP_MAIL
+    const body = new FormData()
+    body.append(
+      'from',
+      `${fromName} <contact@${process.env.MAILGUN_DOMAIN_NAME}>`
+    )
+    body.append('to', mailgunAddress(to))
+    if (replies) body.append('h:Reply-To', mailgunAddress(replies))
+    body.append('subject', subject)
+    body.append('html', bodyHtml)
+    body.append('text', text)
+    if (!(await postToMailgun(body))) {
+      throw new Error('Mailgun did not accept the message')
+    }
+    return { messageId: 'mailgun' }
+  } catch (err) {
+    const { code, message } = err as { code?: string; message?: string }
+    console.error('Failed to send email:', code ?? '', message ?? err)
+    if (required) throw err
+    return { messageId: '' }
   }
 }

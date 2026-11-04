@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-11-04
+
+- Add site analytics, FlowTrace, sign-in and the admin toolbar, from hubcityhomeworks.com and webplant.media: needs D1 and the cron, so Cloudflare only
+- Add the toolbar demo (`NEXT_PUBLIC_ADMIN_DEMO=true`), as on Winx: a "Try the admin toolbar" button shows visitors the toolbar with made-up visits and stats, and can email a test report on a made-up visit, once per address and five a day per visitor
+- `sendEmail` is now mail to who it names (sign-in, FlowTrace), by Cloudflare or Mailgun; form mail is `sendFormEmail`
+
 ## 2026-11-02
 
 - Epsom 1.0.0: template for concrete floor contractors

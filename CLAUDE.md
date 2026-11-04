@@ -20,6 +20,10 @@ Company identity is not centralized in one config file; these are the places it 
 | Form email logo | `src/app/api/submit-form/route.ts` |
 | Author name and archive | `src/components/post-hero.tsx`, `post-archive.tsx`, `src/utils/structured-data.ts`, `src/app/sitemap.ts`, `src/app/(default)/author/bedrock-flooring/` |
 | Page copy and SEO titles | each route's `page.tsx` and `_blocks/` |
+| Mail sending domain and recipients | `EMAIL_DOMAIN` (`cf.epsom.gallop.software` here), `EMAIL_TO`, `EMAIL_DEV_TO`, `EMAIL_FROM_NAME` in `.env.production` |
+| Who can sign in and gets FlowTrace emails | `AUTH_ALLOWED_EMAILS` in `.env.production` (then `npm run cf:secrets`) |
+| Sign-in and FlowTrace email wording and logo | `src/utils/auth-email.ts`, `flow-trace-email.ts`, `email-template.ts`, `components/login-dialog.tsx` |
+| The toolbar demo's made-up data | `src/utils/demo-api.ts` (places, referrers, contact details) |
 | Blog posts | `src/app/(post)/` (then `npm run blog`) |
 | Images and video | AI-generated demo media in Gallop Studio (`/content/`, `/content/circles/`, `/heroes/`, `/videos/hero-home-hls/`): upload your own with `gallop studio upload`, then update the paths |
 
@@ -29,7 +33,9 @@ Company identity is not centralized in one config file; these are the places it 
 |---|---|---|
 | `_data/_studio.json` | Gallop Studio (`gallop studio …`) | Image additions, moves, removals |
 | `_data/_blog.json` | `npm run blog` | Adding/editing posts in `src/app/(post)/` |
+| `_data/_pages.json` | `npm run pages` | Adding, removing or retitling a page (page views count only these and the posts) |
 | `src/app/(demo)/block/[[...slug]]/_block-index.ts` | `npm run blocks` | Block additions/removals |
+| `cloudflare-env.d.ts` (gitignored) | `npm run cf:typegen`, also on install | `wrangler.jsonc` changes |
 
 ## Build Commands
 
@@ -40,6 +46,8 @@ Company identity is not centralized in one config file; these are the places it 
 | `npm run build` | Production build (auto-runs npm run blog) |
 | `npm run blog` | Regenerate blog metadata |
 | `npm run blocks` | Regenerate the block preview index |
+| `npm run pages` | Regenerate the page list analytics counts against |
+| `npm run db:migrate` / `db:migrate:local` | Apply `_scripts/migrations` to D1 (`epsom`), live or local |
 | `npm run lint` | ESLint check (run after edits) |
 | `npm run ts` | TypeScript check |
 | `npm run check` | lint + ts combined |
@@ -77,7 +85,9 @@ src/app/
 ├── (no-cta)/         # White header, no photo strip above the footer (gallery)
 ├── (post)/<slug>/    # Blog posts at the site root: page.tsx (metadata) + content.tsx
 ├── (demo)/block/[[...slug]]/  # Block preview: one page per block at /block/<route>/<block>/
+├── (admin)/          # /login and /dashboard: redirects that open the modals
 ├── api/submit-form/  # Form endpoint (Turnstile, honeypot, Mailgun or Cloudflare Email)
+├── api/auth, view, flow-trace, flowtrace, analytics/  # Sign-in, counting, FlowTrace and the toolbar's reads
 ├── layout.tsx        # Fonts → CSS vars, body classes, analytics, TransitionsReady
 ├── metadata.tsx      # baseURL, siteName, defaultStructuredData
 ├── sitemap.ts, robots.ts, not-found.tsx, error.tsx
@@ -209,15 +219,40 @@ All tokens live in `src/styles/tailwind.css` `@theme`.
 - **Page parts**: `page-header` (white title band), `details` (FAQ accordion row), `contact-icons`
 - **Video**: `hls-video` is the HLS player (hls.js, loads near the viewport, plays muted in view, one at a time). Encode with `gallop studio ffmpeg` (`gallop studio ffmpeg --help`) into 1080p, 720p and 480p renditions plus a `master.m3u8`, then `gallop studio upload <dir> --to videos/<name>-hls`. The bucket's CORS rule must allow the site's origin (GET/HEAD)
 - **Blog**: `post-hero`, `post-body`, `post-gallery`, `post-archive` (cards + pagination)
+- **Admin**: `modal`, `span`, `grid` (the toolbar's and box's building blocks); see Site analytics and FlowTrace
 - **Forms**: `form/` posts to `api/submit-form` (honeypot `companyWebsite`, invisible Turnstile when `NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY` is set). Fields: `FormInput`, `FormName`, `FormSelect`, `FormTextArea`, `FormUpload` (`name="files"` → attachments), `FormButton`; a visible label when `label` is set; `tone="dark"` for dark sections. The Contact form confirms to the visitor (`CONFIRMED_FORMS` in the route). Turnstile rejects automated browsers: test forms in a real one
 - **Lightbox**: `lightbox-wrapper` + `lightbox/` on `a.lightbox-item` links, colored by `--color--gallery*`
 - **Chrome**: `navbar/` (`navbar/config.ts`, `mobile-cta`), `footer/` (`footer/config.ts`)
+
+## Site analytics and FlowTrace (Cloudflare only)
+
+Ported from hubcityhomeworks.com, itself from webplant.media. Every public page view is counted, a visit that converts is recorded whole and emailed, and an admin toolbar across the top opens the admin box, a modal over the page. It needs D1 and the cron: on Vercel the site works, but none of this does.
+
+**There are two toolbars, one component.** Someone signed in gets the real one. A visitor gets the demo, only where `NEXT_PUBLIC_ADMIN_DEMO=true`: a "Try the admin toolbar" button opens the same bar with a Demo label, Exit demo and made-up data. Signing in always wins and ends the demo. Keep the flag false on a client's site; off, the button never renders and the demo's code (a lazy chunk) is never fetched.
+
+| Piece | File | Notes |
+|---|---|---|
+| Page views | `src/hooks/page-view.tsx` → `POST /api/view/` → `src/utils/page-views.ts` | Tables `page_views`, `page_view_log`. Counts paths in `_data/_pages.json` and the posts. Stores the IP address and Cloudflare's place |
+| FlowTrace | `src/hooks/flow-trace.tsx` (+ `.md`) → `POST /api/flow-trace/` → `src/utils/flow-trace-store.ts` | Tables `ft_*`. The browser keeps the visit in `localStorage` and sends it only on a conversion: a `tel:`, `mailto:` or `sms:` click, a form sent, or a `.ft-tracking` / `[data-ft="Label"]` element. Settings in `flow-trace-config.ts` |
+| Toolbar and box | `admin-bar-gate`, `admin-bar`, `admin-dialogs`, `admin-box/`, `analytics/` | Styled by `.admin-bar-theme` and `.admin-theme`. Both must sit above the header (`z-99`): the toolbar is `z-100`, the dialogs `z-110`. The toolbar sets `data-admin-bar` on `<html>`, and `--admin-bar` moves the page and header down. Neither toolbar shows on `/block/` previews |
+| Demo | `hooks/use-demo.tsx`, `utils/demo-api.ts` | While `state.demo` is on, `analyticsCall` and `analyticsPost` (`analytics/call.ts`) answer in the browser and never reach a route. The data is seeded, so it is the same on every visit, and is built from the real pages and posts. Changes are refused. A new read or route the box calls must be answered in `demoCall` too. The one real thing it does is `POST /api/demo/email/`, a test report on a made-up visit (`demo-guard.ts`, tables `demo_sends`, `demo_attempts`): once per inbox ever, five a day per IP address, forty a day in all, and 404 with the flag off |
+| Read routes | `/api/analytics/*`, `/api/flowtrace/*` | `adminRoute` → `superAdmin` in `api-session.ts` checks the session; this is what protects the data |
+| Emails | `flow-trace-email.ts` and `auth-email.ts`, on `email-template.ts`, through `sendEmail` in `send-email.ts` | `sendEmail` goes only to who it names, by Cloudflare when `EMAIL_DOMAIN` is set and Mailgun otherwise; `sendFormEmail` is form mail, with its copies |
+| Cron | `worker-entry.ts` (`main` in `wrangler.jsonc`) calls `POST /api/flowtrace/jobs/` every ten minutes with `CRON_SECRET` | Retries failed reports and sends the daily and weekly summaries. It calls `AUTH_URL`, the live address |
+| Sign-in | `src/utils/auth.ts` (Better Auth), `login-form`, `login-dialog`, `footer/auth-link` | An email code or link, no passwords and no roles. Only `AUTH_ALLOWED_EMAILS` can sign in, and each sees everything. `skipTrailingSlashes` is required, or the auth routes 404 on this site's addresses |
+
+- Signed-in people, bots, `navigator.webdriver` browsers and any `dev.` address are left out of the numbers.
+- At most 30 reports an hour, and 5 from one address, counted in `ft_report_log`. Visits past that stay in the box and the summaries.
+- FlowTrace emails everyone on the list who has signed in once; each chooses off, instant, daily or weekly under Email settings. The default is instant.
+- POST to these routes with the trailing slash: a beacon or the cron should not depend on a redirect.
+- Locally the sign-in code is printed in `gallop dev logs`, and no mail goes out. First run: `npm run db:migrate:local`.
+- A deploy with a new migration or setting, in order: `npm run db:migrate`, `npm run cf:secrets`, `npm run cf:deploy`.
 
 ## State Management
 
 valtio store at `src/state.ts`. Read with `useSnapshot(state)`, write with `state.propName = value`.
 
-Available state: `offsetTop`, `windowHeight`, `lastOffsetTop`, `isScrolling`, `dialogOpen`, `scrollingDirection`, `lastScrollingDirection`, `lockScrollDirection`, `activeVideoId`.
+Available state: `offsetTop`, `windowHeight`, `lastOffsetTop`, `isScrolling`, `dialogOpen`, `scrollingDirection`, `lastScrollingDirection`, `lockScrollDirection`, `activeVideoId`, `loginOpen`, `loginNext`, `loginError`, `dashboard`, `signedIn`, `demo`.
 
 ## Template-Specific Rules
 

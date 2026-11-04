@@ -6,6 +6,10 @@ import type { Metadata } from 'next'
 import IframeHeight from '@/hooks/use-iframe-height'
 import SmoothScroll from '@/hooks/smooth-scroll'
 import TransitionsReady from '@/hooks/transitions-ready'
+import FlowTrace from '@/hooks/flow-trace'
+import PageView from '@/hooks/page-view'
+import { AdminBarGate } from '@/components/admin-bar-gate'
+import { AdminDialogs } from '@/components/admin-dialogs'
 import { baseURL, siteName } from './metadata'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { Analytics } from '@vercel/analytics/react'
@@ -53,6 +57,10 @@ export default function RootLayout({
         <SmoothScroll />
         <TransitionsReady />
         <IframeHeight />
+        <FlowTrace />
+        <PageView />
+        <AdminBarGate />
+        <AdminDialogs />
         {process.env.VERCEL === '1' && <Analytics />}
       </body>
       {track && process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS && (

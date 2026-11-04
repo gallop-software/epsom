@@ -121,6 +121,15 @@ async function check({ siteUrl } = {}) {
         '  Another env file is overriding it. Nothing was deployed.'
     )
   }
+  // A setting only another env file has would go live with that file's value,
+  // such as .env.local's sign-in secret.
+  const strays = Object.keys(built).filter((key) => !(key in vars))
+  if (strays.length) {
+    fail(
+      `The built bundle has settings .env.production does not: ${strays.join(', ')}.\n` +
+        '  They came from another env file. Add them to .env.production. Nothing was deployed.'
+    )
+  }
   const mail = mailSettings(built)
   if (!built[mail.toKey]) {
     fail(
