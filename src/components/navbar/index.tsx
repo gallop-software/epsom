@@ -83,7 +83,7 @@ export function Navbar({ transparent = false }: { transparent?: boolean }) {
             open ? 'text-accent' : 'text-contrast-light'
           )}
         >
-          <span className="relative z-1 -mr-5 flex h-header w-18 flex-col justify-between px-5 py-[35px]">
+          <span className="relative z-1 flex h-header w-13 flex-col justify-between py-[35px] pl-5">
             {[
               ['w-8', open && 'translate-y-6'],
               ['ml-2 w-6', open && 'rotate-180'],

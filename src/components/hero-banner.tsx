@@ -58,7 +58,14 @@ export function HeroBanner({
         />
       )}
       <div className={clsx('absolute inset-0 z-1', overlayColor, dim)} />
-      <div className="relative z-2 w-full px-[5%] lg:[@media(max-height:600px)]:py-17.5">
+      <div
+        className={clsx(
+          'relative z-2 w-full px-[5%] lg:[@media(max-height:600px)]:py-17.5',
+          // Keep the content clear of the down arrow pinned below it.
+          downLink &&
+            'max-lg:pb-14 sm:max-lg:pb-16 lg:[@media(max-height:720px)]:pb-30!'
+        )}
+      >
         <div className="mx-auto max-w-[1120px] [&>:last-child]:mb-0">
           {children}
           {caption && (
